@@ -17,6 +17,9 @@ async function handleGetPdfSummarizedFile(event) {
         "The following account divides the history of awards in Australia into three time periods, determined by the political complexion of the government and the types of laws they made."
     ];
 
+    // Initializing cards
+    initializeSummaryListCards(summaryList);
+
     const formData = new FormData();
     formData.append('file', file);
     formData.append("summaryList", JSON.stringify(summaryList));
@@ -43,8 +46,22 @@ async function handleGetPdfSummarizedFile(event) {
         });
 }
 
-function scrollToText(text = "An example of an individualist rule may be") {
+function initializeSummaryListCards(list) {
+    const cardContainer = document.getElementById('card-container');
+
+    for (let i = 0; i < list.length; i++) {
+        const card = document.createElement('div');
+        card.innerHTML = list[i];
+        card.onclick = function() {
+            scrollToText(list[i]);
+        }
+        card.classList.add('card');
+        cardContainer.appendChild(card);
+    }
+}
+
+function scrollToText(text) {
     console.log('clicking...')
-    document.getElementById('findInput').setAttribute('value',text)
+    document.getElementById('findInput').setAttribute('value', text)
     document.getElementById('findInput').dispatchEvent(new Event('input'));
 }

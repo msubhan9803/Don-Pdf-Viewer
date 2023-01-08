@@ -1,6 +1,7 @@
 .hidden {
     display: none !important;
 }
+
 .block {
     display: block;
 }
@@ -9,4 +10,10 @@
     z-index: 999999999999 !important;
     background-color: #fff !important;
     width: 100% !important;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid black;
+    padding: 20px;
 }
