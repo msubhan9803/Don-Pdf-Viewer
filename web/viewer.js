@@ -4658,6 +4658,7 @@
           this.updateUIState();
         }
         dispatchEvent(type, findPrev = false) {
+          console.log('dipatching...')
           this.eventBus.dispatch("find", {
             source: this,
             type,
