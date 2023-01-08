@@ -4,3 +4,9 @@
 .block {
     display: block;
 }
+
+.my-custom-card {
+    z-index: 999999999999 !important;
+    background-color: #fff !important;
+    width: 100% !important;
+}

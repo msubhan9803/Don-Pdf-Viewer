@@ -1,0 +1,214 @@
+.files input {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    padding: 120px 0px 85px 35%;
+    text-align: center !important;
+    margin: 0;
+    width: 100% !important;
+}
+.files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
+ }
+.files{ position:relative}
+.files:after {  pointer-events: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 50px;
+    right: 0;
+    height: 56px;
+    content: "";
+    background-image: url(../images/pdf.png);
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.color input{ background-color:#f1f1f1;}
+.files:before {
+    position: absolute;
+    bottom: 0px;
+    left: -120px;  pointer-events: none;
+    width: 100%;
+    right: 0;
+    height: 57px;
+    content: " or drag it here. ";
+    display: block;
+    margin: 0 auto;
+    color: #303030;
+    font-weight: 600;
+ 
+    text-align: center;
+}
+
+
+/* 2 Column WooCommerce Checkout */
+
+@media(min-width:768px) {
+	.woocommerce .col2-set .col-1, 
+	.woocommerce-page .col2-set .col-1 {
+		width: 90%;
+	}
+
+	#customer_details {
+		display: flex;
+		flex-flow: column nowrap;
+		float: left;
+		width: 50%;
+	}
+
+	#customer_details .col-1 {
+		width: 90%;
+	}
+
+	#order_review{
+		width: 100%;
+		float: left;
+		clear: none;
+	}
+	
+	#order_review_heading{
+		float: left;
+    	width: 51%;
+	}
+	
+	table.shop_table.woocommerce-checkout-review-order-table{
+		width: 50%!important;
+    	float: left;
+	}
+	
+	#payment.woocommerce-checkout-payment{
+		width: 40%;
+		float: left;
+		margin-left: 50px;
+		margin-top: -200px;
+	}
+}
+
+/* checkout page */
+
+.woocommerce a.remove {
+    display: inline-block!important;
+	color: red!important;
+}
+
+.main-wrapper .page-title{
+	background-color: #FFFFFF;
+    background-image: url(https://www.reviewmyarticles.com/wp-content/uploads/iStock-821497148-scaled.jpg);
+    background-position: top center;
+    background-size: cover;
+}
+
+.woocommerce-MyAccount-navigation li {
+    padding:12px!important;
+    border-top: dotted #ccc 1px;
+}
+
+.woocommerce-MyAccount-navigation li:last-child {
+    border-bottom: dotted #ccc 1px;
+}
+
+/* checkout page */
+.woocommerce-order{
+	border: 1px solid #ececec;
+    max-width: 1001px;
+    margin: 0 auto;
+    padding: 50px;
+}
+.woocommerce-order .woocommerce-customer-details {
+    display: none;
+}
+
+input[type=checkbox], input[type=radio] {
+    width: 20px!important;
+}
+
+input#terms {
+	margin: 6px 10px 6px 6px!important;
+}
+
+/* my account page */
+
+.woocommerce-MyAccount-content .woocommerce-customer-details{
+	display:none;
+}
+
+/* footer */
+.footer{
+	background-image: url(https://www.reviewmyarticles.com/wp-content/uploads/iStock-821497148-scaled.jpg);
+    background-position: center center;
+    background-size: cover;
+	z-index:0;
+}
+
+#margin_logo-1, .footer-links{
+	text-align: center;
+}
+
+.logo__link{
+	text-align: center;
+    display: inline-block;
+}
+
+.top-divider {
+    border-top: none!important;
+}
+.footer__bottom {
+    padding: 5px 0!important;
+}
+
+.social {
+    border-radius: 40px!important;
+}
+
+img#wpstats {
+    display: none;
+}
+
+
+/* login page */
+
+label.woocommerce-form__label.woocommerce-form__label-for-checkbox.woocommerce-form-login__rememberme {
+	display: inline-flex;
+    line-height: 22px;
+	width:50%;
+}
+
+label.woocommerce-LostPassword.lost_password {
+    text-align: right;
+    color: #333b69;
+    font-size: 15px;
+	display: inline-block!important;
+	width:48%;
+}
+p.lost_password {
+	color: #333b69;
+    font-size: 15px;
+	text-align: right;
+}
+
+
+.mo-openid-app-icons {
+    margin-top: 50px!important;
+}
+
+
+
+        @media print
+        {
+            header, footer, .elementor-icon , .elementor-element-62c3e42, #back-to-top, #upload-next-button
+            {
+                display: none!important;
+            }
+			
+			#print{
+				box-shadow:none;
+			}
+        }
+
+.elementor-icon:hover{
+ 	cursor:pointer;	
+}

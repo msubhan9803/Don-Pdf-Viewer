@@ -1,0 +1,173 @@
+(function ($) {
+	"use strict";
+
+	var $window = $(window);
+
+	/* Load More
+	-------------------------------------------------------*/
+	function initLoadMore() {
+		$('.deo-load-more__button').on('click', function (e) {
+			var button = $(this);
+
+			if ( ! button.is('.clicked') ) {
+				button.addClass('clicked');
+
+				e.preventDefault();
+				e.stopPropagation();
+
+				var widget = button.parent('.deo-load-more').siblings('.deo-load-more-container');
+				var widgetRow = widget.find('.row');
+				var page = widget.data('page');
+				var newPage = page + 1;
+				var settings = widget.data('settings');
+
+				var data = {
+					action: 'deo_widget_load_more',
+					security: deo_elementor_data.ajax_nonce,
+					data : {
+						page : page,
+						settings: settings,
+					}
+				}
+
+				$.ajax({
+					type: 'POST',
+					url: deo_elementor_data.ajax_url,
+					data: data,
+					beforeSend : function (xhr) {
+						button.addClass('deo-loading');
+						button.append('<div class="loader"><div></div></div>');
+					},
+					success: function(response) {
+						if (response) {
+							button.removeClass('deo-loading clicked');
+							button.find('.loader').remove();
+
+							widget.data('page', newPage);
+
+							var $items = $(response).hide();
+							widgetRow.append($items);
+
+							// recalc masonry items
+							widgetRow.imagesLoaded( function() {
+								$items.show();
+								widgetRow.isotope('appended', $items); 
+							});
+
+							if ( widget.data('page_max') == widget.data('page') ) {
+								button.remove();
+							}
+						} else {
+							button.remove();
+						}  
+
+					}
+				});
+
+			}
+
+			return false;
+
+		});
+	}
+
+
+	/* Testimonials Slider
+	-------------------------------------------------------*/
+	var deoTestimonialsSlider = function ($scope, $) {
+		var slider = $('.deo-testimonials-slider');
+		var settings = slider.data('slider-settings');
+		const Swiper = elementorFrontend.utils.swiper;
+
+		if ( slider.length > 0 ) {
+			initSwiper();
+			async function initSwiper() {
+				var swiper = await new Swiper(slider, settings);
+
+				// Watch the changes of spacing control
+				if ( elementorFrontend.isEditMode() ) {
+					elementor.channels.editor.on( 'change', function( view ) {
+						let changed = view.container.settings.changed;
+
+						if ( changed.dots_top_space ) {
+							swiper.update();
+						}
+
+						if ( changed.space_between ) {
+							settings.spaceBetween = +changed.space_between.size;
+							swiper.destroy();
+
+							reinitSwiper();
+							async function reinitSwiper() {
+								swiper = await new Swiper(slider, settings);
+							}	
+						}
+					});
+				}
+			}			
+		}			 
+	}
+
+	/* Case Studies Slider
+	-------------------------------------------------------*/
+	var deoCaseStudiesSlider = function ( $scope, $ ) {
+		var slider = $('.deo-case-studies-slider');
+		var settings = slider.data('slider-settings');
+		const Swiper = elementorFrontend.utils.swiper;
+
+		if ( slider.length > 0 ) {
+			initSwiper();
+			async function initSwiper() {
+				var swiper = await new Swiper(slider, settings);
+
+				// Watch the changes of spacing control
+				if ( elementorFrontend.isEditMode() ) {
+					elementor.channels.editor.on( 'change', function( view ) {
+						let changed = view.container.settings.changed;
+
+						if ( changed.dots_top_space ) {
+							swiper.update();
+						}
+
+						if ( changed.space_between ) {
+							swiper.destroy();
+
+							reinitSwiper();
+							async function reinitSwiper() {
+								swiper = await new Swiper(slider, settings);
+							}		
+						}
+					});
+				}	
+
+			}
+		}	
+
+	}
+
+	/* Service Tabs
+	-------------------------------------------------------*/
+	var deoServiceTabs = function ( $scope, $ ) {
+
+		$('.service-tabs__tab-url').on('click', function(e) {
+			var $this = $(this);
+			var currentAttrValue = $this.attr('id');
+			$('.service-tabs__content-wrap ' + currentAttrValue).stop().fadeIn(1000).siblings().hide();
+			$this.parent().addClass('service-tabs__tab--is-active').siblings().removeClass('service-tabs__tab--is-active');
+			$this.attr('aria-selected', 'true').parent().siblings().find('.service-tabs__tab-url').attr('aria-selected', 'false');
+			e.preventDefault();
+		});
+
+	}
+
+	$(document).ready(function () {
+		initLoadMore();
+	});
+		
+	$window.on('elementor/frontend/init', function () {
+		elementorFrontend.hooks.addAction('frontend/element_ready/deo-testimonials.default', deoTestimonialsSlider);
+		elementorFrontend.hooks.addAction('frontend/element_ready/deo-case-studies.default', deoCaseStudiesSlider);
+		elementorFrontend.hooks.addAction('frontend/element_ready/deo-service-tabs.default', deoServiceTabs);
+	});
+
+})(jQuery);

@@ -1548,12 +1548,12 @@
             const cssRules = styleSheet?.cssRules || [];
             for (let i = 0, ii = cssRules.length; i < ii; i++) {
               const rule = cssRules[i];
-              if (rule instanceof CSSMediaRule && rule.media?.[0] === "(prefers-color-scheme: dark)") {
+              if (rule instanceof CSSMediaRule && rule.media?.[0] === "(prefers-color-scheme: light)") {
                 if (cssTheme === ViewerCssTheme.LIGHT) {
                   styleSheet.deleteRule(i);
                   return;
                 }
-                const darkRules = /^@media \(prefers-color-scheme: dark\) {\n\s*([\w\s-.,:;/\\{}()]+)\n}$/.exec(rule.cssText);
+                const darkRules = /^@media \(prefers-color-scheme: light\) {\n\s*([\w\s-.,:;/\\{}()]+)\n}$/.exec(rule.cssText);
                 if (darkRules?.[1]) {
                   styleSheet.deleteRule(i);
                   styleSheet.insertRule(darkRules[1], i);

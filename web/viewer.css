@@ -1153,10 +1153,10 @@
   --dir-factor: -1;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --main-color: rgba(249, 249, 250, 1);
-    --body-bg-color: rgba(42, 42, 46, 1);
+    --body-bg-color: rgb(255, 255, 255);
     --progressBar-color: rgba(0, 96, 223, 1);
     --progressBar-indeterminate-bg-color: rgba(40, 40, 43, 1);
     --progressBar-indeterminate-blend-color: rgba(20, 68, 133, 1);
@@ -2509,6 +2509,7 @@ a.secondaryToolbarButton[href="#"] {
   font-size: 12px;
   line-height: 16px;
   outline: none;
+  height: 25px !important;
 }
 
 [dir="ltr"] .toolbarField[type="checkbox"] {

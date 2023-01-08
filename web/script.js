@@ -1,4 +1,6 @@
 document.getElementById('file-upload-button').addEventListener('click', handleGetPdfSummarizedFile);
+console.log('pdfjsLib: ', pdfjsLib)
+document.getElementById('search-button').addEventListener('click', scrollToText);
 
 async function handleGetPdfSummarizedFile(event) {
     event.preventDefault();
@@ -14,7 +16,10 @@ async function handleGetPdfSummarizedFile(event) {
     })
         .then(result => result.json())
         .then(response => {
+            console.log('response: ', response)
             const summarizedFileUrl = response.summarizedFileUrl;
+            document.getElementById('my-custom-card-section').classList.remove('hidden');
+            document.getElementById('my-custom-card-section').classList.add('block');
 
             const url = {
                 url: "http://127.0.0.1:8000/" + summarizedFileUrl,
@@ -25,4 +30,23 @@ async function handleGetPdfSummarizedFile(event) {
         .catch(error => {
             // Handle error
         });
+}
+
+function scrollToText() {
+    var pdfViewer = PDFViewerApplication.pdfViewer;
+    console.log('pdfViewer: ', pdfViewer)
+
+    // Get the current page of the PDF
+    var page = pdfViewer.currentPageNumber;
+
+    // Search for the text within the PDF
+    const result = pdfViewer.findController.executeCommand('find', {
+        caseSensitive: false,
+        findPrevious: undefined,
+        highlightAll: true,
+        phraseSearch: true,
+        query: 'The literature on individualism and collectivism'
+    });
+
+    console.log('result: ', result)
 }

@@ -1,0 +1,3847 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://www.reviewmyarticles.com/ -->
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#"
+	class="jetpack-lazy-images-js-enabled mediaqueries matchmedia">
+<link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
+<link type="text/css" rel="stylesheet" id="dark-mode-general-link">
+<style lang="en" type="text/css" id="dark-mode-custom-style"></style>
+<style lang="en" type="text/css" id="dark-mode-native-style"></style>
+<style lang="en" type="text/css" id="dark-mode-native-sheet"></style>
+<script type="text/javascript" async="" src="./Home - ReviewMyArticles_files/recaptcha__en.js.download"
+	crossorigin="anonymous"
+	integrity="sha384-0UmWi2drUOFtiIl9tXA3B9fWn6Oz5K3vecq0zC8vAzesBQkPzPdlJKXnimDbxieW"></script>
+<script type="text/javascript" async="" src="./Home - ReviewMyArticles_files/analytics.js.download"></script>
+<script type="module" src="chrome-extension://jdkknkkbebbapilgoeccciglkfbmbnfm/hook.js"></script>
+<script async="false" type="text/javascript"
+	src="chrome-extension://fnjhmkhhmkbjkkabndcnnogagogbneec/in-page.js"></script>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style>
+		:root {
+			--litepicker-container-months-color-bg: #fff;
+			--litepicker-container-months-box-shadow-color: #ddd;
+			--litepicker-footer-color-bg: #fafafa;
+			--litepicker-footer-box-shadow-color: #ddd;
+			--litepicker-tooltip-color-bg: #fff;
+			--litepicker-month-header-color: #333;
+			--litepicker-button-prev-month-color: #9e9e9e;
+			--litepicker-button-next-month-color: #9e9e9e;
+			--litepicker-button-prev-month-color-hover: #2196f3;
+			--litepicker-button-next-month-color-hover: #2196f3;
+			--litepicker-month-width: calc(var(--litepicker-day-width) * 7);
+			--litepicker-month-weekday-color: #9e9e9e;
+			--litepicker-month-week-number-color: #9e9e9e;
+			--litepicker-day-width: 38px;
+			--litepicker-day-color: #333;
+			--litepicker-day-color-hover: #2196f3;
+			--litepicker-is-today-color: #f44336;
+			--litepicker-is-in-range-color: #bbdefb;
+			--litepicker-is-locked-color: #9e9e9e;
+			--litepicker-is-start-color: #fff;
+			--litepicker-is-start-color-bg: #2196f3;
+			--litepicker-is-end-color: #fff;
+			--litepicker-is-end-color-bg: #2196f3;
+			--litepicker-button-cancel-color: #fff;
+			--litepicker-button-cancel-color-bg: #9e9e9e;
+			--litepicker-button-apply-color: #fff;
+			--litepicker-button-apply-color-bg: #2196f3;
+			--litepicker-button-reset-color: #909090;
+			--litepicker-button-reset-color-hover: #2196f3;
+			--litepicker-highlighted-day-color: #333;
+			--litepicker-highlighted-day-color-bg: #ffeb3b
+		}
+
+		.show-week-numbers {
+			--litepicker-month-width: calc(var(--litepicker-day-width) * 8)
+		}
+
+		.litepicker {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+			font-size: 0.8em;
+			display: none
+		}
+
+		.litepicker button {
+			border: none;
+			background: none
+		}
+
+		.litepicker .container__main {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex
+		}
+
+		.litepicker .container__months {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			background-color: var(--litepicker-container-months-color-bg);
+			border-radius: 5px;
+			-webkit-box-shadow: 0 0 5px var(--litepicker-container-months-box-shadow-color);
+			box-shadow: 0 0 5px var(--litepicker-container-months-box-shadow-color);
+			width: calc(var(--litepicker-month-width) + 10px);
+			-webkit-box-sizing: content-box;
+			box-sizing: content-box
+		}
+
+		.litepicker .container__months.columns-2 {
+			width: calc((var(--litepicker-month-width) * 2) + 20px)
+		}
+
+		.litepicker .container__months.columns-3 {
+			width: calc((var(--litepicker-month-width) * 3) + 30px)
+		}
+
+		.litepicker .container__months.columns-4 {
+			width: calc((var(--litepicker-month-width) * 4) + 40px)
+		}
+
+		.litepicker .container__months.split-view .month-item-header .button-previous-month,
+		.litepicker .container__months.split-view .month-item-header .button-next-month {
+			visibility: visible
+		}
+
+		.litepicker .container__months .month-item {
+			padding: 5px;
+			width: var(--litepicker-month-width);
+			-webkit-box-sizing: content-box;
+			box-sizing: content-box
+		}
+
+		.litepicker .container__months .month-item-header {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+			font-weight: 500;
+			padding: 10px 5px;
+			text-align: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			color: var(--litepicker-month-header-color)
+		}
+
+		.litepicker .container__months .month-item-header div {
+			-webkit-box-flex: 1;
+			-ms-flex: 1;
+			flex: 1
+		}
+
+		.litepicker .container__months .month-item-header div>.month-item-name {
+			margin-right: 5px
+		}
+
+		.litepicker .container__months .month-item-header div>.month-item-year {
+			padding: 0
+		}
+
+		.litepicker .container__months .month-item-header .reset-button {
+			color: var(--litepicker-button-reset-color)
+		}
+
+		.litepicker .container__months .month-item-header .reset-button>svg {
+			fill: var(--litepicker-button-reset-color)
+		}
+
+		.litepicker .container__months .month-item-header .reset-button * {
+			pointer-events: none
+		}
+
+		.litepicker .container__months .month-item-header .reset-button:hover {
+			color: var(--litepicker-button-reset-color-hover)
+		}
+
+		.litepicker .container__months .month-item-header .reset-button:hover>svg {
+			fill: var(--litepicker-button-reset-color-hover)
+		}
+
+		.litepicker .container__months .month-item-header .button-previous-month,
+		.litepicker .container__months .month-item-header .button-next-month {
+			visibility: hidden;
+			text-decoration: none;
+			padding: 3px 5px;
+			border-radius: 3px;
+			-webkit-transition: color 0.3s, border 0.3s;
+			transition: color 0.3s, border 0.3s;
+			cursor: default
+		}
+
+		.litepicker .container__months .month-item-header .button-previous-month *,
+		.litepicker .container__months .month-item-header .button-next-month * {
+			pointer-events: none
+		}
+
+		.litepicker .container__months .month-item-header .button-previous-month {
+			color: var(--litepicker-button-prev-month-color)
+		}
+
+		.litepicker .container__months .month-item-header .button-previous-month>svg,
+		.litepicker .container__months .month-item-header .button-previous-month>img {
+			fill: var(--litepicker-button-prev-month-color)
+		}
+
+		.litepicker .container__months .month-item-header .button-previous-month:hover {
+			color: var(--litepicker-button-prev-month-color-hover)
+		}
+
+		.litepicker .container__months .month-item-header .button-previous-month:hover>svg {
+			fill: var(--litepicker-button-prev-month-color-hover)
+		}
+
+		.litepicker .container__months .month-item-header .button-next-month {
+			color: var(--litepicker-button-next-month-color)
+		}
+
+		.litepicker .container__months .month-item-header .button-next-month>svg,
+		.litepicker .container__months .month-item-header .button-next-month>img {
+			fill: var(--litepicker-button-next-month-color)
+		}
+
+		.litepicker .container__months .month-item-header .button-next-month:hover {
+			color: var(--litepicker-button-next-month-color-hover)
+		}
+
+		.litepicker .container__months .month-item-header .button-next-month:hover>svg {
+			fill: var(--litepicker-button-next-month-color-hover)
+		}
+
+		.litepicker .container__months .month-item-weekdays-row {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			justify-self: center;
+			-webkit-box-pack: start;
+			-ms-flex-pack: start;
+			justify-content: flex-start;
+			color: var(--litepicker-month-weekday-color)
+		}
+
+		.litepicker .container__months .month-item-weekdays-row>div {
+			padding: 5px 0;
+			font-size: 85%;
+			-webkit-box-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+			width: var(--litepicker-day-width);
+			text-align: center
+		}
+
+		.litepicker .container__months .month-item:first-child .button-previous-month {
+			visibility: visible
+		}
+
+		.litepicker .container__months .month-item:last-child .button-next-month {
+			visibility: visible
+		}
+
+		.litepicker .container__months .month-item.no-previous-month .button-previous-month {
+			visibility: hidden
+		}
+
+		.litepicker .container__months .month-item.no-next-month .button-next-month {
+			visibility: hidden
+		}
+
+		.litepicker .container__days {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			justify-self: center;
+			-webkit-box-pack: start;
+			-ms-flex-pack: start;
+			justify-content: flex-start;
+			text-align: center;
+			-webkit-box-sizing: content-box;
+			box-sizing: content-box
+		}
+
+		.litepicker .container__days>div,
+		.litepicker .container__days>a {
+			padding: 5px 0;
+			width: var(--litepicker-day-width)
+		}
+
+		.litepicker .container__days .day-item {
+			color: var(--litepicker-day-color);
+			text-align: center;
+			text-decoration: none;
+			border-radius: 3px;
+			-webkit-transition: color 0.3s, border 0.3s;
+			transition: color 0.3s, border 0.3s;
+			cursor: default
+		}
+
+		.litepicker .container__days .day-item:hover {
+			color: var(--litepicker-day-color-hover);
+			-webkit-box-shadow: inset 0 0 0 1px var(--litepicker-day-color-hover);
+			box-shadow: inset 0 0 0 1px var(--litepicker-day-color-hover)
+		}
+
+		.litepicker .container__days .day-item.is-today {
+			color: var(--litepicker-is-today-color)
+		}
+
+		.litepicker .container__days .day-item.is-locked {
+			color: var(--litepicker-is-locked-color)
+		}
+
+		.litepicker .container__days .day-item.is-locked:hover {
+			color: var(--litepicker-is-locked-color);
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			cursor: default
+		}
+
+		.litepicker .container__days .day-item.is-in-range {
+			background-color: var(--litepicker-is-in-range-color);
+			border-radius: 0
+		}
+
+		.litepicker .container__days .day-item.is-start-date {
+			color: var(--litepicker-is-start-color);
+			background-color: var(--litepicker-is-start-color-bg);
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0
+		}
+
+		.litepicker .container__days .day-item.is-start-date.is-flipped {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px
+		}
+
+		.litepicker .container__days .day-item.is-end-date {
+			color: var(--litepicker-is-end-color);
+			background-color: var(--litepicker-is-end-color-bg);
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px
+		}
+
+		.litepicker .container__days .day-item.is-end-date.is-flipped {
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0
+		}
+
+		.litepicker .container__days .day-item.is-start-date.is-end-date {
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px
+		}
+
+		.litepicker .container__days .day-item.is-highlighted {
+			color: var(--litepicker-highlighted-day-color);
+			background-color: var(--litepicker-highlighted-day-color-bg)
+		}
+
+		.litepicker .container__days .week-number {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			color: var(--litepicker-month-week-number-color);
+			font-size: 85%
+		}
+
+		.litepicker .container__footer {
+			text-align: right;
+			padding: 10px 5px;
+			margin: 0 5px;
+			background-color: var(--litepicker-footer-color-bg);
+			-webkit-box-shadow: inset 0px 3px 3px 0px var(--litepicker-footer-box-shadow-color);
+			box-shadow: inset 0px 3px 3px 0px var(--litepicker-footer-box-shadow-color);
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px
+		}
+
+		.litepicker .container__footer .preview-date-range {
+			margin-right: 10px;
+			font-size: 90%
+		}
+
+		.litepicker .container__footer .button-cancel {
+			background-color: var(--litepicker-button-cancel-color-bg);
+			color: var(--litepicker-button-cancel-color);
+			border: 0;
+			padding: 3px 7px 4px;
+			border-radius: 3px
+		}
+
+		.litepicker .container__footer .button-cancel * {
+			pointer-events: none
+		}
+
+		.litepicker .container__footer .button-apply {
+			background-color: var(--litepicker-button-apply-color-bg);
+			color: var(--litepicker-button-apply-color);
+			border: 0;
+			padding: 3px 7px 4px;
+			border-radius: 3px;
+			margin-left: 10px;
+			margin-right: 10px
+		}
+
+		.litepicker .container__footer .button-apply:disabled {
+			opacity: 0.7
+		}
+
+		.litepicker .container__footer .button-apply * {
+			pointer-events: none
+		}
+
+		.litepicker .container__tooltip {
+			position: absolute;
+			margin-top: -4px;
+			padding: 4px 8px;
+			border-radius: 4px;
+			background-color: var(--litepicker-tooltip-color-bg);
+			-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+			white-space: nowrap;
+			font-size: 11px;
+			pointer-events: none;
+			visibility: hidden
+		}
+
+		.litepicker .container__tooltip:before {
+			position: absolute;
+			bottom: -5px;
+			left: calc(50% - 5px);
+			border-top: 5px solid rgba(0, 0, 0, 0.12);
+			border-right: 5px solid transparent;
+			border-left: 5px solid transparent;
+			content: ""
+		}
+
+		.litepicker .container__tooltip:after {
+			position: absolute;
+			bottom: -4px;
+			left: calc(50% - 4px);
+			border-top: 4px solid var(--litepicker-tooltip-color-bg);
+			border-right: 4px solid transparent;
+			border-left: 4px solid transparent;
+			content: ""
+		}
+	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<title>Home - ReviewMyArticles</title>
+	<!-- All in One SEO 4.2.3.1 -->
+	<meta name="description"
+		content="/*! elementor - v3.6.7 - 03-07-2022 */ .elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]&gt;a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}Let’s get your articles summarized Want to see how it works? Upload an article and click on the review button Need some help with your literature review? ReviewMyArticles.com is a document summarizing system developed on Natural Language Processing (NLP) technology. It extracts">
+	<meta name="robots" content="max-image-preview:large">
+	<link rel="canonical" href="https://www.reviewmyarticles.com/">
+	<meta name="generator" content="All in One SEO (AIOSEO) 4.2.3.1 ">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:site_name" content="ReviewMyArticles - Let’s get your articles summarized">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Home - ReviewMyArticles">
+	<meta property="og:description"
+		content="/*! elementor - v3.6.7 - 03-07-2022 */ .elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]&gt;a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}Let’s get your articles summarized Want to see how it works? Upload an article and click on the review button Need some help with your literature review? ReviewMyArticles.com is a document summarizing system developed on Natural Language Processing (NLP) technology. It extracts">
+	<meta property="og:url" content="https://www.reviewmyarticles.com/">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Home - ReviewMyArticles">
+	<meta name="twitter:description"
+		content="/*! elementor - v3.6.7 - 03-07-2022 */ .elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]&gt;a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}Let’s get your articles summarized Want to see how it works? Upload an article and click on the review button Need some help with your literature review? ReviewMyArticles.com is a document summarizing system developed on Natural Language Processing (NLP) technology. It extracts">
+	<!-- All in One SEO -->
+	<link rel="dns-prefetch" href="https://stats.wp.com/">
+	<link rel="dns-prefetch" href="https://www.google.com/">
+	<link rel="dns-prefetch" href="https://i0.wp.com/">
+	<link rel="dns-prefetch" href="https://c0.wp.com/">
+	<link rel="alternate" type="application/rss+xml" title="ReviewMyArticles » Feed"
+		href="https://www.reviewmyarticles.com/feed/">
+	<link rel="alternate" type="application/rss+xml" title="ReviewMyArticles » Comments Feed"
+		href="https://www.reviewmyarticles.com/comments/feed/">
+	<style type="text/css">
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 0.07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+	<link rel="stylesheet" id="wc-blocks-integration-css" href="./Home - ReviewMyArticles_files/index.css"
+		type="text/css" media="all">
+	<link rel="stylesheet" id="wp-block-library-css" href="./Home - ReviewMyArticles_files/style.min.css"
+		type="text/css" media="all">
+	<style id="wp-block-library-inline-css" type="text/css">
+		.has-text-align-justify {
+			text-align: justify;
+		}
+	</style>
+	<link rel="stylesheet" id="mediaelement-css"
+		href="./Home - ReviewMyArticles_files/mediaelementplayer-legacy.min.css" type="text/css" media="all">
+	<link rel="stylesheet" id="wp-mediaelement-css" href="./Home - ReviewMyArticles_files/wp-mediaelement.min.css"
+		type="text/css" media="all">
+	<link rel="stylesheet" id="wc-blocks-vendors-style-css"
+		href="./Home - ReviewMyArticles_files/wc-blocks-vendors-style.css" type="text/css" media="all">
+	<link rel="stylesheet" id="wc-blocks-style-css" href="./Home - ReviewMyArticles_files/wc-blocks-style.css"
+		type="text/css" media="all">
+	<link rel="stylesheet" id="classic-theme-styles-css" href="./Home - ReviewMyArticles_files/classic-themes.min.css"
+		type="text/css" media="all">
+	<style id="global-styles-inline-css" type="text/css">
+		body {
+			--wp--preset--color--black: #000000;
+			--wp--preset--color--cyan-bluish-gray: #abb8c3;
+			--wp--preset--color--white: #ffffff;
+			--wp--preset--color--pale-pink: #f78da7;
+			--wp--preset--color--vivid-red: #cf2e2e;
+			--wp--preset--color--luminous-vivid-orange: #ff6900;
+			--wp--preset--color--luminous-vivid-amber: #fcb900;
+			--wp--preset--color--light-green-cyan: #7bdcb5;
+			--wp--preset--color--vivid-green-cyan: #00d084;
+			--wp--preset--color--pale-cyan-blue: #8ed1fc;
+			--wp--preset--color--vivid-cyan-blue: #0693e3;
+			--wp--preset--color--vivid-purple: #9b51e0;
+			--wp--preset--color--bittersweet: #fa6262;
+			--wp--preset--color--blue: #2d7bfd;
+			--wp--preset--color--violet: #ad3df3;
+			--wp--preset--color--turquoise: #30dca5;
+			--wp--preset--color--light-blue: #F3F2F5;
+			--wp--preset--color--dark: #232329;
+			--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+			--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+			--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+			--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+			--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+			--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+			--wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+			--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+			--wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+			--wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+			--wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+			--wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+			--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');
+			--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');
+			--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');
+			--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');
+			--wp--preset--duotone--midnight: url('#wp-duotone-midnight');
+			--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');
+			--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');
+			--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');
+			--wp--preset--font-size--small: 13px;
+			--wp--preset--font-size--medium: 20px;
+			--wp--preset--font-size--large: 36px;
+			--wp--preset--font-size--x-large: 42px;
+			--wp--preset--spacing--20: 0.44rem;
+			--wp--preset--spacing--30: 0.67rem;
+			--wp--preset--spacing--40: 1rem;
+			--wp--preset--spacing--50: 1.5rem;
+			--wp--preset--spacing--60: 2.25rem;
+			--wp--preset--spacing--70: 3.38rem;
+			--wp--preset--spacing--80: 5.06rem;
+		}
+
+		:where(.is-layout-flex) {
+			gap: 0.5em;
+		}
+
+		body .is-layout-flow>.alignleft {
+			float: left;
+			margin-inline-start: 0;
+			margin-inline-end: 2em;
+		}
+
+		body .is-layout-flow>.alignright {
+			float: right;
+			margin-inline-start: 2em;
+			margin-inline-end: 0;
+		}
+
+		body .is-layout-flow>.aligncenter {
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		body .is-layout-constrained>.alignleft {
+			float: left;
+			margin-inline-start: 0;
+			margin-inline-end: 2em;
+		}
+
+		body .is-layout-constrained>.alignright {
+			float: right;
+			margin-inline-start: 2em;
+			margin-inline-end: 0;
+		}
+
+		body .is-layout-constrained>.aligncenter {
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		body .is-layout-constrained> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+			max-width: var(--wp--style--global--content-size);
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		body .is-layout-constrained>.alignwide {
+			max-width: var(--wp--style--global--wide-size);
+		}
+
+		body .is-layout-flex {
+			display: flex;
+		}
+
+		body .is-layout-flex {
+			flex-wrap: wrap;
+			align-items: center;
+		}
+
+		body .is-layout-flex>* {
+			margin: 0;
+		}
+
+		:where(.wp-block-columns.is-layout-flex) {
+			gap: 2em;
+		}
+
+		.has-black-color {
+			color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-color {
+			color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-color {
+			color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-color {
+			color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-color {
+			color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-color {
+			color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-color {
+			color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-color {
+			color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-color {
+			color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-color {
+			color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-color {
+			color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-color {
+			color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-background-color {
+			background-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-background-color {
+			background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-background-color {
+			background-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-background-color {
+			background-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-background-color {
+			background-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-background-color {
+			background-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-background-color {
+			background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-background-color {
+			background-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-border-color {
+			border-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-border-color {
+			border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-border-color {
+			border-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-border-color {
+			border-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-border-color {
+			border-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-border-color {
+			border-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-border-color {
+			border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-border-color {
+			border-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+			background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+		}
+
+		.has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+			background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+		}
+
+		.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-orange-to-vivid-red-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+		}
+
+		.has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+			background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+		}
+
+		.has-cool-to-warm-spectrum-gradient-background {
+			background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+		}
+
+		.has-blush-light-purple-gradient-background {
+			background: var(--wp--preset--gradient--blush-light-purple) !important;
+		}
+
+		.has-blush-bordeaux-gradient-background {
+			background: var(--wp--preset--gradient--blush-bordeaux) !important;
+		}
+
+		.has-luminous-dusk-gradient-background {
+			background: var(--wp--preset--gradient--luminous-dusk) !important;
+		}
+
+		.has-pale-ocean-gradient-background {
+			background: var(--wp--preset--gradient--pale-ocean) !important;
+		}
+
+		.has-electric-grass-gradient-background {
+			background: var(--wp--preset--gradient--electric-grass) !important;
+		}
+
+		.has-midnight-gradient-background {
+			background: var(--wp--preset--gradient--midnight) !important;
+		}
+
+		.has-small-font-size {
+			font-size: var(--wp--preset--font-size--small) !important;
+		}
+
+		.has-medium-font-size {
+			font-size: var(--wp--preset--font-size--medium) !important;
+		}
+
+		.has-large-font-size {
+			font-size: var(--wp--preset--font-size--large) !important;
+		}
+
+		.has-x-large-font-size {
+			font-size: var(--wp--preset--font-size--x-large) !important;
+		}
+
+		.wp-block-navigation a:where(:not(.wp-element-button)) {
+			color: inherit;
+		}
+
+		:where(.wp-block-columns.is-layout-flex) {
+			gap: 2em;
+		}
+
+		.wp-block-pullquote {
+			font-size: 1.5em;
+			line-height: 1.6;
+		}
+	</style>
+	<link rel="stylesheet" id="contact-form-7-css" href="./Home - ReviewMyArticles_files/styles.css" type="text/css"
+		media="all">
+	<link rel="stylesheet" id="prefix-style-css" href="./Home - ReviewMyArticles_files/style.css" type="text/css"
+		media="all">
+	<link rel="stylesheet" id="woocommerce-layout-css" href="./Home - ReviewMyArticles_files/woocommerce-layout.css"
+		type="text/css" media="all">
+	<style id="woocommerce-layout-inline-css" type="text/css">
+		.infinite-scroll .woocommerce-pagination {
+			display: none;
+		}
+	</style>
+	<link rel="stylesheet" id="woocommerce-smallscreen-css"
+		href="./Home - ReviewMyArticles_files/woocommerce-smallscreen.css" type="text/css"
+		media="only screen and (max-width: 768px)">
+	<link rel="stylesheet" id="woocommerce-general-css" href="./Home - ReviewMyArticles_files/woocommerce.css"
+		type="text/css" media="all">
+	<style id="woocommerce-inline-inline-css" type="text/css">
+		.woocommerce form .form-row .required {
+			visibility: visible;
+		}
+	</style>
+	<link rel="stylesheet" id="wc-memberships-frontend-css"
+		href="./Home - ReviewMyArticles_files/wc-memberships-frontend.min.css" type="text/css" media="all">
+	<link rel="stylesheet" id="bootstrap-css" href="./Home - ReviewMyArticles_files/bootstrap.min.css" type="text/css"
+		media="all">
+	<link rel="stylesheet" id="deo-font-icons-css" href="./Home - ReviewMyArticles_files/font-icons.css" type="text/css"
+		media="all">
+	<link rel="stylesheet" id="deo-parent-styles-css" href="./Home - ReviewMyArticles_files/style(1).css"
+		type="text/css" media="all">
+	<link rel="stylesheet" id="deo-styles-css" href="./Home - ReviewMyArticles_files/style.min(1).css" type="text/css"
+		media="all">
+	<link rel="stylesheet" id="elementor-icons-css" href="./Home - ReviewMyArticles_files/elementor-icons.min.css"
+		type="text/css" media="all">
+	<link rel="stylesheet" id="elementor-frontend-css" href="./Home - ReviewMyArticles_files/frontend-lite.min.css"
+		type="text/css" media="all">
+	<link rel="stylesheet" id="elementor-post-6-css" href="./Home - ReviewMyArticles_files/post-6.css" type="text/css"
+		media="all">
+	<link rel="stylesheet" id="deo-elementor-styles-css" href="./Home - ReviewMyArticles_files/style(2).css"
+		type="text/css" media="all">
+	<link rel="stylesheet" id="elementor-post-806-css" href="./Home - ReviewMyArticles_files/post-806.css"
+		type="text/css" media="all">
+	<link rel="stylesheet" id="google-fonts-1-css" href="./Home - ReviewMyArticles_files/css" type="text/css"
+		media="all">
+	<link rel="stylesheet" id="elementor-icons-shared-0-css" href="./Home - ReviewMyArticles_files/fontawesome.min.css"
+		type="text/css" media="all">
+	<link rel="stylesheet" id="elementor-icons-fa-solid-css" href="./Home - ReviewMyArticles_files/solid.min.css"
+		type="text/css" media="all">
+	<link rel="stylesheet" id="elementor-icons-fa-regular-css" href="./Home - ReviewMyArticles_files/regular.min.css"
+		type="text/css" media="all">
+	<link rel="stylesheet" id="jetpack_css-css" href="./Home - ReviewMyArticles_files/jetpack.css" type="text/css"
+		media="all">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/jquery.min.js.download"
+		id="jquery-core-js"></script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/jquery-migrate.min.js.download"
+		id="jquery-migrate-js"></script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/mo_openid_jquery.cookie.min.js.download"
+		id="js-cookie-script-js"></script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/mo-openid-social_login.js.download"
+		id="mo-social-login-script-js"></script>
+	<script type="text/javascript" id="deo-elementor-scripts-js-extra">
+		/* 
+																																																							  <![CDATA[ */
+		var deo_elementor_data = {
+			"ajax_url": "https:\/\/www.reviewmyarticles.com\/wp-admin\/admin-ajax.php",
+			"ajax_nonce": "1a027274f9",
+			"plugin_url": "https:\/\/www.reviewmyarticles.com\/wp-content\/plugins\/deo-elementor-extension\/"
+		};
+      /* ]]> */
+	</script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/scripts.js.download"
+		id="deo-elementor-scripts-js"></script>
+	<script defer="" type="text/javascript" src="./Home - ReviewMyArticles_files/s-202301.js.download"
+		id="woocommerce-analytics-js"></script>
+	<link rel="https://api.w.org/" href="https://www.reviewmyarticles.com/wp-json/">
+	<link rel="alternate" type="application/json" href="https://www.reviewmyarticles.com/wp-json/wp/v2/pages/806">
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.reviewmyarticles.com/xmlrpc.php?rsd">
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml"
+		href="https://www.reviewmyarticles.com/wp-includes/wlwmanifest.xml">
+	<meta name="generator" content="WordPress 6.1.1">
+	<meta name="generator" content="WooCommerce 6.7.0">
+	<link rel="shortlink" href="https://www.reviewmyarticles.com/">
+	<link rel="alternate" type="application/json+oembed"
+		href="https://www.reviewmyarticles.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.reviewmyarticles.com%2F">
+	<link rel="alternate" type="text/xml+oembed"
+		href="https://www.reviewmyarticles.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.reviewmyarticles.com%2F&amp;format=xml">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async="" src="./Home - ReviewMyArticles_files/js"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'UA-235729916-1');
+	</script>
+	<!-- Global site tag (gtag.js) - Google Ads: 10950095878 -->
+	<script async="" src="./Home - ReviewMyArticles_files/js(1)"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'AW-10950095878');
+	</script>
+	<script type="text/javascript">
+		var ajaxurl = "https://www.reviewmyarticles.com/wp-admin/admin-ajax.php";
+	</script>
+	<style>
+		img#wpstats {
+			display: none
+		}
+	</style>
+	<noscript>
+		<style>
+			.woocommerce-product-gallery {
+				opacity: 1 !important;
+			}
+		</style>
+	</noscript>
+	<style type="text/css">
+		/* If html does not have either class, do not show lazy loaded images. */
+		html:not(.jetpack-lazy-images-js-enabled):not(.js) .jetpack-lazy-image {
+			display: none;
+		}
+	</style>
+	<script>
+		document.documentElement.classList.add('jetpack-lazy-images-js-enabled');
+	</script>
+	<link rel="icon"
+		href="https://i0.wp.com/www.reviewmyarticles.com/wp-content/uploads/favicon.png?fit=32%2C32&amp;ssl=1"
+		sizes="32x32">
+	<link rel="icon"
+		href="https://i0.wp.com/www.reviewmyarticles.com/wp-content/uploads/favicon.png?fit=150%2C150&amp;ssl=1"
+		sizes="192x192">
+	<link rel="apple-touch-icon"
+		href="https://i0.wp.com/www.reviewmyarticles.com/wp-content/uploads/favicon.png?fit=150%2C150&amp;ssl=1">
+	<meta name="msapplication-TileImage"
+		content="https://i0.wp.com/www.reviewmyarticles.com/wp-content/uploads/favicon.png?fit=150%2C150&amp;ssl=1">
+	<style id="kirki-inline-styles">
+		@media (min-width: 992px) {
+			.blog-featured-img {
+				min-height: 412px;
+			}
+
+			.nav {
+				padding-top: 40px;
+				padding-bottom: 20px;
+			}
+		}
+
+		.nav__header .logo {
+			max-height: 85px;
+		}
+
+		.nav--sticky.sticky .nav__header .logo {
+			max-height: 50px;
+		}
+
+		a,
+		.loader,
+		.nav__menu>.active>a,
+		.widget a:hover,
+		.nav__menu>li>a:hover,
+		.nav__dropdown-menu>li>a:hover,
+		.nav__dropdown-menu>li>a:focus,
+		.nav__menu .current-menu-item>a,
+		.entry__article p a:hover,
+		.entry__article li:not(.wp-social-link) a:hover,
+		.entry__meta a:hover,
+		.entry__meta a:focus,
+		.entry__meta i,
+		.widget_tag_cloud a:hover,
+		.entry__tags a:hover,
+		h1>a:hover,
+		h1>a:focus,
+		h2>a:hover,
+		h2>a:focus,
+		h3>a:hover,
+		h3>a:focus,
+		h4>a:hover,
+		h4>a:focus,
+		h5>a:hover,
+		h5>a:focus,
+		h6>a:hover,
+		h6>a:focus,
+		.highlight,
+		.optin__input:focus~label,
+		.comment-edit-link,
+		.copyright a:hover,
+		.copyright a:focus,
+		.newsletter .consent-checkbox .wpcf7-list-item-label a,
+		.breadcrumbs a:hover {
+			color: #FA6262;
+		}
+
+		.widget_products .product_list_widget a:hover,
+		.widget_top_rated_products .product_list_widget a:hover,
+		.widget_recent_reviews .product_list_widget a:hover,
+		.widget_shopping_cart .product_list_widget a:hover,
+		.widget_recently_viewed_products .product_list_widget a:hover,
+		.woocommerce .woocommerce-breadcrumb a:hover,
+		.woocommerce .woocommerce-breadcrumb a:focus,
+		.woocommerce-page .woocommerce-breadcrumb a:hover,
+		.woocommerce-page .woocommerce-breadcrumb a:focus,
+		.widget_product_categories li a:hover,
+		.woocommerce-product-rating a:hover,
+		.woocommerce table.shop_table .product-name a:hover,
+		.woocommerce-MyAccount-navigation-link.is-active a {
+			color: #FA6262;
+		}
+
+		.btn--color,
+		.btn--button:focus,
+		a.cc-btn.cc-dismiss,
+		.input-underline,
+		.post-password-form label+input,
+		#back-to-top:hover,
+		.pagination span.current,
+		.pagination a.current,
+		.widget_tag_cloud a:hover {
+			background-color: #FA6262;
+		}
+
+		.widget_product_tag_cloud a:hover .woocommerce-pagination span.current,
+		.woocommerce-pagination a.current,
+		.woocommerce nav.woocommerce-pagination ul li a:focus,
+		.woocommerce nav.woocommerce-pagination ul li a:hover,
+		.woocommerce nav.woocommerce-pagination ul li span.current,
+		.woocommerce #respond input#submit,
+		.woocommerce #respond input#submit.alt,
+		.woocommerce #respond input#submit.alt.disabled,
+		.woocommerce #respond input#submit.alt.disabled:hover,
+		.woocommerce #respond input#submit.alt:disabled,
+		.woocommerce #respond input#submit.alt:disabled:hover,
+		.woocommerce #respond input#submit.alt:disabled[disabled],
+		.woocommerce #respond input#submit.alt:disabled[disabled]:hover,
+		.woocommerce a.button,
+		.woocommerce a.button.alt,
+		.woocommerce a.button.alt.disabled,
+		.woocommerce a.button.alt.disabled:hover,
+		.woocommerce a.button.alt:disabled,
+		.woocommerce a.button.alt:disabled:hover,
+		.woocommerce a.button.alt:disabled[disabled],
+		.woocommerce a.button.alt:disabled[disabled]:hover,
+		.woocommerce button.button,
+		.woocommerce button.button.alt,
+		.woocommerce button.button.alt.disabled,
+		.woocommerce button.button.alt.disabled:hover,
+		.woocommerce button.button.alt:disabled,
+		.woocommerce button.button.alt:disabled:hover,
+		.woocommerce button.button.alt:disabled[disabled],
+		.woocommerce button.button.alt:disabled[disabled]:hover,
+		.woocommerce button.button:disabled,
+		.woocommerce button.button:disabled[disabled],
+		.woocommerce input.button,
+		.woocommerce input.button.alt,
+		.woocommerce input.button.alt.disabled,
+		.woocommerce input.button.alt.disabled:hover,
+		.woocommerce input.button.alt:disabled,
+		.woocommerce input.button.alt:disabled:hover,
+		.woocommerce input.button.alt:disabled[disabled],
+		.woocommerce input.button.alt:disabled[disabled]:hover,
+		.woocommerce input.button.disabled,
+		.woocommerce input.button:disabled,
+		.woocommerce input.button:disabled[disabled],
+		.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+		.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+		.woocommerce span.onsale,
+		.woocommerce #respond input#submit.alt:hover,
+		.woocommerce #respond input#submit:hover,
+		.woocommerce a.button.alt:hover,
+		.woocommerce a.button:hover,
+		.woocommerce button.button.alt:hover,
+		.woocommerce button.button:hover,
+		.woocommerce input.button.alt:hover,
+		.woocommerce input.button:hover {
+			background-color: #FA6262;
+		}
+
+		input:focus,
+		textarea:focus {
+			border-color: #FA6262;
+		}
+
+		.nav__btn {
+			background: linear-gradient(to right, #FA6262 0%, #F8875F 100%);
+		}
+
+		.nav {
+			background: rgba(255, 255, 255, 0);
+		}
+
+		.nav__holder.sticky {
+			background: rgba(255, 255, 255, 1);
+		}
+
+		.nav__menu>li>a {
+			color: #333B69;
+		}
+
+		.hover-line:before {
+			background-color: #4C86E7;
+		}
+
+		.entry__article p a,
+		.entry__article li:not(.wp-social-link) a {
+			color: #4C86E7;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		.entry__meta a,
+		.testimonial__author {
+			color: #333B69;
+		}
+
+		.woocommerce #reviews #comments ol.commentlist li .meta {
+			color: #333B69;
+		}
+
+		body,
+		.widget a,
+		.copyright,
+		.nav__dropdown-menu>li>a {
+			color: #6A798C;
+		}
+
+		h1 {
+			font-family: Roboto;
+			font-size: 40px;
+			line-height: 1.3;
+		}
+
+		h2 {
+			font-family: Roboto;
+			font-size: 34px;
+			line-height: 1.3;
+		}
+
+		h3 {
+			font-family: Roboto;
+			font-size: 28px;
+			line-height: 1.3;
+		}
+
+		h4 {
+			font-family: Roboto;
+			font-size: 24px;
+			line-height: 1.3;
+		}
+
+		h5 {
+			font-family: Roboto;
+			font-size: 20px;
+			line-height: 1.3;
+		}
+
+		h6 {
+			font-family: Roboto;
+			font-size: 18px;
+			line-height: 1.3;
+		}
+
+		body,
+		.btn,
+		input {
+			font-family: Roboto;
+			font-size: 15px;
+			line-height: 1.75;
+		}
+
+		.entry__article {
+			font-size: 18px;
+			line-height: 1.8;
+		}
+
+		/* cyrillic-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xFIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+
+		/* cyrillic */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xMIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		/* greek-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xEIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+1F00-1FFF;
+		}
+
+		/* greek */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xLIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+0370-03FF;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xHIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xGIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xIIzQXKMny.woff) format('woff');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* cyrillic-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu72xMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+
+		/* cyrillic */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu5mxMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		/* greek-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu7mxMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+1F00-1FFF;
+		}
+
+		/* greek */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu4WxMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+0370-03FF;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu7WxMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu7GxMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu4mxMKTU1Kg.woff) format('woff');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* cyrillic-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fCRc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+
+		/* cyrillic */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fABc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		/* greek-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fCBc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+1F00-1FFF;
+		}
+
+		/* greek */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fBxc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0370-03FF;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fCxc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fChc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fBBc-AMP6lQ.woff) format('woff');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* cyrillic-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfCRc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+
+		/* cyrillic */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfABc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		/* greek-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfCBc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+1F00-1FFF;
+		}
+
+		/* greek */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfBxc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0370-03FF;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfCxc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfChc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfBBc-AMP6lQ.woff) format('woff');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* cyrillic-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xFIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+
+		/* cyrillic */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xMIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		/* greek-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xEIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+1F00-1FFF;
+		}
+
+		/* greek */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xLIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+0370-03FF;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xHIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xGIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xIIzQXKMny.woff) format('woff');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* cyrillic-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu72xMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+
+		/* cyrillic */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu5mxMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		/* greek-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu7mxMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+1F00-1FFF;
+		}
+
+		/* greek */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu4WxMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+0370-03FF;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu7WxMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu7GxMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu4mxMKTU1Kg.woff) format('woff');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* cyrillic-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fCRc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+
+		/* cyrillic */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fABc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		/* greek-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fCBc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+1F00-1FFF;
+		}
+
+		/* greek */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fBxc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0370-03FF;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fCxc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fChc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fBBc-AMP6lQ.woff) format('woff');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* cyrillic-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfCRc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+
+		/* cyrillic */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfABc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		/* greek-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfCBc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+1F00-1FFF;
+		}
+
+		/* greek */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfBxc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0370-03FF;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfCxc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfChc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfBBc-AMP6lQ.woff) format('woff');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* cyrillic-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xFIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+
+		/* cyrillic */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xMIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		/* greek-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xEIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+1F00-1FFF;
+		}
+
+		/* greek */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xLIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+0370-03FF;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xHIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xGIzQXKMnyrYk.woff) format('woff');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOkCnqEu92Fr1Mu51xIIzQXKMny.woff) format('woff');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* cyrillic-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu72xMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+
+		/* cyrillic */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu5mxMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		/* greek-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu7mxMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+1F00-1FFF;
+		}
+
+		/* greek */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu4WxMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+0370-03FF;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu7WxMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu7GxMKTU1Kvnz.woff) format('woff');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu4mxMKTU1Kg.woff) format('woff');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* cyrillic-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fCRc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+
+		/* cyrillic */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fABc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		/* greek-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fCBc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+1F00-1FFF;
+		}
+
+		/* greek */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fBxc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0370-03FF;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fCxc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fChc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 500;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmEU9fBBc-AMP6lQ.woff) format('woff');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* cyrillic-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfCRc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+
+		/* cyrillic */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfABc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+
+		/* greek-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfCBc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+1F00-1FFF;
+		}
+
+		/* greek */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfBxc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0370-03FF;
+		}
+
+		/* vietnamese */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfCxc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+		}
+
+		/* latin-ext */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfChc-AMP6lbBP.woff) format('woff');
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+
+		/* latin */
+		@font-face {
+			font-family: 'Roboto';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url(https://www.reviewmyarticles.com/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfBBc-AMP6lQ.woff) format('woff');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+	</style>
+	<meta http-equiv="origin-trial"
+		content="A751Xsk4ZW3DVQ8WZng2Dk5s3YzAyqncTzgv+VaE6wavgTY0QHkDvUTET1o7HanhuJO8lgv1Vvc88Ij78W1FIAAAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+	<meta http-equiv="origin-trial"
+		content="A751Xsk4ZW3DVQ8WZng2Dk5s3YzAyqncTzgv+VaE6wavgTY0QHkDvUTET1o7HanhuJO8lgv1Vvc88Ij78W1FIAAAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+	<script src="./Home - ReviewMyArticles_files/wp-emoji-release.min.js.download" type="text/javascript"
+		defer=""></script>
+	<style>
+		@font-face {
+			font-family: "wticons";
+			src: url("data:font/woff2;charset=utf-8;base64,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") format("woff2");
+		}
+
+		.wticons {
+			line-height: 1;
+		}
+
+		.wticons:before {
+			font-family: wticons !important;
+			font-style: normal;
+			font-weight: normal !important;
+			vertical-align: top;
+		}
+
+		.wticon-account:before {
+			content: "\f101";
+		}
+
+		.wticon-add:before {
+			content: "\f102";
+		}
+
+		.wticon-cardResizeDrag:before {
+			content: "\f103";
+		}
+
+		.wticon-casual:before {
+			content: "\f104";
+		}
+
+		.wticon-check:before {
+			content: "\f105";
+		}
+
+		.wticon-checkSmall:before {
+			content: "\f106";
+		}
+
+		.wticon-chevron:before {
+			content: "\f107";
+		}
+
+		.wticon-copy:before {
+			content: "\f108";
+		}
+
+		.wticon-copySmall:before {
+			content: "\f109";
+		}
+
+		.wticon-dismiss:before {
+			content: "\f10a";
+		}
+
+		.wticon-downChevron:before {
+			content: "\f10b";
+		}
+
+		.wticon-error:before {
+			content: "\f10c";
+		}
+
+		.wticon-expand:before {
+			content: "\f10d";
+		}
+
+		.wticon-feedback:before {
+			content: "\f10e";
+		}
+
+		.wticon-filledDownArrow:before {
+			content: "\f10f";
+		}
+
+		.wticon-find:before {
+			content: "\f110";
+		}
+
+		.wticon-formal:before {
+			content: "\f111";
+		}
+
+		.wticon-gift:before {
+			content: "\f112";
+		}
+
+		.wticon-grayLogo:before {
+			content: "\f113";
+		}
+
+		.wticon-ignore:before {
+			content: "\f114";
+		}
+
+		.wticon-info:before {
+			content: "\f115";
+		}
+
+		.wticon-leftChevron:before {
+			content: "\f116";
+		}
+
+		.wticon-logo:before {
+			content: "\f117";
+		}
+
+		.wticon-love:before {
+			content: "\f118";
+		}
+
+		.wticon-noRecommendations:before {
+			content: "\f119";
+		}
+
+		.wticon-paragraphRewrite:before {
+			content: "\f11a";
+		}
+
+		.wticon-paste:before {
+			content: "\f11b";
+		}
+
+		.wticon-pin:before {
+			content: "\f11c";
+		}
+
+		.wticon-premium:before {
+			content: "\f11d";
+		}
+
+		.wticon-premiumDetail:before {
+			content: "\f11e";
+		}
+
+		.wticon-premiumFull:before {
+			content: "\f11f";
+		}
+
+		.wticon-recommendationLight:before {
+			content: "\f120";
+		}
+
+		.wticon-recommendationLightCard:before {
+			content: "\f121";
+		}
+
+		.wticon-recommendationLightNoSuggestions:before {
+			content: "\f122";
+		}
+
+		.wticon-refine:before {
+			content: "\f123";
+		}
+
+		.wticon-rewrite:before {
+			content: "\f124";
+		}
+
+		.wticon-rightChevron:before {
+			content: "\f125";
+		}
+
+		.wticon-rocket:before {
+			content: "\f126";
+		}
+
+		.wticon-sentenceExamples:before {
+			content: "\f127";
+		}
+
+		.wticon-settings:before {
+			content: "\f128";
+		}
+
+		.wticon-shorten:before {
+			content: "\f129";
+		}
+
+		.wticon-tutorial:before {
+			content: "\f12a";
+		}
+
+		.wticon-unlock:before {
+			content: "\f12b";
+		}
+
+		.wticon-warn:before {
+			content: "\f12c";
+		}
+
+		.wticon-WordtuneButton:before {
+			content: "\f12d";
+		}
+
+		.wticon-x:before {
+			content: "\f12e";
+		}
+
+		/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvc2hhcmVkL0ljb25zLmZvbnQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Q0FDQyxzQkFBc0I7Q0FDdEIsNjNTQUE2M1M7QUFDOTNTOztBQUVBO0NBQ0MsY0FBYztBQUNmOztBQUVBO0NBQ0MsK0JBQStCO0NBQy9CLGtCQUFrQjtDQUNsQiw4QkFBOEI7Q0FDOUIsbUJBQW1CO0FBQ3BCOztBQUVBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCO0FBQ0E7Q0FDQyxnQkFBZ0I7QUFDakI7QUFDQTtDQUNDLGdCQUFnQjtBQUNqQjtBQUNBO0NBQ0MsZ0JBQWdCO0FBQ2pCIiwic291cmNlc0NvbnRlbnQiOlsiQGZvbnQtZmFjZSB7XG5cdGZvbnQtZmFtaWx5OiBcInd0aWNvbnNcIjtcblx0c3JjOiB1cmwoXCJkYXRhOmZvbnQvd29mZjI7Y2hhcnNldD11dGYtODtiYXNlNjQsZDA5R01nQUJBQUFBQUJ2c0FBc0FBQUFBUVdRQUFCdVpBQUVBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUhJa1lCbFlBakJBSzJ3akpKUUUyQWlRRGduQUxnVG9BQkNBRmhBb0hobWtiL3paVkliQnhBSkF3blJKUmxLeE5TUGIvbHdSdFNxZ3NIdEoyTDJqR3JDRGJLWHNSaVRUNlZLUkYwSWQyR2ZrS0hxTjkxVVdhTVRSYVhGdC85UlVxeUYxUHlTL3ZxRy9jVUVwNC9wbXI5d1lHbHBBU25pVERXQ0JXZTc2dUZJQkNWdGxYSUFDdWVaL2k3NHNDcWFaWjRlalI1aW44Z01NMVRUOEFobWliQjArWTBJb05Jb0lWSUFJU0VqWkttY0dpYkZ3YXhTck1yVjJwbTR2V1pUdHhsUzdhaFM2U283VTJ0bnBpZXkvaVJEeFR5Wjh5TVJLYXRrYklIZ0dEODBJZWNSQ0RPVFdwT1pTY1lhQTA0TkNBV1ZDRWpaL2tBK3Z1SjkzOUhLY0VhUnNhTUJ2MmwrcHZPLzE3K25DeFcvZlkyeGpqVEVBUUdwQjRRc1JORVRhMU9hNVRPbGw5S2dpRHpiZldyOTdlVjBOTUxwSEZ2QlRTN054OS9zN083UmZmSGN6dUw3Ym9IU2FXUk93RWMyODhraVdUMXozVElkRXNVZ3FsV0szUWlNQkQzS3VhTWUwSFBNOGVZa2pHbkpaWVd1cUZZZzNXNmlYcWxSWk5JSzBZVjdmYVRkK0JtN2tpcEoreDJlK0IwN3UyR3BreUxFVE01ZjNjRVJRdzdKSkRIYVNMVGNiejE3LzZoR1U2czE4RlNkMUsvdjY3cjVNMC9PZ2x6b3JrV1J3Znc2UjlvYi81S1ZiS0pxNVVJZTNWSHJwSTc5aVZUN3hmTEZERnpWTWxtRXdXbThPbDBYZzhDWlBPaGJyZTg0MFhzWEVHWDM4UlV3S2hTRm9ndzJmSVNocVdGekFWRkpVWWNuTEdETEZVVkVreUxNR2tXK2F6T09LV2FBalpaYVVTWWsyVUdLRno2aXAwZCtJY0ExdDBTSWlicGxpQ0FDemZVbElTY0hnTXJxaFpITEx3dDVLZnRib3N2cWlEbTFmRnJac3d3bExqcUFzVGZWeENoRXNlRHBWd3A5YTl1QlhjK1ZHeDJaMm1MWkw5ak83cXNuaGIxdW83RUFvMDZDY1d1TG02c2dmOXlBeHIzeGRHK1pxUmh6b25nWnIwMFYyQnM0VUhHaUtPd0tXNFNrbkFWWXlwV2RQaW5sUVlIWW1UWXZ4UDB6NU4wakhMbFVreHNPdFJwcW1lSjRhU2lweTA1RnF5TWV4MklXYUZibWEraE1YblVIVkRMWk1zaDJZcXNFTG5hTEJLeEVWTGtpdHMrVlZ0bGl6TElsMmtzVkliVE5wMGJOV0lMTTJWR2Erdkg4aU9ONkwxS3d2RWpidFU5SmF2UEdjbUZVd01XWTlVNU5kVFUyb2krOFpFYXJBa1lpdkp5RU1aSStjY0dxR1REbnVGVTN2TjBNaU9HTlRxQ3V6U1ZGR3JRbmRQNzFoMDZJWVZDa0JtVFRSYlowN0FrMW1mWEV2MTRXcG00SUJPbW93WncvTnp4L243Qzg4cEJ1S0VGYnBINDhUajdtNFNHT3dFYUJDSElqbG43bnZzaVdzZDJyR3NuSXFhaGo0bC9IOFpKQmlMMWQ4QVB3WTNYdmxBTXdoQkZZc3dONk42aU43aUw3cWxQLzhCL2VqdGRXdkJBREdnZ2ROcm1yL2FvWlpUYXFCRjRpbk44TWYrMFFNVm1EVkpvMHNyS212b2VOOW5maWo5Ly8veGRhcWU4T3MrOUVVSmE2NHBLbWF0VzlUbS9ybGt5SU9XZ2JxTW5vNjJycFNpUGtPVHlWdFRLS3NyUkFweVNrUkxoVCtUcG0xbE5VK3EwaFRCM21HT1NVZ2FNbUxVdUFtVHBzeVlOV2ZlZ2lYTFZxeGFzMkhUbG0yNzl1dzdjT1RZcVRQbkxseTZjdTNHclR2M0hqeEJTVEZOdERiMVRLOERNRVFKcEJid1dnenBHR3UrSjIxazgvRFBQeTA1VmdYNEE5Y3VxNTZxQ3FET1VZRDJnS28xNER0VHRFQ0tBUWlvZzVBTWlPaUJOQjFRcEEzSzdTNXZBVWlCUnJ2SVhnRDY0SFVNOEFaTjhDWW1lQXNQdkUwQTNxRUIzaVVMM2lNUDNpY0NIMUlBSDVFREgxTUNuK0NBVDdIQVoxVEFGL2pnUzBMd0ZTNzRHaHQ4UXhsOFN3MTh4eFA0bmlyNEladUdZSU9nUlFBYUJIUUl4Q0FpQWRFaUNURmlDR0xGQ01TSlVZZ1g0NUJJVEVCaU1RbEp4QlFrRlRPUVRNeENjakVIS2NROHBCUUxrRW9zUVlKWWh0UmlCZElRcTVDbVdJTzB4QWFrTFRZaEhiRUY2WXB0U0Uvc1F2cGlEeklRKzVDaE9JQ014QkZrTEk0aEUzRUttWW96eUV5Y1ErYmlBcklRbDVDbHVJS3N4RFZrTFc0Z0czRUwyWW83eUU3Y1EvYmlBWElvcnAwbHZPUjk4Qk4rTTM0RTRlVXptQ01zZ3VLVDZaRVJzZUpZSWd2UlhCQnFLalFuQnBZcHhkUm15QWhiWUNpeE5TbGI0Q3c0YlVXNzVnYnYyMXpVdmNRK2kydVJvV2puMURWYXVWeFFQOWJVV2QzdjhSZHA2cDNuVVQxWStWbFJHV090LzNiemc1UFNGWTBrYnJiYnhucFZPWC9HWGpkZnhIN05qanExbGp3UElSMkdJTlZ4d1RIclhmc0F2YVp3NGZzQ0c5OHU4Y0wzQTN4Q1IxSGxxMjczWVorNDNpZ1NQYXAzM3Z6UTlpRWVJTG9rTmdPRE9vSGlYaUNZKzMrdE5yZm0vb3JicjVmZFhIVTNjdG1GZ3I4NDZDbjZhYk1EREx0SjNQaWlQajB6bm42VW42OXozaUVBQVF3d3hFMEVHd3o2YkQ4OS9XWHJIK0RuQjF4SlBtNnlmLzBiL1BYblgvQnZ2WWtKMkpaRE1oMHdPd0RvNWtPZ0d0ZmU0WW5LODZCd0NVR2NCZWVzYmtHbkowZ0x3b2tGbS9ta25SMmk3VWNtdE00YlRrWW9pZklYZFQvUWlwQlBQR25VWkEwZlBNSis5UVQ2eE9NS3plZlh5YWV3ejA5UDVON2k5Mm56YzBkSWE3ZkpZVTZQc25QeEE5NDhLaGNqMWVEZmVlZXFjVVF1Um1tbnk3a1dueDhhRHZOeDhydjRnZjJzYTUxZmVmTXEyTnBpcGllZG1MVzFwNjVYSGcwT1JNaDQ5YzM0aWpRNkVvODArK0ZaRGtManBBalN1ZlJsaUUva0pkcjhMRkNOREZONWtaTVpJNHVaa2JtZEUzbVZKZmtabmFSY1p5KzRCMlhENEdnVUsrOGd6YXA0U2x3VXNyT3FnRFdBbFV4SGxWTVNDTzRQaGprTmhnK0c1ektPSVlPSWNBUVlBb3QweFBxZXV3aEorMms1UWZMalV3QW1neGdncUFIajJhZUo5dm55UWtUKytlY3pPb1cxVzlxNS9KWFM3cjRROWxNa0hla29EbGlocmxEdXN4c3hlNHFOa3V6Mlc4dXhtbmVuS1Rubkh1MHF2WDUvTGxvNTIvVGNiRVlDbVhKdmJhb3NCWVVWc2hCTXQrQWlKSE93cWxZQmFNMDEveW1nd1VvTWpBeEN2ZzRNbTRHT2NwdDJsblNYOVh2VHVxclJza0loMDJ4RzZaNXltM1E4Wm5GSG9CQUp6c3hPYzIzbWhrSldhTFEwRk1pc21tMEd6UFRvYUM1bm9LdTBxNng3RmkrRDRreHZHU2hrWW4yWkJEVE5rQlh1N3IvU1REaHNVMEZwTXRoWkFscWsvMldDbmNFa0xCdXJ0V1B4Y0todmFwODNyWDloZHpobGNTTnN0T0VEbmtVbzMyTW5BbGtnZU5KbkxPNlpMTHZCUFFiN1NqOHpGeTBEOWgrTi9YL3E0ZHJRYVJEaUFxNUFWYll6cnF3K09sd3N2ZUVwWi9FMVk5RlZXN3BMbmtPLytDNi9HdCtjSCsxa0ZNbEVBWUI4R054WW0xZk4rQ2NFTTZ0dUloYjJPbzlCckpiZml4SngvYjE4ZTNYelM5U0hHODBBN1dXNG8zZ00vS05iQnZhc3Vsc1Y4ZlNHR05Fc1Z2RThQQXNRRkxFY2twRk12V3ZUSGMvUEc4UEtPYTMxZnNMcVE1d1c3T3BxdDFmUytkZkFNK3Y3WEhFUjVmb0d0QTZCOGZEWVJqZWtVZXd2MHFxTHNBODdMYjRDZHJEbHF1Zkg4WFZ4QnFpNm5iVzA4cE96bkp2ZFhsa0thVG5vSzUyV21td2E2dEk4TGMwY3BYbDN4N3RhV296SXZhOFRDV1hhNC9Jck1LN056NjdQSGc2R2Y4U2Z4Sy9jZ09JN2ttOGppUVc1OTBSNEhsYnZvdmtQV0RrT01CS0ZkVlRJSERwMDVIdnM4WUt1TGpQT0VuUVRLMkRoR1VFK294MzIzMlhEL3RmMndocFpoTGJIbXNiL05LNytRaXhUSmdscE1nZEJkcXZPa2lXV0JNMTlaaEp2WDJ3b3lJK21MRUtZWlFZSUlYMG9IYUEzNTlEUmpVSWdMZWRhTFpaNW9oNDE3Qm9mb0JzQzlyTXJFZmR6Z3p6VXQ2VjhVZTNaY21BVlJFMmtsYVJib2VIL1NCVUNtQUUvaEJyd016VVBBd1R4eURzNk44NDFHN1l0WFJlT0k5T2d2cmlIYnpRSUhaSGJJcndUSXYySlpYbkFzSmZaWkpMTGJydFF2UGhDQ0lYSXBWdlYwTjYwM09WUDMxN25xRjRJenVmaHhOM0lvQWt5VjgrN0grRHg2bDZRWnUxSVM4YU90ZVdHZERWYkJkdXQ3cjBLQ1hUYmtrR3E1aWhhVW9WbkhYeWVub1h0K2VFWXMwYlJPSGt6UURwS09rdUNyVmxWWDhSWjhhS2FqU3pHS2c4aHFyL2ZsbnkySHhUUVZ4dlZ2VmlqWTRET0FOT3VoVUpDRDdIVC9EQ3BnYWdTcWhzMytEQ0hkOTF5NkRrUjRIdFhmV1c4U3ZqbWJKL3JqNityMzQrSFY4R3pzeDNVMGpwNmJWMjVLZ1N1ZWJ6ZytZZHlJelc2cVhDT01Dc2RxRkNteTFpNG1tMVhjUE5XZUllcVp5THdkQU5mY25qSDJraHJDejBwVjkxZGwwbDQxTnRhK1NEK1pPRVYrSEdYUTA2T2JuOUNxUGNpUWxGSzVHTVBMUjNiUWhxSlBWeVZtZDBkdjdJeFZvWFhwVDBNM3RudEpEV2FuU1BoSnh0L0FIRmpJRjEzZlBFTzZFWXhUU1lEeEVReXhES3ppV0VpSkswUXV4M0xJNnZuTzlBbHlwaGxoWGtLcXlETnorT3BGTVlxQ1ZxM29vQ1N3OXpiblVTRXB2SUZaRTF1N2dxR3lMSjBaQlZMMFBJT28yUUttYzlYWitjc3A1aXZISXV2cFF2WnRHN1dHNG5oT01yejJsOEhZanhTVDhSaitWQnZNV2ViTWpTYWUzSTAweXpIcjlrRmplZUhoeDYvZmhsb2FVM09TV0kxTHpWdjdMZjB1V3k4K2dIRjVmZDZBd1dOelpEZkJRMGp3bmdsWVpEeWN3ZytuWVVnYVFPOC82VUFKRE5BbldYS1AyQ2Z5TjB2NStrYWlFRVZ3UER4eHp6V25yVG1FQzVya2ZiUnBkQzNESVJDc3JiMVgzNzB2NW1vdytvY1ZZRFN6MDhab0RvdTRGRXIvVlFCeDRrMXIwWk5HUmIvMU8rZThGTThQS1hMUlJjUXp4QW5qb3NaN2JFVzQ0a01jWHlBaTY3c0llMUhUV1FOV29yMlB1c2ZvTlpxdFgyTEZpbFFkM2g5SCsyMloyb0diNGhHQUw1YzBFSHcwZFE3MEhCL09nekt6S1FDY09rYVFzS2tkYXhxczc2NExmUTRmZHoxakpBYUdqMHJLbXBXZEZyK3dvdk8vZjN6SGp5NGtIaVY4OXdLcXE3ZUVZbzBJSk1lUkd0Q3VMZWtUcjFqeDVFM2I4YkdPa0JsK3FKRm53WUdWcXo4RDd5cVJndUwyTTlvUTBPOGRQeEtkalkvdTUzWDdvQy9WaTZoNENraFM5R1lqcjZiN0ljazdSTEFMR05uVS9BTzdieU83QlJlYVJHbm1pUWRPaDl2Tmo5NTh2U0pBYXlmR2tERjMvejBLZGhiZTl5bTU5Y2dnN0dXeVJINGZRcm9GWk5pWXRabXhnMHVscncvM2J4bnI5bGtzdkx1MUhSNGgxcWY5K3o1N09Oa1BocUtBOGFIcFZqRzV2UUIzYU5tSHlld2NTTjR4QksrUTEzak0vNnhHemRoQWIraDB4bHFvSXZSUmJadzRUdWZLVzBEb2tNWDVQSVdqQXp6N2lEekRjbFpRZXBoV29xOXhESi9ZbTl1UDdOY3o1Q0VHRWladlNSQVZ3eWFXd3lFVHd2N0I0N1lSem9vb2l2NFJlRUZlZUY2d2FjaWZqNlhtODhycXFySUxRM1B6K1BwK1laNG8vL2MvbjUzVDhJamIwN2VyVFNmT08vb2FPODRuNzBDOXZhTzN1M2YrN3BINWhmTllhaG1KT3Nha3BOalp5UlZGdWxtNit4VWsrbzlVR2lDRkkyYTQ0TnNTV21kSmFQUmk0RTgrTkpwbTNrVEJtVjA1a1htN1QwNFlhM0xhWTh6QW8vQzNZWDNVajVudjM3bklUampzUldqM3VqcXFDdkJsT0pPNFVveHRpVytvT3R1cmhFQis5WGRJbnNoOEQxdG5pWEZOeWtpMnFKQlIvOTd1UDJaWlA3RTNGbFVVMWxTeEJUTG1Xb0wzY29QQ3dKaHVLT0ZSUlk0UW5DTDg1SVpqU3JzMU4rNUdWYm9ITmxsUEFoYzNQYVJOVUMrU3VaZHc1THZlMWcxdTcrRjBtcldIbUQ1NFR2NnpBWllyZjN1SUxZdnFINWZqbzJ5a1NzS0RuVGZJTWJTQ0RCL0N0OGpCRmVRdXdTT3BzZFphVW5SbDAvRmJWKzFOR3J4MEVlY1kwTFJ0dnJUWjg2MStIN3RBLytEdWZ0TE54WHVidE5NVGZOTmNvQ1FMa21XOFU1b0lvOGhRNmxVQlljZTlReWlXZ0V4bDZhMkt4eVNEVDc3VTM3KzVjbmkwakp0KzdReVN5dWtSWEtDTFFsTEVOaW5WZFNoSElJSHUzdGp2ODJhQU5NYWR4QU9QdTVzdmZlbDFuMVZrVmJIbnBUQWN3cWhFTzNZUjlwb2NhcEZrOWYwYm8xVTc4bGRWckx2N3J6cE81Zk1XZjZla0VDYmI3VU9Sc2crSkNNcHlISEdNbWx4WkdTeHRBd240R3JGa1dWU0hMR0Z4aXlxemsyelVnSEFJOVdydG1XN1BwbW9JZW83dDljbXdwUGdoYUh3eEM5eWJHaGkyRXlGWjJQMVkwOG5jbWRlYXpjZ1NWTFFrL1JQZWFOcDRJbFo2UlJmcHdiMFhrdGRZZWl1eklCN3Y5WTBQVEFzTTdDVk5TTFBzSnl3M1RjYmJ1N080WVF4aGNWS2FEMTF4RGZjenhReDdNL3pHNzcvTlNzOTNoQ3Z6Rkt1TnF6dXIrcXVraDlvQ1dHb2t5ZUIzTGVHNXdFTEp0QThXOTZHVmxOVDF2UDFTMW4xaS8zRTBHMklYbEFRZE5ob3ozTDBVS3RGRFIzZTFINk9USDZueUk4cjBYTjVSZlZqUTNyT3JFTDJvRW1FTXdSNFRFM3NPbXNFekRNKyt0TjZvNUtxL0ttZ1hxTnluUWU2eVJRZnp3V04zTENHUmxGalhLT3dFYmhKN3lzOVhabDF0UW9Zejcrb2FZUFBZL1M4V1RsVnB3am1hZ0R2ZDgyY2Q3OE1FMmtqRFZXZmJiOU9VQVRnZ1Q4cW5rN0hGU1FaNFdSOGpGVVNVWGI0Wkh4TGZiVnM2bzFIV010NGVXdnAzbjFuRzMxR2RzSSswaWhkREkyalVUSWxXaUNtd0JETzJWYkpFT0NScFVtcUE0ZXU5dlFoS21Ed3ZPV2tXREFZMmZmc1hmbkJtN0s4SlRkUHk3ZXdndENhV0dzU0JpYndqQ2s4VzBEQkh6ZDI4c1p0RTJDcXBnNzg1c2Z6bSs2TzFMaVhGMnBsNXdnS2VJN0I5Z1J5NkxaVmJ0R2loWk1YcnQ0U25MOHhhVm5lM292VE05Y3NubE56a1JEalZtL1pDc2RsTlVxSWtjVG8ydW5pS1VMaEZQRjB1SUFyVHhGT0YwUEFrNG42YTBHcW04cFZXUjM1bS84UE5LbVA4R2RQd0tpL1M4K2VKWWNmdnJwOCtkWEQ3ZXYyZExyNGovbzdvcUE5cHlEVTBOU1FRSTAyTUlSNmEyWDlMVnFJSmpCUUUrTEhSMUZPZi9qdzB6VHljMHp0WmFINHFJNkF4LzR1bmZ4VkpPeGZVZzZ0ckk5ZlNBQmYvOEc0Y1RPM1lIdnJYLzh4TThzOFo0Nk56ZWlyYzUybEYyeXR0YVZqaG0xRGJBR21vdzlqNkpnbWpiVnRDQWFRZTkwYVE3Zjk2Q3BCSk1LUWtHV2NIZ2ZCR3d4d0pOeFd1aEVIdFN6V28yZ0Y4Rnc0MXFBVDBNaFFLc29qTlJPT05Da3pZYThCUjJJWnlmMjNNa1Q1MjUza2JwYWF2VnhjaFNhM01EZFRoR3Y3aU93QTNrZ0lJeGp4ZTRJemE1VjhaNlNiU2VqNjFuNk5WZkE2OG00VTVVUmRickNYdU1tS3U0aTBET0hXdlhoMlNEaWpOaFB0TWhHT1JtRG14b3Z3U0dvaWlwcEpRQ0VJMHpVcW1xYzZ1U3VzNis3VUxtd1gwTjhBYkxQT1VVa1A2QXFnSzN1Z05YcWRYOERqRlZRQm1LMklCQUVRR0d1V09JZVVXckk0aWFsaFpjL0k0bVN3UXpNNDJROFRKUGpBM3ZJWjJScFdFck5rTVNuMXJhZGVxZmNFR3JxY1lZcWord3NVOSt6N3VXWFVCSG1rN3drVS92UTRVK3hJSE4waEF2OVp4d2hpWi9nSTQ5YlRFaDNwL0pIWUVUN2RTVWxiTDR6TDhHRUg2UmlmOFJFTzlMZ1JpZnZEakZjWitDYkM4ajdMQUU1YXQzOTNKSmxIa3B4bzJCa09pZlZyTmh1alFQdm10ZnBFRHVETVJqTU5VQTFFV0ZZVVE3TUxuSVQybVF3VlF3N1YwN01JbnI5RFU1RE9PamdLc3AwUUhZSkhVT09Rcm5HM2g3ZCtmTG95RWsrUzMxdkpnZ1hDTFdRd0FNR0pFaGdFTzhvSEVEaXpBQnc4N2g1bHQrMSszMzg4QzQvdDYzcjJ6Y3IrRlAzMEVaMHdzVjUwK1laMlJybkVPSmRnSk5TZ3RmSzVQZm1IU3M2U01wbFNsbHdWN1NlYi9UZXZDTjJHR3ZQK3p2YVRSYXV3TktaVXlwU3pRUEFLZmJteS9GR0Nhek00YU9SZHJscWxWNmxRamlwZmU3dllzOU1UbDR4VDV0ckV6L1RYdWtzazdscC9rWEN5VW83VDR6b1AzbkxscWxIazc2NlZTTFM1eEVHMXMwVERkcXZxYVJZMjkxUzVzZkdKTzZ0cmI5MFNMNW40SUNhL0pqL204d05hRUkrYmx4OWVMdUM5elF1aVBRQmIzNWduTmIrWU9BdW03ODJPUW1YeEEzejZvekFZT3RUcTFXbGROdGlSdk5tS3ZRNWhnM1E0YnR3QStwQ0xyY01YZVN3alU3ZXRPc2E5TUwvbm9sbFZpQm9FWWRtRUpSRmhDdHAzeXI2cEtjNmlNWU1Xd0hDYW4wd2NoZWw5dTEwcnRIaUV6M2pvaVVPSFdydzVWWmdEeHNadWZiNzB2TnZnZVFDeVp6Q1diOEwzdzZUQkNpWkZITFhvSHE0WDcwUHhiUGpKakFxV0JodHgrTXJjY0UwZ1B6a2tocUl4R0ZLY29vTjEvRUJWV0hZRm5JQmZmOGZlN0dkZE5uYXZkNnVnU0piTWl4SkowR3B2NU5uWnlQVHVVb3EzZ2hVSkpRTGl2bzRJUFordmo1REhGOThqWjJMS0xUWE82UW1yTklkZkhrdUxGUlE2WmJucTUwUUk5RVg4MUNyeXQ1U1ZMTUoxKzdlZExzNVpMbnVBcjlmelFlRFFPSTZrakpENmNtSnJZcXlod0V6R2p3K1lmUFIyZEN1NkhmWHF0NzJkeWFBaXJHTmlhemkrVXZpU3FHd1orTEZ0VU8yWjJJNWUwMWlzclV0c1RQaU9aSGVIcEpuVk5wbWh0cGt6SmhVN2JLMDFNZUd4QkJ3eHhsMnRTYUdIcTA0cm9laGZHOE9OeFY5YjV5VmpNbVZxZ2ZCU1IySlppOXVBMERJTklvYk12dzA4OXRqa3U1YzAraXRQT1BOeGg5Yk82cEhFMjlHY2RTcU5Bbi9OV1phanQzbmc2TURBS0dtdkhkWnVjL3F2T2x0ck1sbDdkWHM3L2VNQjZyQmk5ZE1XMVRQa0V0U1NaN0VzS001M3JYbWhwYlZnWVBsQVVYL1JJZ0Z2QVZpZTZKanB3ZC9ud1kwVGM5alVVOUpIdE15UGRxTjJhSEl6Z3NlYmpNWVNnSnUwcFNTWG04M2haSE56UndRTVByRGJQL0o2blozRkdxMUdzLzYzOXZjemVNWU9ibmVFVUJuUGFyV0JyOXVnOEM1MjRZWnRtcW5SRVNvS0hHV2JheG1QZ1RUMm5PYUFiTE81SVMvZlNsWGprSFhiZEZ0cmhCTVpFK0ZKeDJxZXZhNjU2TjQrcXcxcEtOVEs1WW5NV3JUNllIQit0cW1lQnMwUE9NazFGM1dQZXQ1QXMyNE53R0EydjVuaDhBNkd5MU1oZFpDTTJReXlHM3FycEpFcXlBWmNyZUFuQ3NEZDhGa0FQWVRZRUlsR0lZd2Z2QjdVbWk2R3NWK2c1eWdDcXlGcU9Ub0hqd2JYZjlCSU9ia0gzY3IyR3dNMUlnNHBxbnRUWllrTUhZU0tmQVI2aHBWQWxzTy9BL2RXQnJkT2VGYy96dEE1aUNDTjBNSUZxSDZvMi93UGdIU3pEaU9yb0swUWthblF4aHpYUW0vY2FlWG9JUFFBQ1JiUUpSRWk0amgwa0tGUmlja2VxQU81NWtOVEk5cXAwRjIvSG1qT3l0RUZLRERMdEZBcGcvcnRISGlJemxEUy9iL3NOdzA4aWEvTXljRUt2bGxZUTI4QXdIVEw1OGRyQWlpK1haQUtGc0QxOG9BQWlEbkxvYzc4Ny84L1NQK25TSDd1U2h3ZDM4bzQrMzVtTTZnTFhuOUtCWmg0UUZ2ZDRPOFdRYkdzajNoQ1cxK2hxMUNYS0pzZ2g4MW0zRXhUYWlvWWxSRUExRU1BNUtqNUgzOHpUWGhBeUNnQTRxNWtGZGpMVDMvYkozNGd2MmFEWmFyeTk0UFpJQUlBWjloS2dBRU5BUURlS2dYZ0gwcms0UHdjbFVDQVp1YmdmOHBVQ2NVV0dFb3N5TEVWc0FiT3NUVkFBMlpzRDN5QS84b2pRQVJwQUFJd2hDV0FBUXlZZXFEZ0ZyTW95TUpJSVN4YVl5T0JIZGdjR3dVd29EKzJGVWdHRnpmR0duZ1dLUDhHOFpvdzM0QXJRYkhoN2kvc0FUaDd3cWJ2Tm9pVGNRZ0lyQVJNTTU0M2VlWTJSV3hqbVdKelFDZ1FBaldKNlFtMGRCT1J0TFcrYm1sUFhhY3BMZ3ppTldHK0FWZUNZbnB6TXRJSDRJeWhQbWtOUFIwYjVkUWhScGI0bFlEaHgzTlBOOC9jSm1MeHRuRWFaSW9OQjN5UUVRV002QU1udXVZSk5DWWRFdzVOMm1MZGFwOWx4VjNIWE55L2VHVzAwRngreDFsRlJrR0ZHZzFhZFA5NTlXT05NY0VVTTh3QlJKaFF4b1ZVMmxqbmd6Q0trelRMaTdLcW03YnJoM0dhbDNYYmovTzZuL2Y3L1ZRUVJ1bE1OcGN2RkV2bFNyVldielJiN1U2MzF4Kzg5TEp4VmgxYlUwRlpDM2FzN1pmVlk5N3BZSE1EMmIvQUhpdFg2Y2hGaFpIV1lOdXY2Z042K2txVDNFWVZRaDFYblRIaEdxNnY3VmQwcC9tYXF6enA5VHFxc2UxclV6bXE5dnphOUlDN2xWZXdDc1BFRmZ4Sm9SbjVhOVAySTV0Z3hrcFAzOXNLQWN3ZW9PMUtCb1lWVzJncTI5eFlUU3V1ckZRdWpUZmVqWnFma2FQS3YwZ01LLzVhZWgzU1NoZStLK0VFeEhULzFqNzBERDRpM1lDbUdBR05FaytZUHlRMVhLRGxwc2tORE93RlZsTmtnZHFqeDJhaHFiQk9BOUdYK0Rhb2N3OUUrZkE2TStKQkNlR3RQbXpiZitiNkordk11NGw4SjlHdXdqdm1KdzJnUTgxbkF4ZDBXNXlETERSZmNhcWtPTlQ4NGZlRytWU0QxbHR4NnluSWh3d29XbXNOKzg4cXBnQjVsRlBFbzh0MVBzVEZoa2Z5Q2JGWG9TbzNzTjhkSzBNd3ZudHNObElRZG9vSTRZZjBPZFQyaTg4VWpSUklHT3dHeUx3WGU1eGdZdXBXTkpQTURYWlpZOXZPSExpdzc5SE9XZ0FBQUFBPVwiKSBmb3JtYXQoXCJ3b2ZmMlwiKTtcbn1cblxuLnd0aWNvbnMge1xuXHRsaW5lLWhlaWdodDogMTtcbn1cblxuLnd0aWNvbnM6YmVmb3JlIHtcblx0Zm9udC1mYW1pbHk6IHd0aWNvbnMgIWltcG9ydGFudDtcblx0Zm9udC1zdHlsZTogbm9ybWFsO1xuXHRmb250LXdlaWdodDogbm9ybWFsICFpbXBvcnRhbnQ7XG5cdHZlcnRpY2FsLWFsaWduOiB0b3A7XG59XG5cbi53dGljb24tYWNjb3VudDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEwMVwiO1xufVxuLnd0aWNvbi1hZGQ6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMDJcIjtcbn1cbi53dGljb24tY2FyZFJlc2l6ZURyYWc6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMDNcIjtcbn1cbi53dGljb24tY2FzdWFsOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTA0XCI7XG59XG4ud3RpY29uLWNoZWNrOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTA1XCI7XG59XG4ud3RpY29uLWNoZWNrU21hbGw6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMDZcIjtcbn1cbi53dGljb24tY2hldnJvbjpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEwN1wiO1xufVxuLnd0aWNvbi1jb3B5OmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTA4XCI7XG59XG4ud3RpY29uLWNvcHlTbWFsbDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEwOVwiO1xufVxuLnd0aWNvbi1kaXNtaXNzOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTBhXCI7XG59XG4ud3RpY29uLWRvd25DaGV2cm9uOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTBiXCI7XG59XG4ud3RpY29uLWVycm9yOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTBjXCI7XG59XG4ud3RpY29uLWV4cGFuZDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEwZFwiO1xufVxuLnd0aWNvbi1mZWVkYmFjazpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEwZVwiO1xufVxuLnd0aWNvbi1maWxsZWREb3duQXJyb3c6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMGZcIjtcbn1cbi53dGljb24tZmluZDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExMFwiO1xufVxuLnd0aWNvbi1mb3JtYWw6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMTFcIjtcbn1cbi53dGljb24tZ2lmdDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExMlwiO1xufVxuLnd0aWNvbi1ncmF5TG9nbzpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExM1wiO1xufVxuLnd0aWNvbi1pZ25vcmU6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMTRcIjtcbn1cbi53dGljb24taW5mbzpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExNVwiO1xufVxuLnd0aWNvbi1sZWZ0Q2hldnJvbjpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExNlwiO1xufVxuLnd0aWNvbi1sb2dvOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTE3XCI7XG59XG4ud3RpY29uLWxvdmU6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMThcIjtcbn1cbi53dGljb24tbm9SZWNvbW1lbmRhdGlvbnM6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMTlcIjtcbn1cbi53dGljb24tcGFyYWdyYXBoUmV3cml0ZTpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExYVwiO1xufVxuLnd0aWNvbi1wYXN0ZTpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExYlwiO1xufVxuLnd0aWNvbi1waW46YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMWNcIjtcbn1cbi53dGljb24tcHJlbWl1bTpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjExZFwiO1xufVxuLnd0aWNvbi1wcmVtaXVtRGV0YWlsOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTFlXCI7XG59XG4ud3RpY29uLXByZW1pdW1GdWxsOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTFmXCI7XG59XG4ud3RpY29uLXJlY29tbWVuZGF0aW9uTGlnaHQ6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMjBcIjtcbn1cbi53dGljb24tcmVjb21tZW5kYXRpb25MaWdodENhcmQ6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMjFcIjtcbn1cbi53dGljb24tcmVjb21tZW5kYXRpb25MaWdodE5vU3VnZ2VzdGlvbnM6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMjJcIjtcbn1cbi53dGljb24tcmVmaW5lOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTIzXCI7XG59XG4ud3RpY29uLXJld3JpdGU6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMjRcIjtcbn1cbi53dGljb24tcmlnaHRDaGV2cm9uOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTI1XCI7XG59XG4ud3RpY29uLXJvY2tldDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEyNlwiO1xufVxuLnd0aWNvbi1zZW50ZW5jZUV4YW1wbGVzOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTI3XCI7XG59XG4ud3RpY29uLXNldHRpbmdzOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTI4XCI7XG59XG4ud3RpY29uLXNob3J0ZW46YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMjlcIjtcbn1cbi53dGljb24tdHV0b3JpYWw6YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMmFcIjtcbn1cbi53dGljb24tdW5sb2NrOmJlZm9yZSB7XG5cdGNvbnRlbnQ6IFwiXFxmMTJiXCI7XG59XG4ud3RpY29uLXdhcm46YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMmNcIjtcbn1cbi53dGljb24tV29yZHR1bmVCdXR0b246YmVmb3JlIHtcblx0Y29udGVudDogXCJcXGYxMmRcIjtcbn1cbi53dGljb24teDpiZWZvcmUge1xuXHRjb250ZW50OiBcIlxcZjEyZVwiO1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */
+	</style>
+	<style type="text/css">
+		@font-face {
+			font-weight: 400;
+			font-style: normal;
+			font-family: 'Circular-Loom';
+			src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2') format('woff2');
+		}
+
+		@font-face {
+			font-weight: 500;
+			font-style: normal;
+			font-family: 'Circular-Loom';
+			src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Medium.woff2') format('woff2');
+		}
+
+		@font-face {
+			font-weight: 700;
+			font-style: normal;
+			font-family: 'Circular-Loom';
+			src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
+		}
+
+		@font-face {
+			font-weight: 900;
+			font-style: normal;
+			font-family: 'Circular-Loom';
+			src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Black.woff2') format('woff2');
+		}
+	</style>
+	<script src="./Home - ReviewMyArticles_files/pptm.js.download" id="xo-pptm" async=""></script>
+	<link rel="stylesheet" href="viewer.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="resource" type="application/l10n" href="locale/locale.properties">
+	<script src="../build/pdf.js"></script>
+	<script src="viewer.js"></script>
+</head>
+
+<body
+	class="home page-template-default page page-id-806 wp-embed-responsive theme-margin woocommerce-js right-sidebar elementor-default elementor-kit-6 elementor-page elementor-page-806 e--ua-blink e--ua-chrome e--ua-webkit"
+	itemscope="" itemtype="https://schema.org/WebPage" data-elementor-device-mode="desktop"
+	data-new-gr-c-s-check-loaded="14.1093.0" data-gr-ext-installed="">
+	<!-- Preloader -->
+	<div class="loader-mask" style="display: none;">
+		<div class="loader" style="display: none;">
+			<div></div>
+		</div>
+	</div>
+	<div class="main-wrapper">
+		<!-- Header -->
+		<header class="nav nav--transparent" itemtype="https://schema.org/WPHeader" itemscope="itemscope">
+			<div class="nav__holder nav--sticky sticky offset">
+				<div class="container-fluid container-semi-fluid nav__container">
+					<div class="flex-parent">
+						<div class="nav__header">
+							<!-- Logo -->
+							<div class="flex-child logo-container">
+								<a href="https://www.reviewmyarticles.com/" class="logo-url"
+									itemtype="https://schema.org/Organization" itemscope="itemscope">
+									<img src="./Home - ReviewMyArticles_files/logo.png"
+										srcset="https://www.reviewmyarticles.com/wp-content/uploads/logo.png 1x, https://www.reviewmyarticles.com/wp-content/uploads/logo.png 2x"
+										class="logo" alt="ReviewMyArticles">
+								</a>
+							</div>
+							<!-- Mobile toggle -->
+							<button type="button" class="nav__icon-toggle" id="nav__icon-toggle" data-toggle="collapse"
+								data-target="#navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="nav__icon-toggle-bar"></span>
+								<span class="nav__icon-toggle-bar"></span>
+								<span class="nav__icon-toggle-bar"></span>
+							</button>
+						</div>
+						<!-- Nav-wrap -->
+						<nav id="navbar-collapse" class="nav__wrap collapse navbar-collapse"
+							itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope">
+							<ul id="menu-main-menu" class="nav__menu">
+								<li id="menu-item-90"
+									class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-806 current_page_item active menu-item-90">
+									<a href="https://www.reviewmyarticles.com/">Home</a>
+								</li>
+								<li id="menu-item-412"
+									class="menu-item menu-item-type-post_type menu-item-object-page menu-item-412">
+									<a href="https://www.reviewmyarticles.com/pricing/">Pricing</a>
+								</li>
+								<li id="menu-item-1571"
+									class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1571">
+									<a href="https://www.reviewmyarticles.com/summarize-pro/">Members Access</a>
+								</li>
+								<li id="menu-item-553"
+									class="menu-item menu-item-type-post_type menu-item-object-page menu-item-553">
+									<a href="https://www.reviewmyarticles.com/contact/">Contact</a>
+								</li>
+							</ul>
+						</nav>
+						<!-- end nav-wrap -->
+						<!-- Phone Button -->
+						<div class="nav__btn-holder nav--align-right">
+							<!-- Button -->
+							<a href="https://www.reviewmyarticles.com/my-account" class="btn btn--md nav__btn">
+								<!-- PRASAD copy this line after updated theme -->
+								<span>Login / Sign Up</span>
+							</a>
+						</div>
+					</div>
+					<!-- end flex-parent -->
+				</div>
+				<!-- end container -->
+			</div>
+		</header>
+		<!-- end header -->
+		<main class="elementor-main-content site-main">
+			<div data-elementor-type="wp-post" data-elementor-id="806" class="elementor elementor-806">
+				<section
+					class="elementor-section elementor-top-section elementor-element elementor-element-0c016c3 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+					data-id="0c016c3" data-element_type="section">
+					<div class="elementor-container elementor-column-gap-default">
+						<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-ae6a938"
+							data-id="ae6a938" data-element_type="column">
+							<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-a51365f elementor-widget elementor-widget-deo-triangle-image"
+									data-id="a51365f" data-element_type="widget"
+									data-widget_type="deo-triangle-image.default">
+									<div class="elementor-widget-container">
+										<div class="triangle-wrap triangle-wrap--align-right">
+											<div class="triangle">
+												<div class="triangle__img"
+													style="background-image: url(https://margin.deothemes.com/wp-content/uploads/2018/05/hero-1.jpg)">
+												</div>
+												<div class="triangle__gradient"
+													style="background: linear-gradient(to top, rgb(185, 57, 229) 0%, rgb(76, 134, 231) 100%); --darkreader-inline-bgimage:linear-gradient(to top, #8f29b3 0%, #2758a8 100%); --darkreader-inline-bgcolor: initial;"
+													data-darkreader-inline-bgimage="" data-darkreader-inline-bgcolor="">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section
+					class="elementor-section elementor-top-section elementor-element elementor-element-8f2d099 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+					data-id="8f2d099" data-element_type="section">
+					<div class="elementor-container elementor-column-gap-default">
+						<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-6379042"
+							data-id="6379042" data-element_type="column">
+							<div class="elementor-widget-wrap"></div>
+						</div>
+						<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-8cea13a"
+							data-id="8cea13a" data-element_type="column">
+							<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-0e0a0b8 elementor-widget elementor-widget-heading"
+									data-id="0e0a0b8" data-element_type="widget" data-widget_type="heading.default">
+									<div class="elementor-widget-container">
+										<style>
+											/*! elementor - v3.9.2 - 21-12-2022 */
+											.elementor-heading-title {
+												padding: 0;
+												margin: 0;
+												line-height: 1
+											}
+
+											.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a {
+												color: inherit;
+												font-size: inherit;
+												line-height: inherit
+											}
+
+											.elementor-widget-heading .elementor-heading-title.elementor-size-small {
+												font-size: 15px
+											}
+
+											.elementor-widget-heading .elementor-heading-title.elementor-size-medium {
+												font-size: 19px
+											}
+
+											.elementor-widget-heading .elementor-heading-title.elementor-size-large {
+												font-size: 29px
+											}
+
+											.elementor-widget-heading .elementor-heading-title.elementor-size-xl {
+												font-size: 39px
+											}
+
+											.elementor-widget-heading .elementor-heading-title.elementor-size-xxl {
+												font-size: 59px
+											}
+										</style>
+										<h1 class="elementor-heading-title elementor-size-default">Let’s get your
+											articles summarized</h1>
+									</div>
+								</div>
+								<div class="elementor-element elementor-element-729e41b elementor-widget elementor-widget-text-editor"
+									data-id="729e41b" data-element_type="widget" data-widget_type="text-editor.default">
+									<div class="elementor-widget-container">
+										<style>
+											/*! elementor - v3.9.2 - 21-12-2022 */
+											.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap {
+												background-color: #818a91;
+												color: #fff
+											}
+
+											.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap {
+												color: #818a91;
+												border: 3px solid;
+												background-color: transparent
+											}
+
+											.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap {
+												margin-top: 8px
+											}
+
+											.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter {
+												width: 1em;
+												height: 1em
+											}
+
+											.elementor-widget-text-editor .elementor-drop-cap {
+												float: left;
+												text-align: center;
+												line-height: 1;
+												font-size: 50px
+											}
+
+											.elementor-widget-text-editor .elementor-drop-cap-letter {
+												display: inline-block
+											}
+										</style>
+										<p>Want to see how it works? Upload an article and click on the review button
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-ace0abc"
+							data-id="ace0abc" data-element_type="column">
+							<div class="elementor-widget-wrap"></div>
+						</div>
+						<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-97dbd46"
+							data-id="97dbd46" data-element_type="column">
+							<div class="elementor-widget-wrap"></div>
+						</div>
+					</div>
+				</section>
+				<section
+					class="elementor-section elementor-top-section elementor-element elementor-element-4bc2382 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+					data-id="4bc2382" data-element_type="section">
+					<div class="elementor-container elementor-column-gap-default">
+						<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-fc49c62"
+							data-id="fc49c62" data-element_type="column">
+							<div class="elementor-widget-wrap"></div>
+						</div>
+						<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-bc5b902"
+							data-id="bc5b902" data-element_type="column">
+							<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-aff2b11 elementor-widget elementor-widget-wp-widget-custom_html"
+									data-id="aff2b11" data-element_type="widget"
+									data-widget_type="wp-widget-custom_html.default">
+									<div class="elementor-widget-container">
+										<div class="textwidget custom-html-widget">
+											<div class="optin">
+												<div class="optin__form-group form-group">
+													<div class="form-group files">
+														<div role="form" class="wpcf7" id="wpcf7-f1424-p806-o1"
+															lang="en-US" dir="ltr">
+															<div class="screen-reader-response">
+																<p role="status" aria-live="polite" aria-atomic="true">
+																</p>
+																<ul></ul>
+															</div>
+															<!-- Upload form -->
+															<form id="upload-form" enctype="multipart/form-data"
+																class="wpcf7-form init">
+																<!-- action="https://www.reviewmyarticles.com/#wpcf7-f1424-p806-o1"
+																method="post" 
+																enctype="multipart/form-data" novalidate="novalidate"
+																data-status="init" -->
+																<input type="file" id="my-file-input">
+																<!-- <div style="display: none;"><input type="hidden" name="_wpcf7" value="1424"><input type="hidden" name="_wpcf7_version"
+																		value="5.6.1"><input type="hidden" name="_wpcf7_locale"
+																		value="en_US"><input type="hidden" name="_wpcf7_unit_tag"
+																		value="wpcf7-f1424-p806-o1"><input type="hidden" name="_wpcf7_container_post"
+																		value="806"><input type="hidden" name="_wpcf7_posted_data_hash"
+																		value=""><input type="hidden"
+																		name="_wpcf7_recaptcha_response"
+																		value="03AD1IbLBvhAteOIWh66MLixqTeOumD9LbS8DCObjGWkWr7KnbMpu0JGrQxkftOJzb46-sXoAsZETVPm7vPuScpw_Fd9z4_x6Y9xKCxW2sXOh6xmYAwl3mO-PSpaMTZVSBRy_X5UjuaTwPFGBC_t3_KnIiZk7UoaBlm7mcTdMA-0eeyXb2E5kAoMImZ0DYzknUPBLMn9s9Z4QR8_8Pgr6vu8D6Fyim5ZOuw3N48gFl0kjwN240YctgVWpp8PM96Ec_wpP1-d_ov3ALuGxFowXxQeCBNyHpIF_FPFHChc4vJOrCMgL1BLYombMdZMAvV77O1dDW1oixWNkO_U4ByTC7XvCQpQptriEuNLUjxO2XdZhrDoK1gDHDx-54qx1nleAl5U48ZVtUmsYSYBfh9puXxhbQSarPouWOXL5IzZ_RX4-KBRMdoYKXYouCctQN_-DT3tYUyHIZNt-VprwnV6oi9_jQ_6NOCt4oq_PhvjoymlypLIv68CPLF7Ou9ICfAF2F6jZQTGKNrtxZTvNXmc5FBag0RKNWB-MZgX4THtndivTtXPtHfV_60gVmzNu1VvDFAkvtyjS83OrnybCfdHbZ8ZzPO9gkI0Z6WQ"></div><p><span class="wpcf7-form-control-wrap"
+																		data-name="fileInput"><input type="file"
+																			name="fileInput" size="40"
+																			class="wpcf7-form-control wpcf7-file form-control pdf"
+																			accept=".pdf" aria-invalid="false"></span></p><p style="display: none !important;"><label>Δ<textarea
+																			name="_wpcf7_ak_hp_textarea" cols="45"
+																			rows="8"
+																			maxlength="100"></textarea></label><input
+																		type="hidden" id="ak_js_1" name="_wpcf7_ak_js"
+																		value="1673202027673"></p><div class="wpcf7-response-output" aria-hidden="true"></div> -->
+																<button
+																	class="optin__btn btn btn--md btn--color btn--button"
+																	type="submit"
+																	id="file-upload-button">Upload</button>
+																<button
+																	class="optin__btn btn btn--md btn--color btn--button"
+																	type="button"
+																	id="search-button">Search</button>
+															</form>
+														</div>
+													</div>
+												</div>
+												<!-- <button class="optin__btn btn btn--md btn--color btn--button">Review</button> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-1726346"
+							data-id="1726346" data-element_type="column">
+							<div class="elementor-widget-wrap"></div>
+						</div>
+					</div>
+				</section>
+
+				<!-- viewer code start -->
+				<section>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-7">
+								<div class="my-custom-card hidden" id="my-custom-card-section" style="height: 960px;">
+									<div id="outerContainer">
+										<div id="sidebarContainer">
+											<div id="toolbarSidebar">
+												<div id="toolbarSidebarLeft">
+													<div id="sidebarViewButtons" class="splitToolbarButton toggled"
+														role="radiogroup">
+														<button id="viewThumbnail" class="toolbarButton toggled"
+															title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs" role="radio"
+															aria-checked="true" aria-controls="thumbnailView">
+															<span data-l10n-id="thumbs_label">Thumbnails</span>
+														</button>
+														<button id="viewOutline" class="toolbarButton"
+															title="Show Document Outline (double-click to expand/collapse all items)"
+															tabindex="3" data-l10n-id="document_outline" role="radio"
+															aria-checked="false" aria-controls="outlineView">
+															<span data-l10n-id="document_outline_label">Document
+																Outline</span>
+														</button>
+														<button id="viewAttachments" class="toolbarButton" title="Show Attachments"
+															tabindex="4" data-l10n-id="attachments" role="radio"
+															aria-checked="false" aria-controls="attachmentsView">
+															<span data-l10n-id="attachments_label">Attachments</span>
+														</button>
+														<button id="viewLayers" class="toolbarButton"
+															title="Show Layers (double-click to reset all layers to the default state)"
+															tabindex="5" data-l10n-id="layers" role="radio" aria-checked="false"
+															aria-controls="layersView">
+															<span data-l10n-id="layers_label">Layers</span>
+														</button>
+													</div>
+												</div>
+			
+												<div id="toolbarSidebarRight">
+													<div id="outlineOptionsContainer" class="hidden">
+														<div class="verticalToolbarSeparator"></div>
+			
+														<button id="currentOutlineItem" class="toolbarButton" disabled="disabled"
+															title="Find Current Outline Item" tabindex="6"
+															data-l10n-id="current_outline_item">
+															<span data-l10n-id="current_outline_item_label">Current
+																Outline
+																Item</span>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div id="sidebarContent">
+												<div id="thumbnailView">
+												</div>
+												<div id="outlineView" class="hidden">
+												</div>
+												<div id="attachmentsView" class="hidden">
+												</div>
+												<div id="layersView" class="hidden">
+												</div>
+											</div>
+											<div id="sidebarResizer"></div>
+										</div> <!-- sidebarContainer -->
+			
+										<div id="mainContainer">
+											<div class="findbar hidden doorHanger" id="findbar">
+												<div id="findbarInputContainer">
+													<input id="findInput" class="toolbarField" title="Find"
+														placeholder="Find in document…" tabindex="91" data-l10n-id="find_input"
+														aria-invalid="false">
+													<div class="splitToolbarButton">
+														<button id="findPrevious" class="toolbarButton"
+															title="Find the previous occurrence of the phrase" tabindex="92"
+															data-l10n-id="find_previous">
+															<span data-l10n-id="find_previous_label">Previous</span>
+														</button>
+														<div class="splitToolbarButtonSeparator"></div>
+														<button id="findNext" class="toolbarButton"
+															title="Find the next occurrence of the phrase" tabindex="93"
+															data-l10n-id="find_next">
+															<span data-l10n-id="find_next_label">Next</span>
+														</button>
+													</div>
+												</div>
+			
+												<div id="findbarOptionsOneContainer">
+													<input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
+													<label for="findHighlightAll" class="toolbarLabel"
+														data-l10n-id="find_highlight">Highlight All</label>
+													<input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
+													<label for="findMatchCase" class="toolbarLabel"
+														data-l10n-id="find_match_case_label">Match
+														Case</label>
+												</div>
+												<div id="findbarOptionsTwoContainer">
+													<input type="checkbox" id="findMatchDiacritics" class="toolbarField"
+														tabindex="96">
+													<label for="findMatchDiacritics" class="toolbarLabel"
+														data-l10n-id="find_match_diacritics_label">Match
+														Diacritics</label>
+													<input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="97">
+													<label for="findEntireWord" class="toolbarLabel"
+														data-l10n-id="find_entire_word_label">Whole
+														Words</label>
+												</div>
+			
+												<div id="findbarMessageContainer" aria-live="polite">
+													<span id="findResultsCount" class="toolbarLabel"></span>
+													<span id="findMsg" class="toolbarLabel"></span>
+												</div>
+											</div> <!-- findbar -->
+			
+											<div class="editorParamsToolbar hidden doorHangerRight"
+												id="editorFreeTextParamsToolbar">
+												<div class="editorParamsToolbarContainer">
+													<div class="editorParamsSetter">
+														<label for="editorFreeTextColor" class="editorParamsLabel"
+															data-l10n-id="editor_free_text_color">Color</label>
+														<input type="color" id="editorFreeTextColor" class="editorParamsColor"
+															tabindex="100">
+													</div>
+													<div class="editorParamsSetter">
+														<label for="editorFreeTextFontSize" class="editorParamsLabel"
+															data-l10n-id="editor_free_text_size">Size</label>
+														<input type="range" id="editorFreeTextFontSize" class="editorParamsSlider"
+															value="10" min="5" max="100" step="1" tabindex="101">
+													</div>
+												</div>
+											</div>
+			
+											<div class="editorParamsToolbar hidden doorHangerRight" id="editorInkParamsToolbar">
+												<div class="editorParamsToolbarContainer">
+													<div class="editorParamsSetter">
+														<label for="editorInkColor" class="editorParamsLabel"
+															data-l10n-id="editor_ink_color">Color</label>
+														<input type="color" id="editorInkColor" class="editorParamsColor"
+															tabindex="102">
+													</div>
+													<div class="editorParamsSetter">
+														<label for="editorInkThickness" class="editorParamsLabel"
+															data-l10n-id="editor_ink_thickness">Thickness</label>
+														<input type="range" id="editorInkThickness" class="editorParamsSlider"
+															value="1" min="1" max="20" step="1" tabindex="103">
+													</div>
+													<div class="editorParamsSetter">
+														<label for="editorInkOpacity" class="editorParamsLabel"
+															data-l10n-id="editor_ink_opacity">Opacity</label>
+														<input type="range" id="editorInkOpacity" class="editorParamsSlider"
+															value="100" min="1" max="100" step="1" tabindex="104">
+													</div>
+												</div>
+											</div>
+			
+											<div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
+												<div id="secondaryToolbarButtonContainer">
+													<button id="secondaryOpenFile" class="secondaryToolbarButton visibleLargeView"
+														title="Open File" tabindex="51" data-l10n-id="open_file">
+														<span data-l10n-id="open_file_label">Open</span>
+													</button>
+			
+													<button id="secondaryPrint" class="secondaryToolbarButton visibleMediumView"
+														title="Print" tabindex="52" data-l10n-id="print">
+														<span data-l10n-id="print_label">Print</span>
+													</button>
+			
+													<button id="secondaryDownload" class="secondaryToolbarButton visibleMediumView"
+														title="Save" tabindex="53" data-l10n-id="save">
+														<span data-l10n-id="save_label">Save</span>
+													</button>
+			
+													<div class="horizontalToolbarSeparator visibleLargeView">
+													</div>
+			
+													<button id="presentationMode" class="secondaryToolbarButton"
+														title="Switch to Presentation Mode" tabindex="54"
+														data-l10n-id="presentation_mode">
+														<span data-l10n-id="presentation_mode_label">Presentation
+															Mode</span>
+													</button>
+			
+													<a href="#" id="viewBookmark" class="secondaryToolbarButton"
+														title="Current view (copy or open in new window)" tabindex="55"
+														data-l10n-id="bookmark">
+														<span data-l10n-id="bookmark_label">Current
+															View</span>
+													</a>
+			
+													<div class="horizontalToolbarSeparator"></div>
+			
+													<button id="firstPage" class="secondaryToolbarButton" title="Go to First Page"
+														tabindex="56" data-l10n-id="first_page">
+														<span data-l10n-id="first_page_label">Go to First
+															Page</span>
+													</button>
+													<button id="lastPage" class="secondaryToolbarButton" title="Go to Last Page"
+														tabindex="57" data-l10n-id="last_page">
+														<span data-l10n-id="last_page_label">Go to Last
+															Page</span>
+													</button>
+			
+													<div class="horizontalToolbarSeparator"></div>
+			
+													<button id="pageRotateCw" class="secondaryToolbarButton"
+														title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
+														<span data-l10n-id="page_rotate_cw_label">Rotate
+															Clockwise</span>
+													</button>
+													<button id="pageRotateCcw" class="secondaryToolbarButton"
+														title="Rotate Counterclockwise" tabindex="59"
+														data-l10n-id="page_rotate_ccw">
+														<span data-l10n-id="page_rotate_ccw_label">Rotate
+															Counterclockwise</span>
+													</button>
+			
+													<div class="horizontalToolbarSeparator"></div>
+			
+													<div id="cursorToolButtons" role="radiogroup">
+														<button id="cursorSelectTool" class="secondaryToolbarButton toggled"
+															title="Enable Text Selection Tool" tabindex="60"
+															data-l10n-id="cursor_text_select_tool" role="radio" aria-checked="true">
+															<span data-l10n-id="cursor_text_select_tool_label">Text
+																Selection
+																Tool</span>
+														</button>
+														<button id="cursorHandTool" class="secondaryToolbarButton"
+															title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool"
+															role="radio" aria-checked="false">
+															<span data-l10n-id="cursor_hand_tool_label">Hand
+																Tool</span>
+														</button>
+													</div>
+			
+													<div class="horizontalToolbarSeparator"></div>
+			
+													<div id="scrollModeButtons" role="radiogroup">
+														<button id="scrollPage" class="secondaryToolbarButton"
+															title="Use Page Scrolling" tabindex="62" data-l10n-id="scroll_page"
+															role="radio" aria-checked="false">
+															<span data-l10n-id="scroll_page_label">Page
+																Scrolling</span>
+														</button>
+														<button id="scrollVertical" class="secondaryToolbarButton toggled"
+															title="Use Vertical Scrolling" tabindex="63"
+															data-l10n-id="scroll_vertical" role="radio" aria-checked="true">
+															<span data-l10n-id="scroll_vertical_label">Vertical
+																Scrolling</span>
+														</button>
+														<button id="scrollHorizontal" class="secondaryToolbarButton"
+															title="Use Horizontal Scrolling" tabindex="64"
+															data-l10n-id="scroll_horizontal" role="radio" aria-checked="false">
+															<span data-l10n-id="scroll_horizontal_label">Horizontal
+																Scrolling</span>
+														</button>
+														<button id="scrollWrapped" class="secondaryToolbarButton"
+															title="Use Wrapped Scrolling" tabindex="65"
+															data-l10n-id="scroll_wrapped" role="radio" aria-checked="false">
+															<span data-l10n-id="scroll_wrapped_label">Wrapped
+																Scrolling</span>
+														</button>
+													</div>
+			
+													<div class="horizontalToolbarSeparator"></div>
+			
+													<div id="spreadModeButtons" role="radiogroup">
+														<button id="spreadNone" class="secondaryToolbarButton toggled"
+															title="Do not join page spreads" tabindex="66"
+															data-l10n-id="spread_none" role="radio" aria-checked="true">
+															<span data-l10n-id="spread_none_label">No
+																Spreads</span>
+														</button>
+														<button id="spreadOdd" class="secondaryToolbarButton"
+															title="Join page spreads starting with odd-numbered pages" tabindex="67"
+															data-l10n-id="spread_odd" role="radio" aria-checked="false">
+															<span data-l10n-id="spread_odd_label">Odd
+																Spreads</span>
+														</button>
+														<button id="spreadEven" class="secondaryToolbarButton"
+															title="Join page spreads starting with even-numbered pages"
+															tabindex="68" data-l10n-id="spread_even" role="radio"
+															aria-checked="false">
+															<span data-l10n-id="spread_even_label">Even
+																Spreads</span>
+														</button>
+													</div>
+			
+													<div class="horizontalToolbarSeparator"></div>
+			
+													<button id="documentProperties" class="secondaryToolbarButton"
+														title="Document Properties…" tabindex="69"
+														data-l10n-id="document_properties" aria-controls="documentPropertiesDialog">
+														<span data-l10n-id="document_properties_label">Document
+															Properties…</span>
+													</button>
+												</div>
+											</div> <!-- secondaryToolbar -->
+			
+											<div class="toolbar">
+												<div id="toolbarContainer">
+													<div id="toolbarViewer">
+														<div id="toolbarViewerLeft">
+															<button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar"
+																tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false"
+																aria-controls="sidebarContainer">
+																<span data-l10n-id="toggle_sidebar_label">Toggle
+																	Sidebar</span>
+															</button>
+															<div class="toolbarButtonSpacer"></div>
+															<button id="viewFind" class="toolbarButton" title="Find in Document"
+																tabindex="12" data-l10n-id="findbar" aria-expanded="false"
+																aria-controls="findbar">
+																<span data-l10n-id="findbar_label">Find</span>
+															</button>
+															<div class="splitToolbarButton hiddenSmallView">
+																<button class="toolbarButton" title="Previous Page" id="previous"
+																	tabindex="13" data-l10n-id="previous">
+																	<span data-l10n-id="previous_label">Previous</span>
+																</button>
+																<div class="splitToolbarButtonSeparator">
+																</div>
+																<button class="toolbarButton" title="Next Page" id="next"
+																	tabindex="14" data-l10n-id="next">
+																	<span data-l10n-id="next_label">Next</span>
+																</button>
+															</div>
+															<input type="number" id="pageNumber" class="toolbarField" title="Page"
+																value="1" min="1" tabindex="15" data-l10n-id="page"
+																autocomplete="off">
+															<span id="numPages" class="toolbarLabel"></span>
+														</div>
+														<div id="toolbarViewerRight">
+															<button id="openFile" class="toolbarButton hiddenLargeView"
+																title="Open File" tabindex="31" data-l10n-id="open_file">
+																<span data-l10n-id="open_file_label">Open</span>
+															</button>
+			
+															<button id="print" class="toolbarButton hiddenMediumView" title="Print"
+																tabindex="32" data-l10n-id="print">
+																<span data-l10n-id="print_label">Print</span>
+															</button>
+			
+															<button id="download" class="toolbarButton hiddenMediumView"
+																title="Save" tabindex="33" data-l10n-id="save">
+																<span data-l10n-id="save_label">Save</span>
+															</button>
+			
+															<div class="verticalToolbarSeparator hiddenMediumView">
+															</div>
+			
+															<div id="editorModeButtons" class="splitToolbarButton toggled"
+																role="radiogroup">
+																<button id="editorFreeText" class="toolbarButton"
+																	disabled="disabled" title="Text" role="radio"
+																	aria-checked="false" tabindex="34"
+																	data-l10n-id="editor_free_text2">
+																	<span data-l10n-id="editor_free_text2_label">Text</span>
+																</button>
+																<button id="editorInk" class="toolbarButton" disabled="disabled"
+																	title="Draw" role="radio" aria-checked="false" tabindex="35"
+																	data-l10n-id="editor_ink2">
+																	<span data-l10n-id="editor_ink2_label">Draw</span>
+																</button>
+															</div>
+			
+															<div id="editorModeSeparator" class="verticalToolbarSeparator">
+															</div>
+			
+															<button id="secondaryToolbarToggle" class="toolbarButton" title="Tools"
+																tabindex="48" data-l10n-id="tools" aria-expanded="false"
+																aria-controls="secondaryToolbar">
+																<span data-l10n-id="tools_label">Tools</span>
+															</button>
+														</div>
+														<div id="toolbarViewerMiddle">
+															<div class="splitToolbarButton">
+																<button id="zoomOut" class="toolbarButton" title="Zoom Out"
+																	tabindex="21" data-l10n-id="zoom_out">
+																	<span data-l10n-id="zoom_out_label">Zoom
+																		Out</span>
+																</button>
+																<div class="splitToolbarButtonSeparator">
+																</div>
+																<button id="zoomIn" class="toolbarButton" title="Zoom In"
+																	tabindex="22" data-l10n-id="zoom_in">
+																	<span data-l10n-id="zoom_in_label">Zoom
+																		In</span>
+																</button>
+															</div>
+															<span id="scaleSelectContainer" class="dropdownToolbarButton">
+																<select id="scaleSelect" title="Zoom" tabindex="23"
+																	data-l10n-id="zoom">
+																	<option id="pageAutoOption" title="" value="auto"
+																		selected="selected" data-l10n-id="page_scale_auto">
+																		Automatic Zoom</option>
+																	<option id="pageActualOption" title="" value="page-actual"
+																		data-l10n-id="page_scale_actual">
+																		Actual
+																		Size</option>
+																	<option id="pageFitOption" title="" value="page-fit"
+																		data-l10n-id="page_scale_fit">Page
+																		Fit</option>
+																	<option id="pageWidthOption" title="" value="page-width"
+																		data-l10n-id="page_scale_width">Page
+																		Width
+																	</option>
+																	<option id="customScaleOption" title="" value="custom"
+																		disabled="disabled" hidden="true"></option>
+																	<option title="" value="0.5" data-l10n-id="page_scale_percent"
+																		data-l10n-args='{ "scale": 50 }'>50%
+																	</option>
+																	<option title="" value="0.75" data-l10n-id="page_scale_percent"
+																		data-l10n-args='{ "scale": 75 }'>75%
+																	</option>
+																	<option title="" value="1" data-l10n-id="page_scale_percent"
+																		data-l10n-args='{ "scale": 100 }'>
+																		100%
+																	</option>
+																	<option title="" value="1.25" data-l10n-id="page_scale_percent"
+																		data-l10n-args='{ "scale": 125 }'>
+																		125%
+																	</option>
+																	<option title="" value="1.5" data-l10n-id="page_scale_percent"
+																		data-l10n-args='{ "scale": 150 }'>
+																		150%
+																	</option>
+																	<option title="" value="2" data-l10n-id="page_scale_percent"
+																		data-l10n-args='{ "scale": 200 }'>
+																		200%
+																	</option>
+																	<option title="" value="3" data-l10n-id="page_scale_percent"
+																		data-l10n-args='{ "scale": 300 }'>
+																		300%
+																	</option>
+																	<option title="" value="4" data-l10n-id="page_scale_percent"
+																		data-l10n-args='{ "scale": 400 }'>
+																		400%
+																	</option>
+																</select>
+															</span>
+														</div>
+													</div>
+													<div id="loadingBar">
+														<div class="progress">
+															<div class="glimmer">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+			
+											<div id="viewerContainer" tabindex="0">
+												<div id="viewer" class="pdfViewer"></div>
+											</div>
+										</div> <!-- mainContainer -->
+			
+										<div id="dialogContainer">
+											<dialog id="passwordDialog">
+												<div class="row">
+													<label for="password" id="passwordText" data-l10n-id="password_label">Enter
+														the password to open this PDF
+														file:</label>
+												</div>
+												<div class="row">
+													<input type="password" id="password" class="toolbarField">
+												</div>
+												<div class="buttonRow">
+													<button id="passwordCancel" class="dialogButton"><span
+															data-l10n-id="password_cancel">Cancel</span></button>
+													<button id="passwordSubmit" class="dialogButton"><span
+															data-l10n-id="password_ok">OK</span></button>
+												</div>
+											</dialog>
+											<dialog id="documentPropertiesDialog">
+												<div class="row">
+													<span id="fileNameLabel" data-l10n-id="document_properties_file_name">File
+														name:</span>
+													<p id="fileNameField" aria-labelledby="fileNameLabel">-
+													</p>
+												</div>
+												<div class="row">
+													<span id="fileSizeLabel" data-l10n-id="document_properties_file_size">File
+														size:</span>
+													<p id="fileSizeField" aria-labelledby="fileSizeLabel">-
+													</p>
+												</div>
+												<div class="separator"></div>
+												<div class="row">
+													<span id="titleLabel" data-l10n-id="document_properties_title">Title:</span>
+													<p id="titleField" aria-labelledby="titleLabel">-</p>
+												</div>
+												<div class="row">
+													<span id="authorLabel" data-l10n-id="document_properties_author">Author:</span>
+													<p id="authorField" aria-labelledby="authorLabel">-</p>
+												</div>
+												<div class="row">
+													<span id="subjectLabel"
+														data-l10n-id="document_properties_subject">Subject:</span>
+													<p id="subjectField" aria-labelledby="subjectLabel">-
+													</p>
+												</div>
+												<div class="row">
+													<span id="keywordsLabel"
+														data-l10n-id="document_properties_keywords">Keywords:</span>
+													<p id="keywordsField" aria-labelledby="keywordsLabel">-
+													</p>
+												</div>
+												<div class="row">
+													<span id="creationDateLabel"
+														data-l10n-id="document_properties_creation_date">Creation
+														Date:</span>
+													<p id="creationDateField" aria-labelledby="creationDateLabel">-</p>
+												</div>
+												<div class="row">
+													<span id="modificationDateLabel"
+														data-l10n-id="document_properties_modification_date">Modification
+														Date:</span>
+													<p id="modificationDateField" aria-labelledby="modificationDateLabel">-</p>
+												</div>
+												<div class="row">
+													<span id="creatorLabel"
+														data-l10n-id="document_properties_creator">Creator:</span>
+													<p id="creatorField" aria-labelledby="creatorLabel">-
+													</p>
+												</div>
+												<div class="separator"></div>
+												<div class="row">
+													<span id="producerLabel" data-l10n-id="document_properties_producer">PDF
+														Producer:</span>
+													<p id="producerField" aria-labelledby="producerLabel">-
+													</p>
+												</div>
+												<div class="row">
+													<span id="versionLabel" data-l10n-id="document_properties_version">PDF
+														Version:</span>
+													<p id="versionField" aria-labelledby="versionLabel">-
+													</p>
+												</div>
+												<div class="row">
+													<span id="pageCountLabel" data-l10n-id="document_properties_page_count">Page
+														Count:</span>
+													<p id="pageCountField" aria-labelledby="pageCountLabel">
+														-</p>
+												</div>
+												<div class="row">
+													<span id="pageSizeLabel" data-l10n-id="document_properties_page_size">Page
+														Size:</span>
+													<p id="pageSizeField" aria-labelledby="pageSizeLabel">-
+													</p>
+												</div>
+												<div class="separator"></div>
+												<div class="row">
+													<span id="linearizedLabel" data-l10n-id="document_properties_linearized">Fast
+														Web View:</span>
+													<p id="linearizedField" aria-labelledby="linearizedLabel">-</p>
+												</div>
+												<div class="buttonRow">
+													<button id="documentPropertiesClose" class="dialogButton"><span
+															data-l10n-id="document_properties_close">Close</span></button>
+												</div>
+											</dialog>
+											<dialog id="printServiceDialog" style="min-width: 200px;">
+												<div class="row">
+													<span data-l10n-id="print_progress_message">Preparing
+														document for
+														printing…</span>
+												</div>
+												<div class="row">
+													<progress value="0" max="100"></progress>
+													<span data-l10n-id="print_progress_percent" data-l10n-args='{ "progress": 0 }'
+														class="relative-progress">0%</span>
+												</div>
+												<div class="buttonRow">
+													<button id="printCancel" class="dialogButton"><span
+															data-l10n-id="print_progress_close">Cancel</span></button>
+												</div>
+											</dialog>
+										</div> <!-- dialogContainer -->
+									</div>
+									<div id="printContainer"></div>
+								</div>
+							</div>
+
+							<div class="col-5">
+								<p>hahahah</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- viewer code end -->
+			</div>
+		</main>
+		<!-- Back to top -->
+		<div id="back-to-top" class="show">
+			<a href="https://www.reviewmyarticles.com/#top">
+				<i class="ui-arrow-up"></i>
+			</a>
+		</div>
+	</div>
+	<!-- .main-wrapper -->
+	<link rel="stylesheet" id="deo-triangle-image-css" href="./Home - ReviewMyArticles_files/deo-triangle-image.css"
+		type="text/css" media="all">
+	<link rel="stylesheet" id="deo-testimonials-css" href="./Home - ReviewMyArticles_files/deo-testimonials.css"
+		type="text/css" media="all">
+	<script src="script.js"></script>
+	<script type="application/ld+json" class="aioseo-schema">
+      {
+        "@context": "https:\/\/schema.org",
+        "@graph": [{
+          "@type": "WebSite",
+          "@id": "https:\/\/www.reviewmyarticles.com\/#website",
+          "url": "https:\/\/www.reviewmyarticles.com\/",
+          "name": "ReviewMyArticles",
+          "description": "Let\u2019s get your articles summarized",
+          "inLanguage": "en-US",
+          "publisher": {
+            "@id": "https:\/\/www.reviewmyarticles.com\/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https:\/\/www.reviewmyarticles.com\/?s={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        }, {
+          "@type": "Organization",
+          "@id": "https:\/\/www.reviewmyarticles.com\/#organization",
+          "name": "ReviewMyArticles",
+          "url": "https:\/\/www.reviewmyarticles.com\/"
+        }, {
+          "@type": "BreadcrumbList",
+          "@id": "https:\/\/www.reviewmyarticles.com\/#breadcrumblist",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "@id": "https:\/\/www.reviewmyarticles.com\/#listItem",
+            "position": 1,
+            "item": {
+              "@type": "WebPage",
+              "@id": "https:\/\/www.reviewmyarticles.com\/",
+              "name": "Home",
+              "description": "\/*! elementor - v3.6.7 - 03-07-2022 *\/ .elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}Let\u2019s get your articles summarized Want to see how it works? Upload an article and click on the review button Need some help with your literature review? ReviewMyArticles.com is a document summarizing system developed on Natural Language Processing (NLP) technology. It extracts",
+              "url": "https:\/\/www.reviewmyarticles.com\/"
+            },
+            "nextItem": "https:\/\/www.reviewmyarticles.com\/#listItem"
+          }, {
+            "@type": "ListItem",
+            "@id": "https:\/\/www.reviewmyarticles.com\/#listItem",
+            "position": 2,
+            "item": {
+              "@type": "WebPage",
+              "@id": "https:\/\/www.reviewmyarticles.com\/",
+              "name": "Home",
+              "description": "\/*! elementor - v3.6.7 - 03-07-2022 *\/ .elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}Let\u2019s get your articles summarized Want to see how it works? Upload an article and click on the review button Need some help with your literature review? ReviewMyArticles.com is a document summarizing system developed on Natural Language Processing (NLP) technology. It extracts",
+              "url": "https:\/\/www.reviewmyarticles.com\/"
+            },
+            "previousItem": "https:\/\/www.reviewmyarticles.com\/#listItem"
+          }]
+        }, {
+          "@type": "WebPage",
+          "@id": "https:\/\/www.reviewmyarticles.com\/#webpage",
+          "url": "https:\/\/www.reviewmyarticles.com\/",
+          "name": "Home - ReviewMyArticles",
+          "description": "\/*! elementor - v3.6.7 - 03-07-2022 *\/ .elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}Let\u2019s get your articles summarized Want to see how it works? Upload an article and click on the review button Need some help with your literature review? ReviewMyArticles.com is a document summarizing system developed on Natural Language Processing (NLP) technology. It extracts",
+          "inLanguage": "en-US",
+          "isPartOf": {
+            "@id": "https:\/\/www.reviewmyarticles.com\/#website"
+          },
+          "breadcrumb": {
+            "@id": "https:\/\/www.reviewmyarticles.com\/#breadcrumblist"
+          },
+          "datePublished": "2018-05-12T06:54:21+00:00",
+          "dateModified": "2022-07-09T02:27:45+00:00"
+        }]
+      }
+    </script>
+	<script>
+		window._wca = window._wca || [];
+	</script>
+	<script type="text/javascript">
+		window._wpemojiSettings = {
+			"baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/",
+			"ext": ".png",
+			"svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/",
+			"svgExt": ".svg",
+			"source": {
+				"concatemoji": "https:\/\/www.reviewmyarticles.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"
+			}
+		};
+		/*! This file is auto-generated */
+		! function (e, a, t) {
+			var n, r, o, i = a.createElement("canvas"),
+				p = i.getContext && i.getContext("2d");
+
+			function s(e, t) {
+				var a = String.fromCharCode,
+					e = (p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0), i.toDataURL());
+				return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL()
+			}
+
+			function c(e) {
+				var t = a.createElement("script");
+				t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t)
+			}
+			for (o = Array("flag", "emoji"), t.supports = {
+				everything: !0,
+				everythingExceptFlag: !0
+			}, r = 0; r < o.length; r++) t.supports[o[r]] = function (e) {
+				if (p && p.fillText) switch (p.textBaseline = "top", p.font = "600 32px Arial", e) {
+					case "flag":
+						return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]);
+					case "emoji":
+						return !s([129777, 127995, 8205, 129778, 127999], [129777, 127995, 8203, 129778, 127999])
+				}
+				return !1
+			}(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]);
+			t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () {
+				t.DOMReady = !0
+			}, t.supports.everything || (n = function () {
+				t.readyCallback()
+			}, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () {
+				"complete" === a.readyState && t.readyCallback()
+			})), (e = t.source || {}).concatemoji ? c(e.concatemoji) : e.wpemoji && e.twemoji && (c(e.twemoji), c(e.wpemoji)))
+		}(window, document, window._wpemojiSettings);
+	</script>
+	<script>
+		document.getElementById("ak_js_1").setAttribute("value", (new Date()).getTime());
+	</script>
+	<script>
+		window.addEventListener('load', function () {
+			if (window.location.pathname.indexOf("order-received") != -1) {
+				gtag('event', 'conversion', {
+					'send_to': 'AW-10950095878/3UbpCMCbk9kDEIbotOUo',
+					'value': parseFloat(jQuery('.woocommerce-Price-amount.amount:last').text().replace(/[^0-9.]/g, '')),
+					'currency': 'USD',
+					'transaction_id': ''
+				});
+			}
+		})
+	</script>
+	<script>
+		window.addEventListener('load', function () {
+			jQuery('[href="https://www.reviewmyarticles.com/?add-to-cart=977"]').click(function () {
+				gtag('event', 'conversion', {
+					'send_to': 'AW-10950095878/971HCL2bk9kDEIbotOUo'
+				});
+			})
+		})
+	</script>
+	<script>
+		window.addEventListener('load', function () {
+			jQuery('[href="https://www.reviewmyarticles.com/?add-to-cart=957"]').click(function () {
+				gtag('event', 'conversion', {
+					'send_to': 'AW-10950095878/971HCL2bk9kDEIbotOUo'
+				});
+			})
+		})
+	</script>
+	<script>
+		jQuery(document).ajaxStart(function () {
+			jQuery(".loader-mask").css("display", "block");
+			jQuery(".loader").css("display", "block");
+		});
+		jQuery(document).ajaxComplete(function () {
+			jQuery(".loader-mask").css("display", "none");
+			jQuery(".loader").css("display", "none");
+		});
+		jQuery(document).ready(function ($) {
+			//alert();
+			// This is the variable we are passing via AJAX
+			//var fruit = 'Banana';
+			// This does the ajax request (The Call).
+			$(".pdf").on('change', function postinput() {
+				formdata = new FormData();
+				file_data = $('.pdf')[0].files[0];
+				//  console.log(file_data);
+				formdata.append('fileInput', file_data);
+				formdata.append('action', 'example_ajax_request');
+				$.ajax({
+					url: ajaxurl, // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
+					type: 'POST',
+					processData: false,
+					contentType: false,
+					data: formdata,
+					success: function (data) {
+						// This outputs the result of the ajax request (The Callback)
+						//  console.log(data);
+						localStorage.removeItem('rmadata');
+						localStorage.setItem('rmadata', data);
+						// console.log(localStorage.getItem('rmadata'));
+						window.location.href = 'trial';
+						//$(".pdf").text(data);
+					},
+					error: function (errorThrown) {
+						console.log(errorThrown);
+						window.alert(errorThrown);
+					}
+				});
+			});
+			// PRO
+			$(".pdf-pro").on('change', function postinput() {
+				formdata = new FormData();
+				file_data = $('.pdf-pro')[0].files[0];
+				//  console.log(file_data);
+				formdata.append('fileInput', file_data);
+				formdata.append('action', 'example_ajax_request');
+				$.ajax({
+					url: ajaxurl, // Since WP 2.8 ajaxurl is always defined and points to admin-ajax.php
+					type: 'POST',
+					processData: false,
+					contentType: false,
+					data: formdata,
+					success: function (data) {
+						// This outputs the result of the ajax request (The Callback)
+						//  console.log(data);
+						localStorage.removeItem('rmadata');
+						localStorage.setItem('rmadata', data);
+						// console.log(localStorage.getItem('rmadata'));
+						window.location.href = './summarized-pro';
+						//$(".pdf").text(data);
+					},
+					error: function (errorThrown) {
+						console.log(errorThrown);
+						window.alert(errorThrown);
+					}
+				});
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/photon.min.js.download"
+		id="jetpack-photon-js"></script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/regenerator-runtime.min.js.download"
+		id="regenerator-runtime-js"></script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/wp-polyfill.min.js.download"
+		id="wp-polyfill-js"></script>
+	<script type="text/javascript" id="contact-form-7-js-extra">
+		/* 
+																																																																												  <![CDATA[ */
+		var wpcf7 = {
+			"api": {
+				"root": "https:\/\/www.reviewmyarticles.com\/wp-json\/",
+				"namespace": "contact-form-7\/v1"
+			}
+		};
+      /* ]]> */
+	</script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/index.js.download"
+		id="contact-form-7-js"></script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/jquery.blockUI.min.js.download"
+		id="jquery-blockui-js"></script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/js.cookie.min.js.download"
+		id="js-cookie-js"></script>
+	<script type="text/javascript" id="woocommerce-js-extra">
+		/* 
+																																																																												  <![CDATA[ */
+		var woocommerce_params = {
+			"ajax_url": "\/wp-admin\/admin-ajax.php",
+			"wc_ajax_url": "\/?wc-ajax=%%endpoint%%"
+		};
+      /* ]]> */
+	</script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/woocommerce.min.js.download"
+		id="woocommerce-js"></script>
+	<script type="text/javascript" id="wc-cart-fragments-js-extra">
+		/* 
+																																																																												  <![CDATA[ */
+		var wc_cart_fragments_params = {
+			"ajax_url": "\/wp-admin\/admin-ajax.php",
+			"wc_ajax_url": "\/?wc-ajax=%%endpoint%%",
+			"cart_hash_key": "wc_cart_hash_d547df5c40962f027ff8a19d01cf130a",
+			"fragment_name": "wc_fragments_d547df5c40962f027ff8a19d01cf130a",
+			"request_timeout": "5000"
+		};
+      /* ]]> */
+	</script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/cart-fragments.min.js.download"
+		id="wc-cart-fragments-js"></script>
+	<script type="text/javascript" id="wc-cart-fragments-js-after">
+		jQuery('body').bind('wc_fragments_refreshed', function () {
+			var jetpackLazyImagesLoadEvent;
+			try {
+				jetpackLazyImagesLoadEvent = new Event('jetpack-lazy-images-load', {
+					bubbles: true,
+					cancelable: true
+				});
+			} catch (e) {
+				jetpackLazyImagesLoadEvent = document.createEvent('Event')
+				jetpackLazyImagesLoadEvent.initEvent('jetpack-lazy-images-load', true, true);
+			}
+			jQuery('body').get(0).dispatchEvent(jetpackLazyImagesLoadEvent);
+		});
+	</script>
+	<script type="text/javascript" id="ppcp-smart-button-js-extra">
+		/* 
+																																																																												  <![CDATA[ */
+		var PayPalCommerceGateway = {
+			"script_attributes": {
+				"data-partner-attribution-id": "Woo_PPCP"
+			},
+			"data_client_id": {
+				"set_attribute": true,
+				"endpoint": "\/?wc-ajax=ppc-data-client-id",
+				"nonce": "b3b42c389e",
+				"user": 0,
+				"has_subscriptions": false
+			},
+			"redirect": "https:\/\/www.reviewmyarticles.com\/checkout\/",
+			"context": "mini-cart",
+			"ajax": {
+				"change_cart": {
+					"endpoint": "\/?wc-ajax=ppc-change-cart",
+					"nonce": "e58438bce9"
+				},
+				"create_order": {
+					"endpoint": "\/?wc-ajax=ppc-create-order",
+					"nonce": "a2b3605782"
+				},
+				"approve_order": {
+					"endpoint": "\/?wc-ajax=ppc-approve-order",
+					"nonce": "5c1067ce1c"
+				},
+				"vault_paypal": {
+					"endpoint": "\/?wc-ajax=ppc-vault-paypal",
+					"nonce": "2a42b463ee"
+				}
+			},
+			"enforce_vault": "",
+			"can_save_vault_token": "1",
+			"is_free_trial_cart": "",
+			"vaulted_paypal_email": "",
+			"bn_codes": {
+				"checkout": "Woo_PPCP",
+				"cart": "Woo_PPCP",
+				"mini-cart": "Woo_PPCP",
+				"product": "Woo_PPCP"
+			},
+			"payer": null,
+			"button": {
+				"wrapper": "#ppc-button",
+				"mini_cart_wrapper": "#ppc-button-minicart",
+				"cancel_wrapper": "#ppcp-cancel",
+				"url": "https:\/\/www.paypal.com\/sdk\/js?client-id=Ack3Rcc67r5b_8hVLGZDi9zct_4rG9WjzRWIg0Vttof-hx2yUvCOS1yNEp0undHRa7zeGg-kS6vkqinc&currency=USD&integration-date=2022-04-13&components=buttons,messages&vault=true&commit=false&intent=capture&disable-funding=card&enable-funding=venmo,paylater",
+				"mini_cart_style": {
+					"layout": "vertical",
+					"color": "gold",
+					"shape": "rect",
+					"label": "paypal",
+					"height": 35
+				},
+				"style": {
+					"layout": "vertical",
+					"color": "gold",
+					"shape": "rect",
+					"label": "paypal"
+				}
+			},
+			"hosted_fields": {
+				"wrapper": "#ppcp-hosted-fields",
+				"mini_cart_wrapper": "#ppcp-hosted-fields-mini-cart",
+				"labels": {
+					"credit_card_number": "",
+					"cvv": "",
+					"mm_yy": "MM\/YY",
+					"fields_not_valid": "Unfortunately, your credit card details are not valid.",
+					"card_not_supported": "Unfortunately, we do not support your credit card.",
+					"cardholder_name_required": "Cardholder's first and last name are required, please fill the checkout form required fields."
+				},
+				"valid_cards": ["mastercard", "visa", "master-card"],
+				"contingency": "SCA_WHEN_REQUIRED"
+			},
+			"messages": [],
+			"labels": {
+				"error": {
+					"generic": "Something went wrong. Please try again or choose another payment source.",
+					"js_validation": "Required form fields are not filled or invalid."
+				}
+			},
+			"order_id": "0",
+			"single_product_buttons_enabled": "",
+			"mini_cart_buttons_enabled": "",
+			"basic_checkout_validation_enabled": "1"
+		};
+      /* ]]> */
+	</script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/button.js.download"
+		id="ppcp-smart-button-js"></script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/bootstrap.min.js.download"
+		id="bootstrap-js"></script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/modernizr.js.download"
+		id="modernizr-js"></script>
+	<script type="text/javascript" id="deo-scripts-js-extra">
+		/* 
+																																																																												  <![CDATA[ */
+		var Margin_Data = {
+			"mobile_sticky_navbar": ""
+		};
+      /* ]]> */
+	</script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/scripts.js(1).download"
+		id="deo-scripts-js"></script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/intersection-observer.js.download"
+		id="jetpack-lazy-images-polyfill-intersectionobserver-js"></script>
+	<script type="text/javascript" id="jetpack-lazy-images-js-extra">
+		/* 
+																																																																												  <![CDATA[ */
+		var jetpackLazyImagesL10n = {
+			"loading_warning": "Images are still loading. Please cancel your print and try again."
+		};
+      /* ]]> */
+	</script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/lazy-images.js.download"
+		id="jetpack-lazy-images-js"></script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/api.js.download"
+		id="google-recaptcha-js"></script>
+	<script type="text/javascript" id="wpcf7-recaptcha-js-extra">
+		/* 
+																																																																												  <![CDATA[ */
+		var wpcf7_recaptcha = {
+			"sitekey": "6Lcre74gAAAAALwu1pGU3ROltrII46g3XhvCx8H1",
+			"actions": {
+				"homepage": "homepage",
+				"contactform": "contactform"
+			}
+		};
+      /* ]]> */
+	</script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/index.js(1).download"
+		id="wpcf7-recaptcha-js"></script>
+	<script defer="" type="text/javascript" src="./Home - ReviewMyArticles_files/akismet-frontend.js.download"
+		id="akismet-frontend-js"></script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/webpack.runtime.min.js.download"
+		id="elementor-webpack-runtime-js"></script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/frontend-modules.min.js.download"
+		id="elementor-frontend-modules-js"></script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/waypoints.min.js.download"
+		id="elementor-waypoints-js"></script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/core.min.js.download"
+		id="jquery-ui-core-js"></script>
+	<script type="text/javascript" id="elementor-frontend-js-before">
+		var elementorFrontendConfig = {
+			"environmentMode": {
+				"edit": false,
+				"wpPreview": false,
+				"isScriptDebug": false
+			},
+			"i18n": {
+				"shareOnFacebook": "Share on Facebook",
+				"shareOnTwitter": "Share on Twitter",
+				"pinIt": "Pin it",
+				"download": "Download",
+				"downloadImage": "Download image",
+				"fullscreen": "Fullscreen",
+				"zoom": "Zoom",
+				"share": "Share",
+				"playVideo": "Play Video",
+				"previous": "Previous",
+				"next": "Next",
+				"close": "Close"
+			},
+			"is_rtl": false,
+			"breakpoints": {
+				"xs": 0,
+				"sm": 480,
+				"md": 768,
+				"lg": 1025,
+				"xl": 1440,
+				"xxl": 1600
+			},
+			"responsive": {
+				"breakpoints": {
+					"mobile": {
+						"label": "Mobile",
+						"value": 767,
+						"default_value": 767,
+						"direction": "max",
+						"is_enabled": true
+					},
+					"mobile_extra": {
+						"label": "Mobile Extra",
+						"value": 880,
+						"default_value": 880,
+						"direction": "max",
+						"is_enabled": false
+					},
+					"tablet": {
+						"label": "Tablet",
+						"value": 1024,
+						"default_value": 1024,
+						"direction": "max",
+						"is_enabled": true
+					},
+					"tablet_extra": {
+						"label": "Tablet Extra",
+						"value": 1200,
+						"default_value": 1200,
+						"direction": "max",
+						"is_enabled": false
+					},
+					"laptop": {
+						"label": "Laptop",
+						"value": 1366,
+						"default_value": 1366,
+						"direction": "max",
+						"is_enabled": false
+					},
+					"widescreen": {
+						"label": "Widescreen",
+						"value": 2400,
+						"default_value": 2400,
+						"direction": "min",
+						"is_enabled": false
+					}
+				}
+			},
+			"version": "3.9.2",
+			"is_static": false,
+			"experimentalFeatures": {
+				"e_dom_optimization": true,
+				"e_optimized_assets_loading": true,
+				"e_optimized_css_loading": true,
+				"a11y_improvements": true,
+				"additional_custom_breakpoints": true,
+				"e_import_export": true,
+				"e_hidden_wordpress_widgets": true,
+				"landing-pages": true,
+				"elements-color-picker": true,
+				"favorite-widgets": true,
+				"admin-top-bar": true,
+				"kit-elements-defaults": true
+			},
+			"urls": {
+				"assets": "https:\/\/www.reviewmyarticles.com\/wp-content\/plugins\/elementor\/assets\/"
+			},
+			"settings": {
+				"page": [],
+				"editorPreferences": []
+			},
+			"kit": {
+				"active_breakpoints": ["viewport_mobile", "viewport_tablet"],
+				"global_image_lightbox": "yes",
+				"lightbox_enable_counter": "yes",
+				"lightbox_enable_fullscreen": "yes",
+				"lightbox_enable_zoom": "yes",
+				"lightbox_enable_share": "yes",
+				"lightbox_title_src": "title",
+				"lightbox_description_src": "description"
+			},
+			"post": {
+				"id": 806,
+				"title": "Home%20-%20ReviewMyArticles",
+				"excerpt": "",
+				"featuredImage": false
+			}
+		};
+	</script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/frontend.min.js.download"
+		id="elementor-frontend-js"></script>
+	<span id="elementor-device-mode" class="elementor-screen-only"></span>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/underscore.min.js.download"
+		id="underscore-js"></script>
+	<script type="text/javascript" id="wp-util-js-extra">
+		/* 
+																																																																												  <![CDATA[ */
+		var _wpUtilSettings = {
+			"ajax": {
+				"url": "\/wp-admin\/admin-ajax.php"
+			}
+		};
+      /* ]]> */
+	</script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/wp-util.min.js.download"
+		id="wp-util-js"></script>
+	<script type="text/javascript" id="wpforms-elementor-js-extra">
+		/* 
+																																																																												  <![CDATA[ */
+		var wpformsElementorVars = {
+			"captcha_provider": "none",
+			"recaptcha_type": "v3"
+		};
+      /* ]]> */
+	</script>
+	<script type="text/javascript" src="./Home - ReviewMyArticles_files/frontend.min.js(1).download"
+		id="wpforms-elementor-js"></script>
+	<script src="./Home - ReviewMyArticles_files/e-202301.js.download" defer=""></script>
+	<script>
+		_stq = window._stq || [];
+		_stq.push(['view', {
+			v: 'ext',
+			j: '1:11.1.2',
+			blog: '64296390',
+			post: '806',
+			tz: '0',
+			srv: 'www.reviewmyarticles.com'
+		}]);
+		_stq.push(['clickTrackerInit', '64296390', '806']);
+	</script>
+	<img src="./Home - ReviewMyArticles_files/g.gif" alt="" width="6" height="5" id="wpstats">
+	<div>
+		<div class="grecaptcha-badge" data-style="bottomright"
+			style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden; --darkreader-inline-boxshadow:#71797d 0px 0px 5px;"
+			data-darkreader-inline-boxshadow="">
+			<div class="grecaptcha-logo">
+				<iframe title="reCAPTCHA" src="./Home - ReviewMyArticles_files/anchor.html" width="256" height="60"
+					role="presentation" name="a-cnt9oecv964t" frameborder="0" scrolling="no"
+					sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+			</div>
+			<div class="grecaptcha-error"></div>
+			<textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response"
+				style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none; --darkreader-inline-border-top:#54595b; --darkreader-inline-border-right:#54595b; --darkreader-inline-border-bottom:#54595b; --darkreader-inline-border-left:#54595b;"
+				data-darkreader-inline-border-top="" data-darkreader-inline-border-right=""
+				data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left=""></textarea>
+		</div>
+		<iframe style="display: none;" src="./Home - ReviewMyArticles_files/saved_resource(1).html"></iframe>
+	</div>
+	<div id="h10-xray"></div>
+	<div id="h10-xray-keywords"></div>
+	<div id="h10-asin-grabber"></div>
+	<div id="h10-demand"></div>
+	<div id="h10-inventory"></div>
+	<div id="h10-profitability-calculator"></div>
+	<div id="h10-review"></div>
+	<div id="h10-xray-walmart"></div>
+	<div id="h10-token-connection"></div>
+	<div id="h10-page-widget"></div>
+	<script src="./Home - ReviewMyArticles_files/swiper.min.js.download"></script>
+	<script src="./Home - ReviewMyArticles_files/js(2)" data-partner-attribution-id="Woo_PPCP"
+		data-client-token="eyJicmFpbnRyZWUiOnsiYXV0aG9yaXphdGlvbkZpbmdlcnByaW50IjoiOWQ3ZThmODAyNGQ5MmIzNzYxYzlhZmFmZjQ0YTdmMWRkNTVjYTgwNTRiOWU4NzhiOTU0YzE0NGI4NzI1ZTQ3N3xtZXJjaGFudF9pZD1yd3dua3FnMnhnNTZobTJuJnB1YmxpY19rZXk9ajJmYzJqcHhkZzZ2cDg0ZiZjcmVhdGVkX2F0PTIwMjMtMDEtMDhUMTg6MjA6MzAuNDgwWiZjdXN0b21lcl9pZD1lZGVjZmUtZmUyNGVkNjkwYmIzNiIsInZlcnNpb24iOiIzLXBheXBhbCJ9LCJwYXlwYWwiOnsiaWRUb2tlbiI6bnVsbCwiYWNjZXNzVG9rZW4iOiJBMjFBQU0yVXpaaWdkbzdiNUFZb05TVDhEcGVDVVVFZm96SkNSM3ZLU0VlWThNOXBGS1luWVRfUTl3YVJhNjhsVExhZ25xTkFPcVpvZVRhZVlCbUVQcnVSWlhuY3JjakpRIn19"
+		data-uid-auto="uid_eieokqjtsitjqadtqgjfuwrjzdsknz"></script>
+</body>
+<script type="text/javascript" async="" src="./Home - ReviewMyArticles_files/f.txt"></script>
+<loom-container id="lo-engage-ext-container">
+	<loom-shadow classname="resolved"></loom-shadow>
+</loom-container>
+<loom-container id="lo-companion-container">
+	<loom-shadow classname="resolved"></loom-shadow>
+</loom-container>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</html>
