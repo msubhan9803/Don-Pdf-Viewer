@@ -52,7 +52,10 @@ def upload():
                 inst = page.search_for(text, quads=True)
                 ### HIGHLIGHT
                 highlight = page.add_highlight_annot(inst)
-                highlight.set_colors(stroke=[0.5, 1, 1])
+                # print(color['r']/255)
+                # print(color['g']/255)
+                # print(color['b']/255)
+                highlight.set_colors(stroke=[round(color['r']/255, 1), round(color['g']/255, 1), round(color['b']/255, 1)])
                 highlight.update()
 
 

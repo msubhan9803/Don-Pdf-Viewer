@@ -13,11 +13,31 @@ async function handleGetPdfSummarizedFile(event) {
     const result = await handleGetPdfSummary(file);
     const keys = JSON.parse(result);
     const parsedSummaryList = {};
+    
+    let colorList = [
+        {
+            r: 240, g: 178, b:122
+        },
+        {
+            r: 130, g: 224, b:170
+        },
+        {
+            r: 133, g: 193, b:233
+        },
+        {
+            r: 187, g: 143, b:206
+        },
+        {
+            r: 241, g: 148, b:138
+        }
+    ];
     for (let index = 0; index < Object.keys(keys).length; index++) {
         const key = Object.keys(keys)[index];
+        const optionsE = getRandomRgb(colorList);
+        const removedE = colorList.splice(optionsE, 1);
         parsedSummaryList[key] = {
             text: JSON.parse(keys[key]),
-            color: getRandomRgb()
+            color: removedE[0]
         };
     }
     console.log('parsed summary list: ', parsedSummaryList)
@@ -71,13 +91,11 @@ function handleGetPdfSummary(file) {
 }
 
 function initializeSummaryListCards(list) {
-    debugger;
     const cardContainer = document.getElementById('card-container');
 
     for (let i = 0; i < Object.values(list).length; i++) {
         const category = Object.values(list);
         const key = Object.keys(list)[i]
-        debugger;
 
         const h1 = document.createElement('h1');
         h1.innerHTML = key;
@@ -85,18 +103,21 @@ function initializeSummaryListCards(list) {
 
         for (let index = 0; index < category.length; index++) {
             const textObj = category[index];
+            const color = textObj.color;
 
             for (let index = 0; index < Object.values(textObj).length; index++) {
                 const text = Object.values(textObj.text)[index];
                 const card = document.createElement('div');
-                debugger;
 
                 card.innerHTML = text;
                 card.onclick = function () {
                     scrollToText(text);
                 }
                 card.classList.add('card');
-                cardContainer.appendChild(card);   
+                const borderColor = `3px solid rgba(${color.r},${color.g},${color.b})`;
+                console.log('borderColor: ', borderColor);
+                card.style.border = borderColor;
+                cardContainer.appendChild(card);
             }
         }
     }
@@ -108,15 +129,6 @@ function scrollToText(text) {
     document.getElementById('findInput').dispatchEvent(new Event('input'));
 }
 
-function getRandomRgb() {
-    var num = Math.round(0xffffff * Math.random());
-    var r = num >> 16;
-    var g = num >> 8 & 255;
-    var b = num & 255;
-
-    return {
-        r,
-        g,
-        b
-    }
+function getRandomRgb(colorList) {
+    return Math.floor(Math.random() * colorList.length);
 }
