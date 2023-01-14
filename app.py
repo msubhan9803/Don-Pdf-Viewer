@@ -21,6 +21,7 @@ def upload():
     print('preparing pdf annonations ...')
     file = request.files['file']
     summaryList = eval(request.form['summaryList'])
+    # print('summaryList: ', summaryList)
 
     randomString = random_string_generator(size, chars)
     newFileName = "conversions/" + randomString
@@ -34,15 +35,28 @@ def upload():
     for page in doc:
         text_instances = []
         ### SEARCH
-        for text in summaryList:
-            text_instances.append(page.search_for(text, quads=True))
-        ### HIGHLIGHT
-        for inst in text_instances:
-            highlight = page.add_highlight_annot(inst)
-            highlight.set_colors(stroke=[0.5, 1, 1])
-            highlight.update()
+        # for text in summaryList:
+        #     text_instances.append(page.search_for(text, quads=True))
+        # ### HIGHLIGHT
+        # for inst in text_instances:
+        #     highlight = page.add_highlight_annot(inst)
+        #     highlight.set_colors(stroke=[0.5, 1, 1])
+        #     highlight.update()
 
-    print('text_instances: ', text_instances)
+        for key in summaryList.keys():
+            print(key)
+            color = summaryList[key]['color']
+            print(color)
+            for text in summaryList[key]['text'].values():
+                # print('text: ', text)
+                inst = page.search_for(text, quads=True)
+                ### HIGHLIGHT
+                highlight = page.add_highlight_annot(inst)
+                highlight.set_colors(stroke=[0.5, 1, 1])
+                highlight.update()
+
+
+    # print('text_instances: ', text_instances)
 
     doc.save(outputFileName, garbage=4, deflate=True, clean=True)
 
