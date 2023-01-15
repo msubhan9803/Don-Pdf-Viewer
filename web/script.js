@@ -59,18 +59,23 @@ async function handleGetPdfSummarizedFile(event) {
         method: 'POST',
         body: formData
     })
-        .then(result => result.json())
-        .then(response => {
-            console.log('response: ', response)
-            const summarizedFileUrl = response.summarizedFileUrl;
+    .then((response) => response.body)
+    .then((stream) => new Response(stream))
+    .then((response) => response.blob())
+    .then((blob) => {
+            debugger;
+            // const summarizedFileUrl = response.summarizedFileUrl;
             document.getElementById('my-custom-card-section').classList.remove('hidden');
             document.getElementById('my-custom-card-section').classList.add('block');
 
-            const url = {
-                url: "http://127.0.0.1:8000/" + summarizedFileUrl,
-                originalUrl: summarizedFileUrl
-            };
-            PDFViewerApplication.open(url);
+            // const url = {
+            //     url: "http://127.0.0.1:8000/" + summarizedFileUrl,
+            //     // originalUrl: summarizedFileUrl
+            //     originalUrl: URL.createObjectURL(response.body)
+            // };
+            // PDFViewerApplication.open(url);
+            var url = URL.createObjectURL(blob);
+            PDFViewerApplication.open(url, 0);
         })
         .catch(error => {
             // Handle error
@@ -115,7 +120,7 @@ function initializeSummaryListCards(list) {
                 }
                 card.classList.add('card');
                 const borderColor = `3px solid rgba(${color.r},${color.g},${color.b})`;
-                console.log('borderColor: ', borderColor);
+                // console.log('borderColor: ', borderColor);
                 card.style.border = borderColor;
                 cardContainer.appendChild(card);
             }

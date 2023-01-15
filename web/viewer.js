@@ -1835,6 +1835,8 @@
           await Promise.all(promises);
         },
         async open(file, args) {
+          debugger;
+          console.log('file in open method: ', file)
           if (this.pdfLoadingTask) {
             await this.close();
           }
