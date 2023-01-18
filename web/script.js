@@ -12,6 +12,7 @@ async function handleGetPdfSummarizedFile(event) {
     // Here I will hit DOn's api
     const result = await handleGetPdfSummary(file);
     const keys = JSON.parse(result);
+    console.log('result parsed: ', keys);
     const parsedSummaryList = {};
     
     let colorList = [
@@ -98,36 +99,35 @@ function handleGetPdfSummary(file) {
 function initializeSummaryListCards(list) {
     const cardContainer = document.getElementById('card-container');
 
-    for (let i = 0; i < Object.values(list).length; i++) {
-        const category = Object.values(list);
+    for (let i = 0; i < Object.keys(list).length; i++) {
         const key = Object.keys(list)[i]
+        console.log('key: ', key)
+        const object = list[key];
+        console.log('object: ', object)
+        const color = object.color;
 
         const h1 = document.createElement('h1');
-        h1.innerHTML = key;
+        h1.innerHTML = capitalizeFirstLetter(key.replace('_', ' '));
         cardContainer.appendChild(h1);
 
-        for (let index = 0; index < category.length; index++) {
-            const textObj = category[index];
-            const color = textObj.color;
+        const textList = Object.values(object.text);
+        for (let index = 0; index < textList.length; index++) {
+            const text = textList[index];
+            const card = document.createElement('div');
 
-            for (let index = 0; index < Object.values(textObj).length; index++) {
-                const text = Object.values(textObj.text)[index];
-                const card = document.createElement('div');
-
-                card.innerHTML = text;
-                card.onclick = function () {
-                    scrollToText(text);
-                }
-                card.classList.add('card');
-                const borderColor = `3px solid rgba(${color.r},${color.g},${color.b})`;
-                // console.log('borderColor: ', borderColor);
-                card.style.border = borderColor;
-                cardContainer.appendChild(card);
+            card.innerHTML = text;
+            card.onclick = function () {
+                scrollToText(text);
             }
+            card.classList.add('card');
+            const borderColor = `3px solid rgba(${color.r},${color.g},${color.b})`;
+            card.style.border = borderColor;
+            cardContainer.appendChild(card);
         }
     }
 }
 
+// Helpers
 function scrollToText(text) {
     console.log('clicking...')
     document.getElementById('findInput').setAttribute('value', text)
@@ -136,4 +136,8 @@ function scrollToText(text) {
 
 function getRandomRgb(colorList) {
     return Math.floor(Math.random() * colorList.length);
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
