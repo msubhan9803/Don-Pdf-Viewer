@@ -1,12 +1,10 @@
 import datetime
 import random
 import fitz
-from flask import Flask, Response, request, jsonify
-from flask_cors import CORS, cross_origin
-import urllib.request
+from flask import Flask, Response, request
 import random
 import string
-import re
+import os
 
 app = Flask(__name__)
 
@@ -26,16 +24,14 @@ def upload():
     newFileName = "conversions/" + randomString
     articleFileName = newFileName + "-article.pdf"
     outputFileName = newFileName + "-output.pdf"
-    outputFileNameRoot = randomString + "-output.pdf"
 
     file.save(articleFileName)
 
     doc = fitz.open('./'+articleFileName)
     for page in doc:
         for key in summaryList.keys():
-            print(key)
             color = summaryList[key]['color']
-            print(color)
+
             for text in summaryList[key]['text'].values():
                 inst = page.search_for(text, quads=True)
                 ### HIGHLIGHT
@@ -45,10 +41,13 @@ def upload():
 
     doc.save(outputFileName, garbage=4, deflate=True, clean=True)
 
+    doc.close()
+
     with open(outputFileName, 'rb') as pdf_file:
         pdf_data = pdf_file.read()
 
-        
+    os.remove(outputFileName)
+    os.remove(articleFileName)
 
     return Response(pdf_data, mimetype='application/pdf')
 
