@@ -7,3 +7,9 @@
 set FLASK_APP=app.py
 set FLASK_ENV=development
 python -m flask run
+
+
+# FLow:
+1. we hit the summary text api with the file from frontend
+gets the summary
+2. hits the python api and gets the highlighted file

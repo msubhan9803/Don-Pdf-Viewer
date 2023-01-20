@@ -41,13 +41,6 @@ async function handleGetPdfSummarizedFile(event) {
             color: removedE[0]
         };
     }
-    console.log('parsed summary list: ', parsedSummaryList)
-    // summaryList = [
-    //     "Since 2008, the role of awards has been revitalized due to the Rudd Labor government’s policy of ‘award modernization’, which has both restored the effectiveness of awards as a safety net for wages and working hours and expanded their coverage (Murray & Owens, 2009).",
-    //     "This conceptual lacuna is particularly problematic because of the complexity of the processes under examination.",
-    //     "This is a long-standing practice in Europe, through works councils and board representation, and has recently become",
-    //     "The following account divides the history of awards in Australia into three time periods, determined by the political complexion of the government and the types of laws they made."
-    // ];
 
     // Initializing cards
     initializeSummaryListCards(parsedSummaryList);
@@ -64,17 +57,8 @@ async function handleGetPdfSummarizedFile(event) {
     .then((stream) => new Response(stream))
     .then((response) => response.blob())
     .then((blob) => {
-            debugger;
-            // const summarizedFileUrl = response.summarizedFileUrl;
             document.getElementById('my-custom-card-section').classList.remove('hidden');
             document.getElementById('my-custom-card-section').classList.add('block');
-
-            // const url = {
-            //     url: "http://127.0.0.1:8000/" + summarizedFileUrl,
-            //     // originalUrl: summarizedFileUrl
-            //     originalUrl: URL.createObjectURL(response.body)
-            // };
-            // PDFViewerApplication.open(url);
             var url = URL.createObjectURL(blob);
             PDFViewerApplication.open(url, 0);
         })
