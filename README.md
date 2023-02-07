@@ -5,11 +5,21 @@
 
 ## Commands to run python api:
 set FLASK_APP=app.py
-set FLASK_ENV=development
 python -m flask run
+python -m http.server (run in separate terminal)
 
 
 # FLow:
 1. we hit the summary text api with the file from frontend
 gets the summary
 2. hits the python api and gets the highlighted file
+
+
+## Commands to deploy python api
+gunicorn app:app -b 0.0.0.0:8000 --daemon
+
+ps aux --forest | grep gunicorn
+
+sudo kill -9 4930 4968
+
+sudo apt-get install php-curl

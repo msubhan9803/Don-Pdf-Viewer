@@ -47,9 +47,12 @@ async function handleGetPdfSummarizedFile(event) {
 
     const formData = new FormData();
     formData.append('file', file);
-    formData.append("summaryList", JSON.stringify(parsedSummaryList));
+    // formData.append("summaryList", JSON.stringify(parsedSummaryList));
+    formData.append("summaryList", "Individualism");
 
-    await fetch('http://127.0.0.1:5000/upload', {
+    // await fetch('http://127.0.0.1:5000/upload', {
+    // await fetch('http://3.84.161.24/api/upload', {
+    await fetch('http://localhost:57911/api/Highlight', {
         method: 'POST',
         body: formData
     })
@@ -57,9 +60,12 @@ async function handleGetPdfSummarizedFile(event) {
     .then((stream) => new Response(stream))
     .then((response) => response.blob())
     .then((blob) => {
+        debugger;
+            console.log('blob: ', blob);
             document.getElementById('my-custom-card-section').classList.remove('hidden');
             document.getElementById('my-custom-card-section').classList.add('block');
             var url = URL.createObjectURL(blob);
+            console.log('url: ', url);
             PDFViewerApplication.open(url, 0);
         })
         .catch(error => {

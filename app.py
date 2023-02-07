@@ -28,9 +28,11 @@ def highlight_text(page_range, categories, pdf_file, process_index, new_file_nam
     # Open the PDF file
     pdf = fitz.open(pdf_file)
     new_pdf = fitz.open()
+    start_index_val = page_range[0]
+    last_index_val = page_range[len(page_range) - 1]
     
     for i in page_range:
-        print('page no.: ', i)
+        print('page no.: ', i, ' process no.: ', process_index)
         page = pdf[i]
         print('page: ', page)
         for key in categories.keys():
@@ -44,7 +46,7 @@ def highlight_text(page_range, categories, pdf_file, process_index, new_file_nam
                 highlight.set_colors(stroke=[round(color['r']/255, 1), round(color['g']/255, 1), round(color['b']/255, 1)])
                 highlight.update()
 
-    new_pdf.insert_pdf(pdf, from_page = page_range[0], to_page = page_range[1])
+    new_pdf.insert_pdf(pdf, from_page = start_index_val, to_page = last_index_val)
     print('page highlighted!')
 
     # Save the PDF
@@ -69,6 +71,27 @@ def merge_pdfs(pdf_files, output_file):
 
 
 '''
+CHUNK FUNCTION
+'''
+def chunk_array(page_length, chunk_size, cpu_count):
+    chunks = []
+    chunk = []
+    
+    for page_no in range(page_length):
+        if len(chunks) < cpu_count:
+            if len(chunk) < chunk_size:
+                chunk.append(page_no)
+    
+            if len(chunk) == chunk_size:
+                chunks.append(chunk)
+                chunk = []
+        else:
+            chunks[len(chunks) - 1].append(page_no)
+
+    return chunks
+
+
+'''
 MAIN FUNCTION
 '''
 def main(pdf_file, categories, output_file_name):
@@ -84,14 +107,20 @@ def main(pdf_file, categories, output_file_name):
     cpu_count = mp.cpu_count()
     print('cpu_count: ', cpu_count)
     chunk_size = page_length // cpu_count
+    remainder_after_equal = page_length - (chunk_size * cpu_count)
     print('chunk_size: ', chunk_size)
+    print('remainder_after_equal: ', remainder_after_equal)
     chunk_start = 0
     chunk_end = chunk_size
+    page_range_array = list(range(0, page_length))
+    chunks = chunk_array(page_length, chunk_size, cpu_count)
+    print('======> chunks: ', chunks)
     
     # Create a process for each chunk of pages
     for i in range(cpu_count):
+        chunk = chunks[i]
         # Calculate the page range for the current process
-        page_range = range(chunk_start, chunk_end)
+        page_range = chunk
         print('====> current dynamic page_range: ', page_range)
         
         file_name = "conversions/" + str(i) + "-"  + random_string_generator(size, chars) + "-.pdf"
@@ -105,8 +134,8 @@ def main(pdf_file, categories, output_file_name):
         processes.append(process)
         
         # Update the chunk start and end for the next process
-        chunk_start = chunk_end
-        chunk_end += chunk_size
+        # chunk_start = chunk_end
+        # chunk_end += chunk_size
 
     
     addSpaceHere()
