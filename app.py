@@ -4,6 +4,7 @@ import fitz
 from flask import Flask, Response, request
 import random
 import string
+import os
 import multiprocessing as mp
 
 app = Flask(__name__)
@@ -18,12 +19,17 @@ size = 12
 '''
 HIGHLIGHT FUNCTION
 '''
-def highlight_text(page_range, categories, pdf_file):
+def highlight_text(page_range, categories, pdf_file, process_index):
+    print('                   ')
+    print('started process no.: ', process_index)
+    print('highlighting process started for page_range', page_range)
     # Open the PDF file
     pdf = fitz.open(pdf_file)
     
     for i in page_range:
+        print('page no.: ', i)
         page = pdf[i]
+        print('page: ', page)
         for key in categories.keys():
             color = categories[key]['color']
 
@@ -34,28 +40,15 @@ def highlight_text(page_range, categories, pdf_file):
                 highlight = page.add_highlight_annot(inst)
                 highlight.set_colors(stroke=[round(color['r']/255, 1), round(color['g']/255, 1), round(color['b']/255, 1)])
                 highlight.update()
+        print('page highlighted!')
 
-
-        # for category in categories:
-        #     print('index: ', i)
-        #     print('text_list: ', category['text_list'])
-        #     # Get the current page
-        #     page = pdf[i]
-        #     print('page: ', page)
-        #     text_list = category['text_list']
-        #     color = category['color']
-            
-        #     for text in text_list:
-        #         # Search for the text on the current page
-        #         inst = page.search_for(text, quads=True)
-
-        #         highlight = page.add_highlight_annot(inst)
-        #         highlight.set_colors(stroke=[round(color['r']/255, 1), round(color['g']/255, 1), round(color['b']/255, 1)])
-        #         highlight.update()
-    
     # Save the PDF
-    pdf.save(pdf_file, incremental=True, encryption=fitz.PDF_ENCRYPT_KEEP)
+    # pdf.save(pdf_file, incremental=True, encryption=fitz.PDF_ENCRYPT_KEEP)
+    pdf.save(pdf_file)
+    print('saved!')
     pdf.close()
+    print('closed!')
+    print('                   ')
 
 
 '''
@@ -78,29 +71,51 @@ def main(pdf_file, categories):
     chunk_end = chunk_size
     
     # Create a process for each chunk of pages
-    for i in range(cpu_count):
-        # Calculate the page range for the current process
-        page_range = range(chunk_start, chunk_end)
-        print('page_range', page_range)
-        
-        # Create the process
-        process = mp.Process(target=highlight_text, args=(page_range, categories, pdf_file))
-        
-        # Add the process to the list of processes
-        processes.append(process)
-        
-        # Update the chunk start and end for the next process
-        chunk_start = chunk_end
-        chunk_end += chunk_size
+    # for i in range(cpu_count):
+    # Calculate the page range for the current process
+    # page_range = range(chunk_start, chunk_end)
+    page_range = range(0, 3)
+    print('====> current dynamic page_range: ', page_range)
     
+    # Create the process
+    process = mp.Process(target=highlight_text, args=(page_range, categories, pdf_file, 1))
+    
+    # Add the process to the list of processes
+    processes.append(process)
+    
+    # Update the chunk start and end for the next process
+    # chunk_start = chunk_end
+    # chunk_end += chunk_size
+
+
+
+    page_range = range(3, 6)
+    print('====> current dynamic page_range: ', page_range)
+    
+    # Create the process
+    process = mp.Process(target=highlight_text, args=(page_range, categories, pdf_file, 2))
+    
+    # Add the process to the list of processes
+    processes.append(process)
+
+
+    
+    print('                   ')
     # Start all processes
     for process in processes:
+        print('                   ')
+        print('process started!')
         process.start()
-        
+    
+    print('                   ')
+
     # Wait for all processes to finish
     for process in processes:
+        print('waiting for process to finish!')
         process.join()
 
+    print('                   ')
+    print('all processed done!')
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
@@ -121,12 +136,14 @@ def upload():
 
     # doc.close()
 
-    # with open(outputFileName, 'rb') as pdf_file:
-    #     pdf_data = pdf_file.read()
+    with open(articleFileName, 'rb') as pdf_file:
+        print('reading article file to return in response ...')
+        pdf_data = pdf_file.read()
 
     # os.remove(outputFileName)
-    # os.remove(articleFileName)
+    os.remove(articleFileName)
 
+    print('returning the file in response!')
     return Response(pdf_data, mimetype='application/pdf')
 
 if __name__ == "__main__":
