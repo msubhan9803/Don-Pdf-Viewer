@@ -21,12 +21,13 @@ def addSpaceHere():
 '''
 HIGHLIGHT FUNCTION
 '''
-def highlight_text(page_range, categories, pdf_file, process_index, file_name):
+def highlight_text(page_range, categories, pdf_file, process_index, new_file_name):
     addSpaceHere()
     print('started process no.: ', process_index)
     print('highlighting process started for page_range', page_range)
     # Open the PDF file
     pdf = fitz.open(pdf_file)
+    new_pdf = fitz.open()
     
     for i in page_range:
         print('page no.: ', i)
@@ -42,13 +43,14 @@ def highlight_text(page_range, categories, pdf_file, process_index, file_name):
                 highlight = page.add_highlight_annot(inst)
                 highlight.set_colors(stroke=[round(color['r']/255, 1), round(color['g']/255, 1), round(color['b']/255, 1)])
                 highlight.update()
-        print('page highlighted!')
+
+    new_pdf.insert_pdf(pdf, from_page = page_range[0], to_page = page_range[1])
+    print('page highlighted!')
 
     # Save the PDF
-    # pdf.save(pdf_file, incremental=True, encryption=fitz.PDF_ENCRYPT_KEEP)
-    pdf.save(file_name)
+    new_pdf.save(new_file_name)
     print('saved!')
-    pdf.close()
+    new_pdf.close()
     print('closed!')
     addSpaceHere()
 
