@@ -15,12 +15,14 @@ def random_string_generator(str_size, allowed_chars):
 chars = string.ascii_letters + string.digits
 size = 12
 
+def addSpaceHere():
+    print('         ')
 
 '''
 HIGHLIGHT FUNCTION
 '''
-def highlight_text(page_range, categories, pdf_file, process_index):
-    print('                   ')
+def highlight_text(page_range, categories, pdf_file, process_index, file_name):
+    addSpaceHere()
     print('started process no.: ', process_index)
     print('highlighting process started for page_range', page_range)
     # Open the PDF file
@@ -44,19 +46,33 @@ def highlight_text(page_range, categories, pdf_file, process_index):
 
     # Save the PDF
     # pdf.save(pdf_file, incremental=True, encryption=fitz.PDF_ENCRYPT_KEEP)
-    pdf.save(pdf_file)
+    pdf.save(file_name)
     print('saved!')
     pdf.close()
     print('closed!')
-    print('                   ')
+    addSpaceHere()
+
+
+'''
+MERGING PDF BACK TO ONE
+'''
+def merge_pdfs(pdf_files, output_file):
+    pdf_merger = fitz.open()
+    for pdf_file in pdf_files:
+        pdf = fitz.open(pdf_file)
+        pdf_merger.insert_pdf(pdf)
+    pdf_merger.save(output_file)
+    addSpaceHere()
+    print('===>  merged file saved!')
 
 
 '''
 MAIN FUNCTION
 '''
-def main(pdf_file, categories):
+def main(pdf_file, categories, output_file_name):
     # Create a list of processes
     processes = []
+    new_pdf_list = []
     doc = fitz.open(pdf_file)
     page_length = doc.page_count
     print('page length: ', page_length)
@@ -71,51 +87,46 @@ def main(pdf_file, categories):
     chunk_end = chunk_size
     
     # Create a process for each chunk of pages
-    # for i in range(cpu_count):
-    # Calculate the page range for the current process
-    # page_range = range(chunk_start, chunk_end)
-    page_range = range(0, 3)
-    print('====> current dynamic page_range: ', page_range)
-    
-    # Create the process
-    process = mp.Process(target=highlight_text, args=(page_range, categories, pdf_file, 1))
-    
-    # Add the process to the list of processes
-    processes.append(process)
-    
-    # Update the chunk start and end for the next process
-    # chunk_start = chunk_end
-    # chunk_end += chunk_size
+    for i in range(cpu_count):
+        # Calculate the page range for the current process
+        page_range = range(chunk_start, chunk_end)
+        print('====> current dynamic page_range: ', page_range)
+        
+        file_name = "conversions/" + str(i) + "-"  + random_string_generator(size, chars) + "-.pdf"
+        # Create the process
+        
+        process = mp.Process(target=highlight_text, args=(page_range, categories, pdf_file, i, file_name))
 
-
-
-    page_range = range(3, 6)
-    print('====> current dynamic page_range: ', page_range)
-    
-    # Create the process
-    process = mp.Process(target=highlight_text, args=(page_range, categories, pdf_file, 2))
-    
-    # Add the process to the list of processes
-    processes.append(process)
-
+        new_pdf_list.append(file_name)
+        
+        # Add the process to the list of processes
+        processes.append(process)
+        
+        # Update the chunk start and end for the next process
+        chunk_start = chunk_end
+        chunk_end += chunk_size
 
     
-    print('                   ')
+    addSpaceHere()
     # Start all processes
     for process in processes:
-        print('                   ')
+        addSpaceHere()
         print('process started!')
         process.start()
     
-    print('                   ')
+    addSpaceHere()
 
     # Wait for all processes to finish
     for process in processes:
         print('waiting for process to finish!')
         process.join()
 
-    print('                   ')
+    addSpaceHere()
     print('all processed done!')
+
+    print('new_pdf_list', new_pdf_list)
+    merge_pdfs(new_pdf_list, output_file_name)
+
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
@@ -127,21 +138,22 @@ def upload():
     newFileName = "conversions/" + randomString
     articleFileName = newFileName + "-article.pdf"
     outputFileName = newFileName + "-output.pdf"
+    output_file_name = "conversions/" + random_string_generator(size, chars) + "-.pdf"
 
     file.save(articleFileName)
 
-    main(articleFileName, summaryList)
+    main(articleFileName, summaryList, output_file_name)
 
     # doc.save(outputFileName, garbage=4, deflate=True, clean=True)
-
     # doc.close()
 
-    with open(articleFileName, 'rb') as pdf_file:
+    print('output file: ', output_file_name)
+    with open(output_file_name, 'rb') as pdf_file:
         print('reading article file to return in response ...')
         pdf_data = pdf_file.read()
 
     # os.remove(outputFileName)
-    os.remove(articleFileName)
+    # os.remove(output_file_name)
 
     print('returning the file in response!')
     return Response(pdf_data, mimetype='application/pdf')
