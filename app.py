@@ -65,6 +65,8 @@ def merge_pdfs(pdf_files, output_file):
     for pdf_file in pdf_files:
         pdf = fitz.open(pdf_file)
         pdf_merger.insert_pdf(pdf)
+        pdf.close()
+        os.remove(pdf_file)
     pdf_merger.save(output_file)
     addSpaceHere()
     print('===>  merged file saved!')
@@ -110,9 +112,6 @@ def main(pdf_file, categories, output_file_name):
     remainder_after_equal = page_length - (chunk_size * cpu_count)
     print('chunk_size: ', chunk_size)
     print('remainder_after_equal: ', remainder_after_equal)
-    chunk_start = 0
-    chunk_end = chunk_size
-    page_range_array = list(range(0, page_length))
     chunks = chunk_array(page_length, chunk_size, cpu_count)
     print('======> chunks: ', chunks)
     
@@ -127,15 +126,12 @@ def main(pdf_file, categories, output_file_name):
         # Create the process
         
         process = mp.Process(target=highlight_text, args=(page_range, categories, pdf_file, i, file_name))
+        process.daemon = True
 
         new_pdf_list.append(file_name)
         
         # Add the process to the list of processes
         processes.append(process)
-        
-        # Update the chunk start and end for the next process
-        # chunk_start = chunk_end
-        # chunk_end += chunk_size
 
     
     addSpaceHere()
@@ -173,18 +169,16 @@ def upload():
 
     file.save(articleFileName)
 
+    # Stating
     main(articleFileName, summaryList, output_file_name)
-
-    # doc.save(outputFileName, garbage=4, deflate=True, clean=True)
-    # doc.close()
 
     print('output file: ', output_file_name)
     with open(output_file_name, 'rb') as pdf_file:
         print('reading article file to return in response ...')
         pdf_data = pdf_file.read()
 
-    # os.remove(outputFileName)
-    # os.remove(output_file_name)
+    os.remove(articleFileName)
+    os.remove(output_file_name)
 
     print('returning the file in response!')
     return Response(pdf_data, mimetype='application/pdf')
