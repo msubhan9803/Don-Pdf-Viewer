@@ -1,12 +1,21 @@
 document.getElementById('file-upload-button').addEventListener('click', handleGetPdfSummarizedFile);
+document.getElementById('recreate-button').addEventListener('click', handleRecreateButton);
 console.log('pdfjsLib: ', pdfjsLib)
 document.getElementById('search-button').addEventListener('click', scrollToText);
 
 let summaryList = [];
 
+async function handleRecreateButton() {
+    window.location.reload();
+}
+
 async function handleGetPdfSummarizedFile(event) {
     event.preventDefault();
-    console.log('event: ', event)
+    document.getElementById('file-search-loader').classList.add('block');
+    document.getElementById('file-search-loader').classList.remove('hidden');
+    document.getElementById('file-upload-dropzone').classList.add('hidden');
+    document.getElementById('file-upload-dropzone').classList.remove('block');
+
     const file = document.getElementById('my-file-input').files[0];
 
     // Here I will hit DOn's api
@@ -17,19 +26,19 @@ async function handleGetPdfSummarizedFile(event) {
 
     let colorList = [
         {
-            r: 240, g: 178, b:122
+            r: 240, g: 178, b: 122
         },
         {
-            r: 130, g: 224, b:170
+            r: 130, g: 224, b: 170
         },
         {
-            r: 133, g: 193, b:233
+            r: 133, g: 193, b: 233
         },
         {
-            r: 187, g: 143, b:206
+            r: 187, g: 143, b: 206
         },
         {
-            r: 241, g: 148, b:138
+            r: 241, g: 148, b: 138
         }
     ];
     for (let index = 0; index < Object.keys(keys).length; index++) {
@@ -45,26 +54,33 @@ async function handleGetPdfSummarizedFile(event) {
     // Initializing cards
     initializeSummaryListCards(parsedSummaryList);
 
+    document.getElementById('file-search-loader').classList.add('hidden');
+    document.getElementById('pdf-viewer-area').classList.add('block');
+    document.getElementById('pdf-viewer-area').classList.remove('hidden');
+
     const formData = new FormData();
     formData.append('file', file);
     formData.append("summaryList", JSON.stringify(parsedSummaryList));
 
-    // await fetch('http://127.0.0.1:5000/upload', {
-    // await fetch('http://3.84.161.24/api/upload', {
     await fetch('http://35.226.118.147/api/upload', {
         method: 'POST',
         body: formData
     })
-    .then((response) => response.body)
-    .then((stream) => new Response(stream))
-    .then((response) => response.blob())
-    .then((blob) => {
-        debugger;
+        .then((response) => response.body)
+        .then((stream) => new Response(stream))
+        .then((response) => response.blob())
+        .then((blob) => {
             console.log('blob: ', blob);
             document.getElementById('my-custom-card-section').classList.remove('hidden');
             document.getElementById('my-custom-card-section').classList.add('block');
+
+            document.getElementById('recreate-button').classList.add('block');
+            document.getElementById('recreate-button').classList.remove('hidden');
+
+            document.getElementById('pdf-viewer-spinner').classList.remove('block');
+            document.getElementById('pdf-viewer-spinner').classList.add('hidden');
+
             var url = URL.createObjectURL(blob);
-            console.log('url: ', url);
             PDFViewerApplication.open(url, 0);
         })
         .catch(error => {
