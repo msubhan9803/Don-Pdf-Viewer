@@ -107,12 +107,19 @@ def main(pdf_file, categories, output_file_name):
 
     # Divide the pages of the PDF into chunks for each process
     cpu_count = mp.cpu_count()
+    if page_length > cpu_count:
+        chunk_size = page_length // cpu_count
+        remainder_after_equal = page_length - (chunk_size * cpu_count)
+    else:
+        chunk_size = page_length
+        remainder_after_equal = 0
+        cpu_count = 1
+    
+    chunks = chunk_array(page_length, chunk_size, cpu_count)
+    
     print('cpu_count: ', cpu_count)
-    chunk_size = page_length // cpu_count
-    remainder_after_equal = page_length - (chunk_size * cpu_count)
     print('chunk_size: ', chunk_size)
     print('remainder_after_equal: ', remainder_after_equal)
-    chunks = chunk_array(page_length, chunk_size, cpu_count)
     print('======> chunks: ', chunks)
 
     # Create a process for each chunk of pages
