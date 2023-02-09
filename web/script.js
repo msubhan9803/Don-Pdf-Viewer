@@ -14,7 +14,7 @@ async function handleGetPdfSummarizedFile(event) {
     const keys = JSON.parse(result);
     console.log('result parsed: ', keys);
     const parsedSummaryList = {};
-    
+
     let colorList = [
         {
             r: 240, g: 178, b:122
@@ -47,12 +47,11 @@ async function handleGetPdfSummarizedFile(event) {
 
     const formData = new FormData();
     formData.append('file', file);
-    // formData.append("summaryList", JSON.stringify(parsedSummaryList));
-    formData.append("summaryList", "Individualism");
+    formData.append("summaryList", JSON.stringify(parsedSummaryList));
 
     // await fetch('http://127.0.0.1:5000/upload', {
     // await fetch('http://3.84.161.24/api/upload', {
-    await fetch('http://localhost:57911/api/Highlight', {
+    await fetch('http://35.226.118.147/api/upload', {
         method: 'POST',
         body: formData
     })

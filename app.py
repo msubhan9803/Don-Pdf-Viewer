@@ -30,7 +30,7 @@ def highlight_text(page_range, categories, pdf_file, process_index, new_file_nam
     new_pdf = fitz.open()
     start_index_val = page_range[0]
     last_index_val = page_range[len(page_range) - 1]
-    
+
     for i in page_range:
         print('page no.: ', i, ' process no.: ', process_index)
         page = pdf[i]
@@ -78,12 +78,12 @@ CHUNK FUNCTION
 def chunk_array(page_length, chunk_size, cpu_count):
     chunks = []
     chunk = []
-    
+
     for page_no in range(page_length):
         if len(chunks) < cpu_count:
             if len(chunk) < chunk_size:
                 chunk.append(page_no)
-    
+
             if len(chunk) == chunk_size:
                 chunks.append(chunk)
                 chunk = []
@@ -104,7 +104,7 @@ def main(pdf_file, categories, output_file_name):
     page_length = doc.page_count
     print('page length: ', page_length)
     doc.close()
-    
+
     # Divide the pages of the PDF into chunks for each process
     cpu_count = mp.cpu_count()
     print('cpu_count: ', cpu_count)
@@ -114,33 +114,33 @@ def main(pdf_file, categories, output_file_name):
     print('remainder_after_equal: ', remainder_after_equal)
     chunks = chunk_array(page_length, chunk_size, cpu_count)
     print('======> chunks: ', chunks)
-    
+
     # Create a process for each chunk of pages
     for i in range(cpu_count):
         chunk = chunks[i]
         # Calculate the page range for the current process
         page_range = chunk
         print('====> current dynamic page_range: ', page_range)
-        
+
         file_name = "conversions/" + str(i) + "-"  + random_string_generator(size, chars) + "-.pdf"
         # Create the process
-        
+
         process = mp.Process(target=highlight_text, args=(page_range, categories, pdf_file, i, file_name))
         process.daemon = True
 
         new_pdf_list.append(file_name)
-        
+
         # Add the process to the list of processes
         processes.append(process)
 
-    
+
     addSpaceHere()
     # Start all processes
     for process in processes:
         addSpaceHere()
         print('process started!')
         process.start()
-    
+
     addSpaceHere()
 
     # Wait for all processes to finish

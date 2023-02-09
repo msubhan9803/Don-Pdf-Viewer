@@ -23,3 +23,6 @@ ps aux --forest | grep gunicorn
 sudo kill -9 4930 4968
 
 sudo apt-get install php-curl
+
+
+sudo apt install php-fpm php-mysql
