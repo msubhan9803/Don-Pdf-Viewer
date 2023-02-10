@@ -6,8 +6,10 @@ import random
 import string
 import os
 import multiprocessing as mp
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, origins=["http://35.226.118.147", "*"])
 
 def random_string_generator(str_size, allowed_chars):
     return ''.join(random.choice(allowed_chars) for x in range(str_size)) + '-' + str(int(datetime.datetime.now().timestamp()))
@@ -184,7 +186,7 @@ def upload():
     return Response(pdf_data, mimetype='application/pdf')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
 
 # set FLASK_APP=app.py
 # set FLASK_ENV=development
