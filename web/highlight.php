@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $headers = [
     "Content-Type: multipart/form-data",
-    "x_access_token: xyJ3eXCiOiJKV2QiLCJhbGciOiXIUzI1NiX8"
   ];
   curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
