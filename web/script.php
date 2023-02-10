@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $file = $_FILES['file'];
   $curl = curl_init();
 
-  curl_setopt($curl, CURLOPT_URL, 'http://3.1.240.237/data_processing');
+  curl_setopt($curl, CURLOPT_URL, 'http://18.136.213.149/data_processing');
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($curl, CURLOPT_POST, true);
   curl_setopt($curl, CURLOPT_POSTFIELDS, array('file' => new \CURLFile($file['tmp_name'], $file['type'], $file['name'])));

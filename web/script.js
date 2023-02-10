@@ -1,3 +1,5 @@
+const serverUrl = 'http://18.136.213.149/upload';
+
 document.getElementById('file-upload-button').addEventListener('click', handleGetPdfSummarizedFile);
 document.getElementById('recreate-button').addEventListener('click', handleRecreateButton);
 console.log('pdfjsLib: ', pdfjsLib)
@@ -62,7 +64,7 @@ async function handleGetPdfSummarizedFile(event) {
     formData.append('file', file);
     formData.append("summaryList", JSON.stringify(parsedSummaryList));
 
-    await fetch('http://35.226.118.147/api/upload', {
+    await fetch(`${serverUrl}`, {
         method: 'POST',
         body: formData
     })
