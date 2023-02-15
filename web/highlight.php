@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $summary_list = $_POST["summaryList"];
   $curl = curl_init();
 
-  // curl_setopt($curl, CURLOPT_URL, 'http://18.136.213.149/upload');
+  // curl_setopt($curl, CURLOPT_URL, 'http://18.142.48.120/upload');
   curl_setopt($curl, CURLOPT_URL, 'http://127.0.0.1:5000/upload');
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($curl, CURLOPT_POST, true);
