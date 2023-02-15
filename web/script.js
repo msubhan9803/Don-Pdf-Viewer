@@ -51,6 +51,8 @@ async function handleGetPdfSummarizedFile(event) {
         };
     }
 
+    console.log(JSON.stringify(parsedSummaryList))
+
     // Initializing cards
     initializeSummaryListCards(parsedSummaryList);
 
