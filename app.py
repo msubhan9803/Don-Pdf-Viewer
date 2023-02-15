@@ -42,13 +42,9 @@ def highlight_text(page_range, pageSummary, color, pdf_file, process_index, new_
         for key in pageCategories.keys():
             currentColor = color[key]
             currentCategory = json.loads(pageCategories[key])
-            addSpaceHere()
-            print('currentCategory: ', currentCategory)
-            addSpaceHere()
             if len(currentCategory.keys()) > 0:
 
                 for text in currentCategory.values():
-                    print('text: ', text)
                     # Search for the text on the current page
                     inst = page.search_for(text, quads=True)
 
@@ -117,12 +113,19 @@ def main(pdf_file, pageSummary, color, output_file_name):
 
     # Divide the pages of the PDF into chunks for each process
     cpu_count = mp.cpu_count()
+    if page_length > cpu_count:
+        chunk_size = page_length // cpu_count
+        remainder_after_equal = page_length - (chunk_size * cpu_count)
+    else:
+        chunk_size = 1
+        remainder_after_equal = 0
+        cpu_count = page_length
+    
+    chunks = chunk_array(page_length, chunk_size, cpu_count)
+    
     print('cpu_count: ', cpu_count)
-    chunk_size = page_length // cpu_count
-    remainder_after_equal = page_length - (chunk_size * cpu_count)
     print('chunk_size: ', chunk_size)
     print('remainder_after_equal: ', remainder_after_equal)
-    chunks = chunk_array(page_length, chunk_size, cpu_count)
     print('======> chunks: ', chunks)
 
     # Create a process for each chunk of pages
