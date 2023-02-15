@@ -6,6 +6,7 @@ import random
 import string
 import os
 import multiprocessing as mp
+import json
 
 app = Flask(__name__)
 
@@ -21,7 +22,8 @@ def addSpaceHere():
 '''
 HIGHLIGHT FUNCTION
 '''
-def highlight_text(page_range, categories, pdf_file, process_index, new_file_name):
+def highlight_text(page_range, pageSummary, color, pdf_file, process_index, new_file_name):
+    print('color: ', color)
     addSpaceHere()
     print('started process no.: ', process_index)
     print('highlighting process started for page_range', page_range)
@@ -35,16 +37,24 @@ def highlight_text(page_range, categories, pdf_file, process_index, new_file_nam
         print('page no.: ', i, ' process no.: ', process_index)
         page = pdf[i]
         print('page: ', page)
-        for key in categories.keys():
-            color = categories[key]['color']
+        pageCategories = pageSummary[i]
 
-            for text in categories[key]['text'].values():
-                # Search for the text on the current page
-                inst = page.search_for(text, quads=True)
+        for key in pageCategories.keys():
+            currentColor = color[key]
+            currentCategory = json.loads(pageCategories[key])
+            addSpaceHere()
+            print('currentCategory: ', currentCategory)
+            addSpaceHere()
+            if len(currentCategory.keys()) > 0:
 
-                highlight = page.add_highlight_annot(inst)
-                highlight.set_colors(stroke=[round(color['r']/255, 1), round(color['g']/255, 1), round(color['b']/255, 1)])
-                highlight.update()
+                for text in currentCategory.values():
+                    print('text: ', text)
+                    # Search for the text on the current page
+                    inst = page.search_for(text, quads=True)
+
+                    highlight = page.add_highlight_annot(inst)
+                    highlight.set_colors(stroke=[round(currentColor['r']/255, 1), round(currentColor['g']/255, 1), round(currentColor['b']/255, 1)])
+                    highlight.update()
 
     new_pdf.insert_pdf(pdf, from_page = start_index_val, to_page = last_index_val)
     print('page highlighted!')
@@ -96,7 +106,7 @@ def chunk_array(page_length, chunk_size, cpu_count):
 '''
 MAIN FUNCTION
 '''
-def main(pdf_file, categories, output_file_name):
+def main(pdf_file, pageSummary, color, output_file_name):
     # Create a list of processes
     processes = []
     new_pdf_list = []
@@ -125,7 +135,7 @@ def main(pdf_file, categories, output_file_name):
         file_name = "conversions/" + str(i) + "-"  + random_string_generator(size, chars) + "-.pdf"
         # Create the process
 
-        process = mp.Process(target=highlight_text, args=(page_range, categories, pdf_file, i, file_name))
+        process = mp.Process(target=highlight_text, args=(page_range, pageSummary, color, pdf_file, i, file_name))
         process.daemon = True
 
         new_pdf_list.append(file_name)
@@ -159,7 +169,9 @@ def main(pdf_file, categories, output_file_name):
 def upload():
     print('preparing pdf annonations ...')
     file = request.files['file']
-    summaryList = eval(request.form['summaryList'])
+    summaryContent = eval(request.form['summaryContent'])
+    pageSummary = summaryContent['pageSummary']
+    color = summaryContent['color']
 
     randomString = random_string_generator(size, chars)
     newFileName = "conversions/" + randomString
@@ -170,7 +182,7 @@ def upload():
     file.save(articleFileName)
 
     # Stating
-    main(articleFileName, summaryList, output_file_name)
+    main(articleFileName, pageSummary, color, output_file_name)
 
     print('output file: ', output_file_name)
     with open(output_file_name, 'rb') as pdf_file:

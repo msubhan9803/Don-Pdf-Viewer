@@ -20,9 +20,11 @@ async function handleGetPdfSummarizedFile(event) {
 
     // Here I will hit DOn's api
     const result = await handleGetPdfSummary(file);
-    const keys = JSON.parse(result);
-    console.log('result parsed: ', keys);
+    debugger;
+    const parsedResult = JSON.parse(result);
+    console.log('result parsed: ', parsedResult);
     const parsedSummaryList = {};
+    const keys = Object.keys(parsedResult[0]);
 
     let colorList = [
         {
@@ -41,14 +43,24 @@ async function handleGetPdfSummarizedFile(event) {
             r: 241, g: 148, b: 138
         }
     ];
-    for (let index = 0; index < Object.keys(keys).length; index++) {
-        const key = Object.keys(keys)[index];
+    const categorizedColor = {}
+    for (let index = 0; index < keys.length; index++) {
+        const key = keys[index];
         const optionsE = getRandomRgb(colorList);
         const removedE = colorList.splice(optionsE, 1);
+
+        let categoryList = []
+        for (let index = 0; index < parsedResult.length; index++) {
+            const page = parsedResult[index];
+            const currentTextObj = JSON.parse(page[key]);
+            categoryList = [...categoryList, ...Object.values(currentTextObj)]
+        }
+
         parsedSummaryList[key] = {
-            text: JSON.parse(keys[key]),
+            text: categoryList,
             color: removedE[0]
         };
+        categorizedColor[key] = removedE[0]
     }
 
     console.log(JSON.stringify(parsedSummaryList))
@@ -60,9 +72,15 @@ async function handleGetPdfSummarizedFile(event) {
     document.getElementById('pdf-viewer-area').classList.add('block');
     document.getElementById('pdf-viewer-area').classList.remove('hidden');
 
+    const payloadContent = {
+        pageSummary: parsedResult,
+        color: categorizedColor
+    }
+    console.log(JSON.stringify(payloadContent))
+
     const formData = new FormData();
     formData.append('file', file);
-    formData.append("summaryList", JSON.stringify(parsedSummaryList));
+    formData.append("summaryContent", JSON.stringify(payloadContent));
 
     await fetch(`highlight.php`, {
         method: 'POST',
@@ -108,16 +126,14 @@ function initializeSummaryListCards(list) {
 
     for (let i = 0; i < Object.keys(list).length; i++) {
         const key = Object.keys(list)[i]
-        console.log('key: ', key)
         const object = list[key];
-        console.log('object: ', object)
         const color = object.color;
 
         const h1 = document.createElement('h1');
         h1.innerHTML = capitalizeFirstLetter(key.replace('_', ' '));
         cardContainer.appendChild(h1);
 
-        const textList = Object.values(object.text);
+        const textList = object.text;
         for (let index = 0; index < textList.length; index++) {
             const text = textList[index];
             const card = document.createElement('div');
