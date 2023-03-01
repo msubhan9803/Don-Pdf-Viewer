@@ -1,4 +1,4 @@
-document.getElementById('file-upload-button').addEventListener('click', handleGetPdfSummarizedFile);
+// document.getElementById('file-upload-button').addEventListener('click', handleGetPdfSummarizedFile);
 document.getElementById('recreate-button').addEventListener('click', handleRecreateButton);
 console.log('pdfjsLib: ', pdfjsLib)
 document.getElementById('search-button').addEventListener('click', scrollToText);
@@ -9,14 +9,22 @@ async function handleRecreateButton() {
     window.location.reload();
 }
 
-async function handleGetPdfSummarizedFile(event) {
+async function handleGetPdfSummarizedFile(base64) {
+    debugger;
+    const pdfData = atob(base64);
+    const blob = new Blob([pdfData], { type: 'application/pdf' });
+    const file = new File([blob], 'myPdfFile.pdf', { type: 'application/pdf' });
+    debugger;
+
+    // document.getElementById('current-iframe').src = 'data:application/pdf;base64,' + base64;
+
     event.preventDefault();
     document.getElementById('file-search-loader').classList.add('block');
     document.getElementById('file-search-loader').classList.remove('hidden');
     document.getElementById('file-upload-dropzone').classList.add('hidden');
     document.getElementById('file-upload-dropzone').classList.remove('block');
 
-    const file = document.getElementById('my-file-input').files[0];
+    // const file = document.getElementById('my-file-input').files[0];
 
     // Here I will hit DOn's api
     const result = await handleGetPdfSummary(file);
@@ -111,6 +119,7 @@ async function handleGetPdfSummarizedFile(event) {
 function handleGetPdfSummary(file) {
     var formdata = new FormData();
     formdata.append("file", file, file.name);
+    debugger;
 
     return fetch('script.php', {
         method: 'POST',

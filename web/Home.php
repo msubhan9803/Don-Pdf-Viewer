@@ -394,14 +394,14 @@
 														<div role="form" class="wpcf7" id="wpcf7-f1424-p806-o1"
 															lang="en-US" dir="ltr">
 															<!-- Upload form -->
-															<form id="upload-form" enctype="multipart/form-data"
+															<!-- <form id="upload-form" action="Summary.php" enctype="multipart/form-data"
 																class="wpcf7-form init">
-																<input type="file" id="my-file-input">
+																<input type="file" id="my-file-input" name="summary_file">
 																<button
 																	class="optin__btn btn btn--md btn--color btn--button"
 																	type="submit"
 																	id="file-upload-button">Upload</button>
-															</form>
+															</form> -->
 														</div>
 													</div>
 												</div>
@@ -417,6 +417,11 @@
 						</div>
 					</div>
 				</section>
+
+				<form action="Summary.php" method="post" enctype="multipart/form-data">
+					<input type="file" name="sample_file">
+					<button type="submit" value="Upload">Upload</button>
+				</form>
 
 				<!-- viewer code start -->
 				<section class="hidden" id="pdf-viewer-area">

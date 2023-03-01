@@ -172,6 +172,7 @@ def main(pdf_file, pageSummary, color, output_file_name):
 def upload():
     print('preparing pdf annonations ...')
     file = request.files['file']
+    print('file: ', file)
     summaryContent = eval(request.form['summaryContent'])
     pageSummary = summaryContent['pageSummary']
     color = summaryContent['color']
