@@ -2,13 +2,13 @@
 	if(isset($_FILES['sample_file']) && $_FILES['sample_file']['error'] == 0) {
 		$base64_pdf = base64_encode(file_get_contents($_FILES['sample_file']['tmp_name']));
 
-		echo "<input class='hidden' id='hidden-base64' value='".$base64_pdf."'";
+		echo "<input class='hidden' id='hidden-base64' value='".$base64_pdf."' >";
 
 		// echo '<iframe src="data:application/pdf;base64,'.$base64_pdf.'" width="100%" height="500px"></iframe>';
 
 		// echo "
 		// 	<script>
-		// 		console.log('hitting summarization process ...');
+		// 		console.log('file: ', ".file_get_contents($_FILES['sample_file']['tmp_name']).");
 		// 	</script>
 		// ";
 

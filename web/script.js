@@ -1,5 +1,5 @@
 // document.getElementById('file-upload-button').addEventListener('click', handleGetPdfSummarizedFile);
-document.getElementById('recreate-button').addEventListener('click', handleRecreateButton);
+// document.getElementById('recreate-button').addEventListener('click', handleRecreateButton);
 console.log('pdfjsLib: ', pdfjsLib)
 document.getElementById('search-button').addEventListener('click', scrollToText);
 
@@ -10,19 +10,27 @@ async function handleRecreateButton() {
 }
 
 async function handleGetPdfSummarizedFile(base64) {
+    let fileRes = await fetch('data:application/pdf;base64,' + base64)
+    let file = await fileRes.blob()
+    file.name = "article_1.pdf"
+    file.lastModified = new Date().getTime()
+    file.lastModifiedDate = new Date()
+    file.webkitRelativePath = ""
     debugger;
-    const pdfData = atob(base64);
-    const blob = new Blob([pdfData], { type: 'application/pdf' });
-    const file = new File([blob], 'myPdfFile.pdf', { type: 'application/pdf' });
-    debugger;
+    // const pdfData = atob(base64);
+    // const blob = new Blob([pdfData], { type: 'application/pdf' });
+    // const file = new File([blob], 'myPdfFile.pdf', { type: 'application/pdf' });
 
-    // document.getElementById('current-iframe').src = 'data:application/pdf;base64,' + base64;
+    // const again_base64_string = await getBase64(file)
+    // debugger;
 
-    event.preventDefault();
-    document.getElementById('file-search-loader').classList.add('block');
-    document.getElementById('file-search-loader').classList.remove('hidden');
-    document.getElementById('file-upload-dropzone').classList.add('hidden');
-    document.getElementById('file-upload-dropzone').classList.remove('block');
+    // document.getElementById('current-iframe').src = 'data:application/pdf;base64,' + again_base64_string;
+
+    // event.preventDefault();
+    // document.getElementById('file-search-loader').classList.add('block');
+    // document.getElementById('file-search-loader').classList.remove('hidden');
+    // document.getElementById('file-upload-dropzone').classList.add('hidden');
+    // document.getElementById('file-upload-dropzone').classList.remove('block');
 
     // const file = document.getElementById('my-file-input').files[0];
 
@@ -116,7 +124,17 @@ async function handleGetPdfSummarizedFile(base64) {
         });
 }
 
+function getBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
+}
+
 function handleGetPdfSummary(file) {
+    debugger;
     var formdata = new FormData();
     formdata.append("file", file, file.name);
     debugger;

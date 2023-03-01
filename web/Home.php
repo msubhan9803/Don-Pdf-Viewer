@@ -419,9 +419,13 @@
 				</section>
 
 				<form action="Summary.php" method="post" enctype="multipart/form-data">
-					<input type="file" name="sample_file">
+					<input id="sample_file_input" type="file" name="sample_file" onchange="myfunc(this)">
 					<button type="submit" value="Upload">Upload</button>
 				</form>
+
+				<script>
+				function myfunc(input) {console.log(input.files[0])}
+				</script>
 
 				<!-- viewer code start -->
 				<section class="hidden" id="pdf-viewer-area">
