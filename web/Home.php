@@ -129,7 +129,7 @@
 			"ajax_nonce": "1a027274f9",
 			"plugin_url": "https:\/\/www.reviewmyarticles.com\/wp-content\/plugins\/deo-elementor-extension\/"
 		};
-      /* ]]> */
+	  /* ]]> */
 	</script>
 	<script type="text/javascript" src="./Home - ReviewMyArticles_files/scripts.js.download"
 		id="deo-elementor-scripts-js"></script>
@@ -371,37 +371,35 @@
 				<button class="optin__btn btn btn--md btn--color btn--button hidden" type="submit" id="recreate-button"
 					style="margin-left: 30px;">Recreate</button>
 
-				<section id="file-upload-dropzone"
-					class="elementor-section elementor-top-section elementor-element elementor-element-4bc2382 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-					data-id="4bc2382" data-element_type="section">
-					<div class="elementor-container elementor-column-gap-default">
-						<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-fc49c62"
-							data-id="fc49c62" data-element_type="column">
-							<div class="elementor-widget-wrap"></div>
-						</div>
+				<form action="Summary.php" method="post" enctype="multipart/form-data">
+					<section id="file-upload-dropzone"
+						class="elementor-section elementor-top-section elementor-element elementor-element-4bc2382 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+						data-id="4bc2382" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-fc49c62"
+								data-id="fc49c62" data-element_type="column">
+								<div class="elementor-widget-wrap"></div>
+							</div>
 
-						<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-bc5b902"
-							data-id="bc5b902" data-element_type="column">
-							<div class="elementor-widget-wrap elementor-element-populated">
-								<div class="elementor-element elementor-element-aff2b11 elementor-widget elementor-widget-wp-widget-custom_html"
-									data-id="aff2b11" data-element_type="widget"
-									data-widget_type="wp-widget-custom_html.default">
-									<div class="elementor-widget-container">
-										<div class="textwidget custom-html-widget">
-											<div class="optin">
-												<div class="optin__form-group form-group">
-													<div class="form-group files">
-														<div role="form" class="wpcf7" id="wpcf7-f1424-p806-o1"
-															lang="en-US" dir="ltr">
-															<!-- Upload form -->
-															<!-- <form id="upload-form" action="Summary.php" enctype="multipart/form-data"
-																class="wpcf7-form init">
-																<input type="file" id="my-file-input" name="summary_file">
-																<button
-																	class="optin__btn btn btn--md btn--color btn--button"
-																	type="submit"
-																	id="file-upload-button">Upload</button>
-															</form> -->
+							<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-bc5b902"
+								data-id="bc5b902" data-element_type="column">
+								<div class="elementor-widget-wrap elementor-element-populated">
+									<div class="elementor-element elementor-element-aff2b11 elementor-widget elementor-widget-wp-widget-custom_html"
+										data-id="aff2b11" data-element_type="widget"
+										data-widget_type="wp-widget-custom_html.default">
+										<div class="elementor-widget-container">
+											<div class="textwidget custom-html-widget">
+												<div class="optin">
+													<div class="optin__form-group form-group">
+														<div class="form-group files">
+															<div role="form" class="wpcf7" id="wpcf7-f1424-p806-o1"
+																lang="en-US" dir="ltr">
+																<!-- Upload form -->
+																<input id="sample_file_input" type="file"
+																	name="sample_file">
+																<button type="submit" value="Upload"
+																	class="optin__btn btn btn--md btn--color btn--button">Upload</button>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -410,22 +408,23 @@
 									</div>
 								</div>
 							</div>
+							<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-1726346"
+								data-id="1726346" data-element_type="column">
+								<div class="elementor-widget-wrap"></div>
+							</div>
 						</div>
-						<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-1726346"
-							data-id="1726346" data-element_type="column">
-							<div class="elementor-widget-wrap"></div>
-						</div>
-					</div>
-				</section>
-
-				<form action="Summary.php" method="post" enctype="multipart/form-data">
-					<input id="sample_file_input" type="file" name="sample_file" onchange="myfunc(this)">
-					<button type="submit" value="Upload">Upload</button>
+					</section>
 				</form>
 
+				<!-- <form action="Summary.php" method="post" enctype="multipart/form-data">
+					<input id="sample_file_input" type="file" name="sample_file" onchange="myfunc(this)">
+					<button type="submit" value="Upload">Upload</button>
+				</form> -->
+
+				<!-- 
 				<script>
-				function myfunc(input) {console.log(input.files[0])}
-				</script>
+					function myfunc(input) {console.log(input.files[0])}
+				</script> -->
 
 				<!-- viewer code start -->
 				<section class="hidden" id="pdf-viewer-area">
@@ -1100,77 +1099,77 @@
 		type="text/css" media="all">
 	<script src="script.js"></script>
 	<script type="application/ld+json" class="aioseo-schema">
-      {
-        "@context": "https:\/\/schema.org",
-        "@graph": [{
-          "@type": "WebSite",
-          "@id": "https:\/\/www.reviewmyarticles.com\/#website",
-          "url": "https:\/\/www.reviewmyarticles.com\/",
-          "name": "ReviewMyArticles",
-          "description": "Let\u2019s get your articles summarized",
-          "inLanguage": "en-US",
-          "publisher": {
-            "@id": "https:\/\/www.reviewmyarticles.com\/#organization"
-          },
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-              "@type": "EntryPoint",
-              "urlTemplate": "https:\/\/www.reviewmyarticles.com\/?s={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
-          }
-        }, {
-          "@type": "Organization",
-          "@id": "https:\/\/www.reviewmyarticles.com\/#organization",
-          "name": "ReviewMyArticles",
-          "url": "https:\/\/www.reviewmyarticles.com\/"
-        }, {
-          "@type": "BreadcrumbList",
-          "@id": "https:\/\/www.reviewmyarticles.com\/#breadcrumblist",
-          "itemListElement": [{
-            "@type": "ListItem",
-            "@id": "https:\/\/www.reviewmyarticles.com\/#listItem",
-            "position": 1,
-            "item": {
-              "@type": "WebPage",
-              "@id": "https:\/\/www.reviewmyarticles.com\/",
-              "name": "Home",
-              "description": "\/*! elementor - v3.6.7 - 03-07-2022 *\/ .elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}Let\u2019s get your articles summarized Want to see how it works? Upload an article and click on the review button Need some help with your literature review? ReviewMyArticles.com is a document summarizing system developed on Natural Language Processing (NLP) technology. It extracts",
-              "url": "https:\/\/www.reviewmyarticles.com\/"
-            },
-            "nextItem": "https:\/\/www.reviewmyarticles.com\/#listItem"
-          }, {
-            "@type": "ListItem",
-            "@id": "https:\/\/www.reviewmyarticles.com\/#listItem",
-            "position": 2,
-            "item": {
-              "@type": "WebPage",
-              "@id": "https:\/\/www.reviewmyarticles.com\/",
-              "name": "Home",
-              "description": "\/*! elementor - v3.6.7 - 03-07-2022 *\/ .elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}Let\u2019s get your articles summarized Want to see how it works? Upload an article and click on the review button Need some help with your literature review? ReviewMyArticles.com is a document summarizing system developed on Natural Language Processing (NLP) technology. It extracts",
-              "url": "https:\/\/www.reviewmyarticles.com\/"
-            },
-            "previousItem": "https:\/\/www.reviewmyarticles.com\/#listItem"
-          }]
-        }, {
-          "@type": "WebPage",
-          "@id": "https:\/\/www.reviewmyarticles.com\/#webpage",
-          "url": "https:\/\/www.reviewmyarticles.com\/",
-          "name": "Home - ReviewMyArticles",
-          "description": "\/*! elementor - v3.6.7 - 03-07-2022 *\/ .elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}Let\u2019s get your articles summarized Want to see how it works? Upload an article and click on the review button Need some help with your literature review? ReviewMyArticles.com is a document summarizing system developed on Natural Language Processing (NLP) technology. It extracts",
-          "inLanguage": "en-US",
-          "isPartOf": {
-            "@id": "https:\/\/www.reviewmyarticles.com\/#website"
-          },
-          "breadcrumb": {
-            "@id": "https:\/\/www.reviewmyarticles.com\/#breadcrumblist"
-          },
-          "datePublished": "2018-05-12T06:54:21+00:00",
-          "dateModified": "2022-07-09T02:27:45+00:00"
-        }]
-      }
-    </script>
+	  {
+		"@context": "https:\/\/schema.org",
+		"@graph": [{
+		  "@type": "WebSite",
+		  "@id": "https:\/\/www.reviewmyarticles.com\/#website",
+		  "url": "https:\/\/www.reviewmyarticles.com\/",
+		  "name": "ReviewMyArticles",
+		  "description": "Let\u2019s get your articles summarized",
+		  "inLanguage": "en-US",
+		  "publisher": {
+			"@id": "https:\/\/www.reviewmyarticles.com\/#organization"
+		  },
+		  "potentialAction": {
+			"@type": "SearchAction",
+			"target": {
+			  "@type": "EntryPoint",
+			  "urlTemplate": "https:\/\/www.reviewmyarticles.com\/?s={search_term_string}"
+			},
+			"query-input": "required name=search_term_string"
+		  }
+		}, {
+		  "@type": "Organization",
+		  "@id": "https:\/\/www.reviewmyarticles.com\/#organization",
+		  "name": "ReviewMyArticles",
+		  "url": "https:\/\/www.reviewmyarticles.com\/"
+		}, {
+		  "@type": "BreadcrumbList",
+		  "@id": "https:\/\/www.reviewmyarticles.com\/#breadcrumblist",
+		  "itemListElement": [{
+			"@type": "ListItem",
+			"@id": "https:\/\/www.reviewmyarticles.com\/#listItem",
+			"position": 1,
+			"item": {
+			  "@type": "WebPage",
+			  "@id": "https:\/\/www.reviewmyarticles.com\/",
+			  "name": "Home",
+			  "description": "\/*! elementor - v3.6.7 - 03-07-2022 *\/ .elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}Let\u2019s get your articles summarized Want to see how it works? Upload an article and click on the review button Need some help with your literature review? ReviewMyArticles.com is a document summarizing system developed on Natural Language Processing (NLP) technology. It extracts",
+			  "url": "https:\/\/www.reviewmyarticles.com\/"
+			},
+			"nextItem": "https:\/\/www.reviewmyarticles.com\/#listItem"
+		  }, {
+			"@type": "ListItem",
+			"@id": "https:\/\/www.reviewmyarticles.com\/#listItem",
+			"position": 2,
+			"item": {
+			  "@type": "WebPage",
+			  "@id": "https:\/\/www.reviewmyarticles.com\/",
+			  "name": "Home",
+			  "description": "\/*! elementor - v3.6.7 - 03-07-2022 *\/ .elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}Let\u2019s get your articles summarized Want to see how it works? Upload an article and click on the review button Need some help with your literature review? ReviewMyArticles.com is a document summarizing system developed on Natural Language Processing (NLP) technology. It extracts",
+			  "url": "https:\/\/www.reviewmyarticles.com\/"
+			},
+			"previousItem": "https:\/\/www.reviewmyarticles.com\/#listItem"
+		  }]
+		}, {
+		  "@type": "WebPage",
+		  "@id": "https:\/\/www.reviewmyarticles.com\/#webpage",
+		  "url": "https:\/\/www.reviewmyarticles.com\/",
+		  "name": "Home - ReviewMyArticles",
+		  "description": "\/*! elementor - v3.6.7 - 03-07-2022 *\/ .elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}Let\u2019s get your articles summarized Want to see how it works? Upload an article and click on the review button Need some help with your literature review? ReviewMyArticles.com is a document summarizing system developed on Natural Language Processing (NLP) technology. It extracts",
+		  "inLanguage": "en-US",
+		  "isPartOf": {
+			"@id": "https:\/\/www.reviewmyarticles.com\/#website"
+		  },
+		  "breadcrumb": {
+			"@id": "https:\/\/www.reviewmyarticles.com\/#breadcrumblist"
+		  },
+		  "datePublished": "2018-05-12T06:54:21+00:00",
+		  "dateModified": "2022-07-09T02:27:45+00:00"
+		}]
+	  }
+	</script>
 	<script>
 		window._wca = window._wca || [];
 	</script>
@@ -1346,7 +1345,7 @@
 				"namespace": "contact-form-7\/v1"
 			}
 		};
-      /* ]]> */
+	  /* ]]> */
 	</script>
 	<script type="text/javascript" src="./Home - ReviewMyArticles_files/index.js.download"
 		id="contact-form-7-js"></script>
@@ -1361,7 +1360,7 @@
 			"ajax_url": "\/wp-admin\/admin-ajax.php",
 			"wc_ajax_url": "\/?wc-ajax=%%endpoint%%"
 		};
-      /* ]]> */
+	  /* ]]> */
 	</script>
 	<script type="text/javascript" src="./Home - ReviewMyArticles_files/woocommerce.min.js.download"
 		id="woocommerce-js"></script>
@@ -1375,7 +1374,7 @@
 			"fragment_name": "wc_fragments_d547df5c40962f027ff8a19d01cf130a",
 			"request_timeout": "5000"
 		};
-      /* ]]> */
+	  /* ]]> */
 	</script>
 	<script type="text/javascript" src="./Home - ReviewMyArticles_files/cart-fragments.min.js.download"
 		id="wc-cart-fragments-js"></script>
@@ -1484,7 +1483,7 @@
 			"mini_cart_buttons_enabled": "",
 			"basic_checkout_validation_enabled": "1"
 		};
-      /* ]]> */
+	  /* ]]> */
 	</script>
 	<script type="text/javascript" src="./Home - ReviewMyArticles_files/button.js.download"
 		id="ppcp-smart-button-js"></script>
@@ -1498,7 +1497,7 @@
 		var Margin_Data = {
 			"mobile_sticky_navbar": ""
 		};
-      /* ]]> */
+	  /* ]]> */
 	</script>
 	<script type="text/javascript" src="./Home - ReviewMyArticles_files/scripts.js(1).download"
 		id="deo-scripts-js"></script>
@@ -1510,7 +1509,7 @@
 		var jetpackLazyImagesL10n = {
 			"loading_warning": "Images are still loading. Please cancel your print and try again."
 		};
-      /* ]]> */
+	  /* ]]> */
 	</script>
 	<script type="text/javascript" src="./Home - ReviewMyArticles_files/lazy-images.js.download"
 		id="jetpack-lazy-images-js"></script>
@@ -1526,7 +1525,7 @@
 				"contactform": "contactform"
 			}
 		};
-      /* ]]> */
+	  /* ]]> */
 	</script>
 	<script type="text/javascript" src="./Home - ReviewMyArticles_files/index.js(1).download"
 		id="wpcf7-recaptcha-js"></script>
@@ -1670,7 +1669,7 @@
 				"url": "\/wp-admin\/admin-ajax.php"
 			}
 		};
-      /* ]]> */
+	  /* ]]> */
 	</script>
 	<script type="text/javascript" src="./Home - ReviewMyArticles_files/wp-util.min.js.download"
 		id="wp-util-js"></script>

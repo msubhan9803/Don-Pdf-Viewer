@@ -6,7 +6,7 @@ document.getElementById('search-button').addEventListener('click', scrollToText)
 let summaryList = [];
 
 async function handleRecreateButton() {
-    window.location.reload();
+    window.location.href = '/Don-Pdf-Viewer/web/Home.php'
 }
 
 async function handleGetPdfSummarizedFile(base64) {
@@ -16,27 +16,9 @@ async function handleGetPdfSummarizedFile(base64) {
     file.lastModified = new Date().getTime()
     file.lastModifiedDate = new Date()
     file.webkitRelativePath = ""
-    debugger;
-    // const pdfData = atob(base64);
-    // const blob = new Blob([pdfData], { type: 'application/pdf' });
-    // const file = new File([blob], 'myPdfFile.pdf', { type: 'application/pdf' });
 
-    // const again_base64_string = await getBase64(file)
-    // debugger;
-
-    // document.getElementById('current-iframe').src = 'data:application/pdf;base64,' + again_base64_string;
-
-    // event.preventDefault();
-    // document.getElementById('file-search-loader').classList.add('block');
-    // document.getElementById('file-search-loader').classList.remove('hidden');
-    // document.getElementById('file-upload-dropzone').classList.add('hidden');
-    // document.getElementById('file-upload-dropzone').classList.remove('block');
-
-    // const file = document.getElementById('my-file-input').files[0];
-
-    // Here I will hit DOn's api
     const result = await handleGetPdfSummary(file);
-    debugger;
+
     const parsedResult = JSON.parse(result);
     console.log('result parsed: ', parsedResult);
     const parsedSummaryList = {};
@@ -134,10 +116,8 @@ function getBase64(file) {
 }
 
 function handleGetPdfSummary(file) {
-    debugger;
     var formdata = new FormData();
     formdata.append("file", file, file.name);
-    debugger;
 
     return fetch('script.php', {
         method: 'POST',
@@ -179,7 +159,6 @@ function initializeSummaryListCards(list) {
 
 // Helpers
 function scrollToText(text) {
-    console.log('clicking...')
     document.getElementById('findInput').setAttribute('value', text)
     document.getElementById('findInput').dispatchEvent(new Event('input'));
 }
