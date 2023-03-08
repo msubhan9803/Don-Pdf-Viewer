@@ -593,7 +593,7 @@
 											<div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
 												<div id="secondaryToolbarButtonContainer">
 													<button id="secondaryOpenFile"
-														class="secondaryToolbarButton visibleLargeView"
+														class="secondaryToolbarButton visibleLargeView hidden"
 														title="Open File" tabindex="51" data-l10n-id="open_file">
 														<span data-l10n-id="open_file_label">Open</span>
 													</button>
@@ -620,7 +620,7 @@
 															Mode</span>
 													</button>
 
-													<a href="#" id="viewBookmark" class="secondaryToolbarButton"
+													<a href="#" id="viewBookmark" class="secondaryToolbarButton hidden"
 														title="Current view (copy or open in new window)" tabindex="55"
 														data-l10n-id="bookmark">
 														<span data-l10n-id="bookmark_label">Current
@@ -679,7 +679,7 @@
 
 													<div class="horizontalToolbarSeparator"></div>
 
-													<div id="scrollModeButtons" role="radiogroup">
+													<div id="scrollModeButtons" class="hidden" role="radiogroup">
 														<button id="scrollPage" class="secondaryToolbarButton"
 															title="Use Page Scrolling" tabindex="62"
 															data-l10n-id="scroll_page" role="radio"
@@ -713,7 +713,7 @@
 
 													<div class="horizontalToolbarSeparator"></div>
 
-													<div id="spreadModeButtons" role="radiogroup">
+													<div id="spreadModeButtons" role="radiogroup" class="hidden">
 														<button id="spreadNone" class="secondaryToolbarButton toggled"
 															title="Do not join page spreads" tabindex="66"
 															data-l10n-id="spread_none" role="radio" aria-checked="true">
@@ -760,7 +760,7 @@
 																	Sidebar</span>
 															</button>
 															<div class="toolbarButtonSpacer"></div>
-															<button id="viewFind" class="toolbarButton"
+															<button id="viewFind" class="toolbarButton hidden"
 																title="Find in Document" tabindex="12"
 																data-l10n-id="findbar" aria-expanded="false"
 																aria-controls="findbar">
@@ -784,7 +784,7 @@
 															<span id="numPages" class="toolbarLabel"></span>
 														</div>
 														<div id="toolbarViewerRight">
-															<button id="openFile" class="toolbarButton hiddenLargeView"
+															<button id="openFile" class="toolbarButton hiddenLargeView hidden"
 																title="Open File" tabindex="31"
 																data-l10n-id="open_file">
 																<span data-l10n-id="open_file_label">Open</span>

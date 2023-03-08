@@ -26,19 +26,19 @@ async function handleGetPdfSummarizedFile(base64) {
 
     let colorList = [
         {
-            r: 240, g: 178, b: 122
+            r: 196, g: 184, b: 255
         },
         {
-            r: 130, g: 224, b: 170
+            r: 184, g: 254, b: 253
         },
         {
-            r: 133, g: 193, b: 233
+            r: 253, g: 204, b: 183
         },
         {
-            r: 187, g: 143, b: 206
+            r: 253, g: 183, b: 246
         },
         {
-            r: 241, g: 148, b: 138
+            r: 253, g: 183, b: 246
         }
     ];
     const categorizedColor = {}
