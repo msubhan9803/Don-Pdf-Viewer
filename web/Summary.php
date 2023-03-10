@@ -112,6 +112,7 @@
 	<link rel="stylesheet" id="jetpack_css-css" href="./Home - ReviewMyArticles_files/jetpack.css" type="text/css"
 		media="all">
 	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 
 
 	<script src="script.js"></script>

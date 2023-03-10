@@ -3288,12 +3288,12 @@
         const cmd = (evt.ctrlKey ? 1 : 0) | (evt.altKey ? 2 : 0) | (evt.shiftKey ? 4 : 0) | (evt.metaKey ? 8 : 0);
         if (cmd === 1 || cmd === 8 || cmd === 5 || cmd === 12) {
           switch (evt.keyCode) {
-            case 70:
-              if (!PDFViewerApplication.supportsIntegratedFind && !evt.shiftKey) {
-                PDFViewerApplication.findBar.open();
-                handled = true;
-              }
-              break;
+            // case 70:
+            //   if (!PDFViewerApplication.supportsIntegratedFind && !evt.shiftKey) {
+            //     PDFViewerApplication.findBar.open();
+            //     handled = true;
+            //   }
+            //   break;
             case 71:
               if (!PDFViewerApplication.supportsIntegratedFind) {
                 const {

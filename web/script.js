@@ -145,10 +145,25 @@ function initializeSummaryListCards(list) {
             const text = textList[index];
             const card = document.createElement('div');
 
-            card.innerHTML = text;
+            const copyButton = document.createElement('button');
+            const copyIcon = document.createElement('i')
+            copyIcon.className = 'fa fa-copy';
+
+            const textP = document.createElement('p');
+            textP.innerHTML = text;
+            card.appendChild(textP)
+
+            copyButton.appendChild(copyIcon)
+            copyButton.type = 'button'
+            copyButton.addEventListener('click', function () {
+                navigator.clipboard.writeText(text)
+            })
+            card.appendChild(copyButton)
+
             card.onclick = function () {
                 scrollToText(text);
             }
+
             card.classList.add('card');
             const borderColor = `3px solid rgba(${color.r},${color.g},${color.b})`;
             card.style.border = borderColor;
